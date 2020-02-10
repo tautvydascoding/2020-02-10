@@ -1,4 +1,4 @@
-Parsisiusti: GoogleChrome
+﻿Parsisiusti: GoogleChrome
 
 Parsisiusti: Atom
 Isirasyti iskiepius: Atom -> FIle ->settings ->install
@@ -14,7 +14,7 @@ beautify       // ivykdo ctrl + ALT + B
 color-picker   // ijungimas ctrl + Alt + C
 jQuery-snippets
 jquery
-Files->Packages -> autosave -> settings -> varnele uzdeti
+Files->Settings->Packages -> i paieska parasyti: "autosave" -> settings -> varnele uzdeti
 
 
 
