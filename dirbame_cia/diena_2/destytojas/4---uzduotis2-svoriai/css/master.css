@@ -1,15 +1,21 @@
-h1 {
+
+h2 {
     color: red;
 }
-.aukstis-100 {
-    height: 100px;
+li.pirmas {
+    color: green;
 }
-.aukstis-200 {
-    height: 200px;
+/*   ARBA  */
+ul .pirmas {
+    color: green;
 }
-.aukstis-300 {
-    height: 300px;
+li {
+    color: blue;
 }
-.aukstis-500 {
-    height: 500px;
+section li {
+    color: red;
+}
+/*  ARBA */
+.grupe li {
+    color: red;
 }
