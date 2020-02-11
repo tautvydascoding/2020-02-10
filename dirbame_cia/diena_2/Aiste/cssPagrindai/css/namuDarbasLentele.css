@@ -1,0 +1,26 @@
+.box {
+    width: 100px;
+    height: 100px;
+    display: inline-block;
+    border: black solid 1px;
+}
+
+.blue {
+    background-color: blue;
+}
+
+.black {
+    background-color: black;
+}
+
+.green {
+    background-color: green;
+}
+
+.red {
+    background-color: red;
+}
+
+.tarpai{
+    margin: 0px;
+}
