@@ -6,6 +6,11 @@ body{
 }
 div{
   border: solid 1px black;
+  border-radius: 25px 50px;
+ background: #73AD21;
+ padding: 20px;
+ width: 200px;
+ height: 50px;
 }
 .paskutinis{
   background-color: green;
