@@ -1,0 +1,23 @@
+.pirmas {
+    color: red;
+}
+
+/* kai be tarpo tai ta pati deze - turi buti ir li ir pirmas */
+
+li.pirmas {
+    color: green;
+}
+
+li {
+    color: blue;
+}
+
+/* cia skirtingos dezes */
+
+ul .paskutinis {
+    color: blueviolet;
+}
+
+.grupe li {
+    color: red;
+}
