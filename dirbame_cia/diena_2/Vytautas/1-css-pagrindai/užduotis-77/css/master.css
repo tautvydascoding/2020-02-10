@@ -1,0 +1,29 @@
+article {
+  border: solid 4px #FFE4C4;
+}
+
+article.fonas-blue {
+  background-color: blue;
+}
+article.fonas-green {
+  background-color: green;
+}
+article.fonas-pink {
+  background-color: pink;
+}
+article.fonas-red {
+  background-color: red;
+}
+
+.pirma-antraste {
+  color: pink;
+}
+.antra-antraste {
+  color: red;
+}
+.trecia-antraste {
+  color: green;
+}
+.ketvirta-antraste {
+  color: blue;
+}

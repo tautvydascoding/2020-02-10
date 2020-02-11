@@ -1,0 +1,10 @@
+div h2 {
+  color: pink;
+}
+div {
+  border: solid 1px blue;
+}
+h2 {color: orange;}
+div.paskutinis {
+  background-color: pink;
+}
