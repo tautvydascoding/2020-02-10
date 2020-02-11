@@ -2,13 +2,17 @@
     color: red;
 }
 
-ul .pirmas {
+/* kai be tarpo tai ta pati deze - turi buti ir li ir pirmas */
+
+li.pirmas {
     color: green;
 }
 
-ul {
+li {
     color: blue;
 }
+
+/* cia skirtingos dezes */
 
 ul .paskutinis {
     color: blueviolet;
