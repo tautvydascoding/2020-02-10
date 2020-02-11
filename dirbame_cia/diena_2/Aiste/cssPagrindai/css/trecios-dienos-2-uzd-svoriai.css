@@ -1,0 +1,19 @@
+.pirmas {
+    color: red;
+}
+
+ul .pirmas {
+    color: green;
+}
+
+ul {
+    color: blue;
+}
+
+ul .paskutinis {
+    color: blueviolet;
+}
+
+.grupe li {
+    color: red;
+}
