@@ -1,0 +1,41 @@
+.red {
+    background-color: red;
+}
+
+.blue {
+    background-color: blue;
+}
+
+article {
+    border: solid black 2px;
+    margin-bottom: 4px;
+    text-align: center;
+}
+
+.green {
+    background-color: green;
+}
+.yellow {
+    background-color: yellow;
+}
+
+.pink {
+    background-color: pink;
+}
+
+.t1 {
+    color: white;
+}
+
+.t2 {
+    color: yellow;
+}
+
+.t3 {
+    color: greenyellow;
+}
+
+h1 {
+    color: hotpink;
+    text-align: right;
+}

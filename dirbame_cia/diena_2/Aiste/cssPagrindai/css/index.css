@@ -1,0 +1,44 @@
+h1 {
+    color: red;
+    text-align: center;
+    margin: 30px;
+    background-color: rgba(63, 191, 191, 0.21);
+}
+
+.chicken {
+    background-color: red; 
+}
+
+.beef {
+    background-color: blue;
+}
+
+.sushi.paskutinis {
+    background-color: orange;
+}
+
+h2 {
+    text-align: right;
+    float: right;
+    width: 80px;
+    margin: 0;
+    padding-right: 10px;
+}
+
+article {
+    background-color: grey;
+    width: 30%;  
+    border: solid 1px black; 
+    margin-left: 20px;
+    float: left;
+}
+
+p {
+    text-align: center;
+    padding-top: 40px;
+    padding-bottom: 20px;
+}
+
+.paskutinis {
+    background-color: pink;
+}
