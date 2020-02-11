@@ -1,0 +1,33 @@
+h1 {
+    color: red;
+}
+.aukstis-100 {
+    height: 100px;
+}
+.aukstis-200 {
+    height: 200px;
+}
+.aukstis-300 {
+    height: 300px;
+}
+.aukstis-500 {
+    height: 500px;
+}
+.fonas-r {
+    background-color: red;
+}
+.fonas-z {
+    background-color: green;
+}
+.tekstas-o { color: orange; }
+.tekstas-m { color: blue; }
+.tekstas-g { color: yellow; }
+
+article {
+    border: solid 1px black;
+}
+
+
+
+
+/*  */
