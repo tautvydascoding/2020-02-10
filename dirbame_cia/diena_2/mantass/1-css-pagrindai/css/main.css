@@ -1,15 +1,23 @@
-h2 {color: pink;
+h2 {
+  color: pink;
 }
+
 h3 {
   color: green;
 }
+
 h1 {
   color: yellow;
 }
+
 div {
   border: solid 1px blue;
 }
-h2 {color: orange;}
-div.paskutinis{
-    background-color: pink;
+
+h2 {
+  color: orange;
+}
+
+div.paskutinis {
+  background-color: pink;
 }
