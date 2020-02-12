@@ -1,0 +1,56 @@
+body {
+    background-color: grey;
+}
+
+header {
+    background-color:pink;
+    min-height: 50px;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: center;
+}
+
+h1 {
+    text-align: center;
+}
+
+nav {
+    background-color:pink;
+    width: 65%;
+}
+
+nav ul {
+    padding-left: 0;
+}
+
+nav ul li {
+    width: 25%;
+    list-style-type: none;
+}
+
+
+.float {
+    float: left;
+}
+
+.go {
+    width: 30%;
+}
+ input {
+     width: 70%;
+ }
+
+.float-isjungimas {
+    clear: both;
+    content: "";
+}
+
+main {
+    width: 55%;
+    background-color:white;
+}
+
+aside {
+    width: 45%;
+    background-color: pink;
+}
