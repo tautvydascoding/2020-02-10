@@ -23,7 +23,11 @@ h1 {
     clear: both;
     content: "";
 }
-
+.preke {
+    border: solid 1px red;
+    float:  left;
+    height: 250px;
+}
 
 
 /*  */
