@@ -1,0 +1,24 @@
+h1 {
+    color: red;
+}
+.aukstis-100 {
+    height: 100px;
+}
+.aukstis-200 {
+    height: 200px;
+}
+.aukstis-300 {
+    height: 300px;
+}
+.aukstis-500 {
+    height: 500px;
+}
+
+h2 { color: red;}
+ul .pirmas {color: green;}
+/* arba */
+li.pirmas {color: green;}
+li {color: blue;}
+.grupe li {color: red;}
+/* arba */
+section li {color: red;}
