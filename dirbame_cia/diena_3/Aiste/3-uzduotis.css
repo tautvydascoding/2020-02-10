@@ -1,0 +1,63 @@
+h1 {
+    color: red;
+    background-color: black;
+}
+
+.fonas-p {
+    background-color: pink;
+    border: solid blue 2px;
+}
+
+.fonas-m {
+    background-color: lightblue;
+    border: solid pink 2px;
+}
+
+.fonas-z {
+    background-color: green;
+    border: solid yellow 2px;
+}
+
+.fonas-g {
+    background-color: yellow;
+    border: solid blue 2px;
+}
+
+.plotis-30 {
+    width: 30%;
+}
+
+.plotis-45 {
+    width: 45%;
+}
+
+.plotis-100 {
+    width: 100%;
+}
+
+.tarpai {
+    margin: 2px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.box {
+    width: 50%;
+    height: 300px;
+}
+
+.float {
+    float: left;
+}
+
+/* isjungti float laba svarbu, nes kitaip gali susigadinti viskas, siuo atveju gali viskas susiplakti i viena eilute
+float isjungiamas, po paskutinio float
+
+float gali buti svetaines virsuje, ir norint ka ideti i apacia, gali automatiskai nusikelti pvz img i virsu, nes float neisjungtas*/
+
+.isjungiu-float {
+    clear: both;
+    content: "";
+}
