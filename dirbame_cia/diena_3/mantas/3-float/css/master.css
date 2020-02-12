@@ -1,0 +1,50 @@
+h1 {
+  color: red;
+}
+
+.aukstis-100 {
+  height: 100px;
+}
+
+.aukstis-200 {
+  height: 200px;
+}
+
+.aukstis-300 {
+  height: 300px;
+}
+
+.aukstis-500 {
+  height: 500px;
+}
+
+.plotis-30 {width: 30%}
+.plotis-45 {width: 45%}
+.plotis-100 {width: 100%}
+.float {float:left}
+.remelis {border: solid 1px red}
+
+.isjungiu-float{clear:both;}
+
+
+.karsta {
+  width: 30%;
+  min-height: 100px;
+  background-color: cyan;
+  border: solid 2px pink;
+}
+
+.sninga {
+  width: 30%;
+  min-height: 100px;
+  background-color: cyan;
+  border: solid 2px pink;
+}
+
+
+
+
+
+
+.fonas-melynas {background-color: blue};
+.fonas-zydras {background-color: pink};
