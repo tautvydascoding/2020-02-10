@@ -1,3 +1,16 @@
+html {
+    background-color: #f4f4f4;
+}
+body {
+    background-color: #f4f4f4;
+    /* elm. centravimas */
+    width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+
 h1 {
     color: red;
 }
@@ -22,8 +35,8 @@ nav {
     background-color: orange;
     width: 60%;
 }
-ul { padding-left: 0; }
-li {
+nav ul { padding-left: 0; }
+nav li {
     float: left;
     width: 25%;
     text-align: center;
@@ -42,7 +55,29 @@ li {
 .paieska  button { width: 20%; }
 .float {   float: left;  }
 .isjungiu-float {   clear: both;  }
+main {
+    width: 68%;
+    background-color: orange;
+    margin-right: 2%;
+}
+aside {
+    width: 30%;
+    background-color: lightblue;
 
+    /* automatinis aukscio apskaiciavimas */
+    margin-bottom: -99999px;
+    padding-bottom: 99999px;
+    /* nepamirsti ant tevinio elm. uzdeti: overflow: hidden; */
+}
+section {
+    overflow: hidden;
 
+    margin-top: 2%;
+    margin-bottom: 2%;
+}
+footer {
+    background-color: pink;
+    min-height: 60px;
+}
 
 /*  */
