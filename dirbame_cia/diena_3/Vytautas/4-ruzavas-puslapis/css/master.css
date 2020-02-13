@@ -1,0 +1,46 @@
+h1 {
+    color: red;
+}
+.aukstis-100 {
+    height: 100px;
+}
+.aukstis-200 {
+    height: 200px;
+}
+.aukstis-300 {
+    height: 300px;
+}
+.aukstis-500 {
+    height: 500px;
+}
+
+/* ------------nav--------- */
+header {
+  min-height: 70px;
+  background-color: pink;
+}
+nav {background-color: orange;
+  width: 60%;
+}
+ul {padding-left: 0;}
+li {float: left;
+list-style-type: none;
+width: 25%;
+text-align:center;
+}
+
+.float {float: left;}
+
+.isjungiu-float {clear: both;
+content: "";}
+
+/* --------nav pabaiga---------- */
+
+.paieska {background-color: pink;
+width: 40%;
+}
+.float {float: left;}
+li {float: left;
+}
+.isjungiu-float {clear: both;
+content: "";}
