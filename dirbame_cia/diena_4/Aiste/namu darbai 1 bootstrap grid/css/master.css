@@ -1,0 +1,20 @@
+h1 {
+    color: green;
+}
+
+.bg-info {
+    height: 150px;
+    padding-left: 10px;
+    padding-top: 10px;
+}
+
+.bg-light {
+    height: 300px;
+    padding-left: 10px;
+    padding-top: 10px;
+}
+
+.bg-secondary {
+    padding-left: 10px;
+    padding-top: 10px;
+}
