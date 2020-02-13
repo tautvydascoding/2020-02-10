@@ -1,0 +1,29 @@
+h1 {
+    color: red;
+}
+.aukstis-100 {
+    height: 100px;
+}
+.aukstis-200 {
+    height: 200px;
+}
+.aukstis-300 {
+    height: 300px;
+}
+.aukstis-500 {
+    height: 500px;
+}
+nav {background-color: orange;
+width: 60%}
+.paieska {background-color: pink;
+width: 40%}
+.float {float:left;}
+.float-isjungimas {clear:both;}
+
+li {
+  float: left;
+  width: 25%;
+  text-align: center;
+  list-style-type: none;
+}
+ul {padding-left: 0;}
