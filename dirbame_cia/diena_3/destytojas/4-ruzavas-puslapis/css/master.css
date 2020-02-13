@@ -1,42 +1,73 @@
-h1 {
-    color: red;
+html{
+  background: #f2f2f2
+
 }
-.aukstis-100 {
-    height: 100px;
+body {
+ font-family: 'Modak', cursive;
+  background-color: #f2f2f2;
+  width: 1200px;
+  margin-left:auto;
+  margin-right:auto;
 }
-.aukstis-200 {
-    height: 200px;
+h1{
+    text-shadow: 10px 3px 10px grey;
+    color: green;
 }
-.aukstis-300 {
-    height: 300px;
-}
-.aukstis-500 {
-    height: 500px;
-}
+
 header {
     min-height: 70px;
-    background-color: pink;
+    background-color:#f50b0b;
 }
 /* ---------NAV------ */
 nav {
-    background-color: orange;
     width: 60%;
 }
-ul { padding-left: 0; }
-li {
+ nav ul { padding-left: 0;
+}
+nav li {
     float: left;
     width: 25%;
-    text-align: center;
+    font-size: 26px;
+    padding-top: 13px;
     list-style-type: none;
  }
 /* ---------------------- */
 .paieska {
     background-color: pink;
-    width: 40%;
+    width: 38%;
+    padding-top: 20px;
+    margin-left: 2%
+
  }
+.paieska input{width: 60%;}
+button{width: 20%;
+  background-color: black;
+  color:white;
+}
 .float {   float: left;  }
 .isjungiu-float {   clear: both;  }
+main{
+  width: 68%;
 
+  color: black;
+  margin-right: 1%;
+  float: left;
 
-
+}
+aside{
+   width: 30%;
+  background-color: lightblue;
+  float: left;
+  margin-bottom: -999999px;
+  padding-bottom: 999999px;
+}
+section{
+  overflow: hidden;
+  margin-top: 1%;
+  margin-bottom: 1%;
+}
+footer{
+  background-color: pink;
+  min-height: 60px;
+}
 /*  */
