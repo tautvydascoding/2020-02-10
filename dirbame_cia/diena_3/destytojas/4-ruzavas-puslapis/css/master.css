@@ -28,12 +28,18 @@ li {
     width: 25%;
     text-align: center;
     list-style-type: none;
+    font-size: 26px;
+    padding-top: 13px;
  }
 /* ---------------------- */
 .paieska {
     background-color: pink;
-    width: 40%;
+    width: 38%;
+    padding-top: 16px;
+    margin-left: 2%;
  }
+.paieska  input { width: 70%;  }
+.paieska  button { width: 20%; }
 .float {   float: left;  }
 .isjungiu-float {   clear: both;  }
 
