@@ -3,6 +3,8 @@
     box-sizing: border-box;
 }
 h1 {
+    justify-content: 
+    align-items: center;
     color: red;
 }
 
