@@ -1,113 +1,56 @@
 body {
-    background-color: rgb(134, 134, 134);
-    width: 1000px;
-    margin-left: auto;
-    margin-right: auto;
+    background-color: grey;
 }
-
-h1,
-h2,
-h3 {
-    font-family: 'Galada', 'Arial' cursive; 
-    text-align: center;
-}
-
-/* jei neuzkraus Galada tada bus Arial  - isvardinti visus per kableli*/
 
 header {
+    background-color:pink;
     min-height: 50px;
+    margin-bottom: 10px;
     display: flex;
     justify-content: center;
 }
 
-h1,
-h2 {
-    
-    margin: 10px;
+h1 {
+    text-align: center;
 }
 
 nav {
-    width: 70%;
+    background-color:pink;
+    width: 65%;
 }
 
-.go-search {
-    width: 30%;
-    display: flex;
-    align-items: center;
+nav ul {
+    padding-left: 0;
 }
 
 nav ul li {
     width: 25%;
     list-style-type: none;
-    font-size: 20px;
-    display: flex;
-    justify-content: space-evenly;
-    align-content: center;
-    padding: 0;
 }
+
 
 .float {
     float: left;
 }
+
+.go {
+    width: 30%;
+}
+ input {
+     width: 70%;
+ }
 
 .float-isjungimas {
     clear: both;
     content: "";
 }
 
-.go-button {
-    background-color: black;
-    color: white;
-    height: 20px;
-    /* width: 30%; */
-    border: none;
-    min-width: 100px;
-}
-
-.search {
-    /* width: 60%; */
-    height: 20px;
-}
-
-
-
-/*      overflow: hidden;                   eina pas teti
-        margin-bottom: -5000px;             eina pas vaika
-        padding-bottom: 5000px;
-*/
-
-section {
-    overflow: hidden;
-    margin-top: 1%;
-    margin-bottom: 1%;
-}
-
 main {
-    width: 72%;
-    margin-right: 1%;
-    padding: 5px;
+    width: 55%;
+    background-color:white;
 }
 
 aside {
-    width: 22%;
-    margin-bottom: -5000px;
-    /* any large number will do */
-    padding-bottom: 5000px;
-    margin-left: 0;
-}
-
-.fonas-ruz {
-    background-color: rgb(248, 78, 194);
-}
-
-.fonas-b {
-    background-color: white;
-}
-
-
-footer {
-    min-height: 50px;
-    display: flex;
-    align-items: center;
-    padding-left: 5px;
+    width: 45%;
+    background-color: pink;
 }
