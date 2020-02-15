@@ -60,12 +60,24 @@ printAddressData();
 // sukurti funkcija "printTekstas(x)" ,
 //  kuri atspausdina i konsole "x" reiksmes
 // iskviesti f-ja ir vietoj x irasyti koki nors teksta pvz: printTekstas( "Jokubo istorijos");
+function printTekstas(x) {
+  console.log(x);
 
+  }
+printTekstas("Martyno istorijos");
+printTekstas("Jono istorijos");
+printTekstas("Luko istorijos");
 
 
 // 7 UZDUOTIS
 // F-ja kuri paskaiciuoja trikampio ilgaja krastine (Pitagoro teorema)
 // pitagoroTeorema(x, y)      x*x + y*y ir is visko istraukti sakti (js Math.sqrt())
+
+function pitagoroTeorema(x) {
+  console.log(x);
+
+}
+printpitagoroTeorema(sqrt(2*2+4*4));
 
 //==========================KOMANDINE (3-4h) Bootstrap && GIT=================
 // ant lentos
