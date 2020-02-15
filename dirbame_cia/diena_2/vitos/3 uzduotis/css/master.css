@@ -1,0 +1,30 @@
+h1 {
+    color: red;
+}
+.aukstis-100 {
+    height: 100px;
+}
+.aukstis-200 {
+    height: 200px;
+}
+.aukstis-300 {
+    height: 300px;
+}
+.aukstis-500 {
+    height: 500px;
+}
+
+.box {width: 100px;
+  height: 100px;
+  border: solid 1px blue;
+  display: inline-block;}
+
+.fonas1 {background-color: green;}
+.fonas2 {background-color: yellow;}
+.fonas3 {background-color: blue;}
+
+.tekstas1 {color: yellow;}
+.tekstas2 {color: blue;}
+.tekstas3 {color: orange;}
+
+article {border: solid 1px black;}
