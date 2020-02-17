@@ -14,7 +14,7 @@ li {
 
 /* cia skirtingos dezes */
 
-ul .paskutinis {
+li.paskutinis {
     color: blueviolet;
 }
 

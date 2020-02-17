@@ -1,0 +1,57 @@
+body {
+    background-color: grey;
+}
+header {
+    margin-top: 50px;
+    margin-bottom: 10px;
+    justify-content: center;
+    background-color: grey;
+}
+
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Lobster', cursive;
+}
+
+
+
+.tarpai {
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+
+
+.fonas-w {
+    background-color: white;
+}
+
+.fonas-r {
+    background-color: hotpink;
+}
+
+.tarpai-r {
+    margin-right: 10px;
+}
+
+footer, header, nav {
+    min-height: 50px;
+}
+
+.float {
+    float: left;
+}
+
+.isjungiu-float {   clear: both;  }
+
+.search {
+    width: 70%;
+}
+
+.go {
+    width: 25%;
+}
+
+.padding {
+    padding: 10px;
+}
+

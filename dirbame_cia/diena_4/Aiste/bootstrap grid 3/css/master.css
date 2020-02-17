@@ -11,7 +11,7 @@ h1 {
 }
 
 .row {
-    margin-bottom: 2%;
+    margin-bottom: 5px;
 }
 
 .cont {
@@ -28,6 +28,10 @@ h1 {
 
 .col-md-1 {
     padding: 0;
+}
+
+.margin-right {
+    margin-right: 5px;
 }
 
 /* .col-md-6 {
