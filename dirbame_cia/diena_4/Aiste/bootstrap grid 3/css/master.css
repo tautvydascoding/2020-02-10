@@ -1,0 +1,48 @@
+h1 {
+    color: green;
+}
+
+.header {
+    height: 70px;
+}
+
+.hight-col {
+    height: 150px;
+}
+
+.row {
+    margin-bottom: 5px;
+}
+
+.cont {
+    padding: 0;
+}
+
+.container {
+    padding: 0;
+}
+
+.bg-warning {
+    padding: 15px;
+}
+
+.col-md-1 {
+    padding: 0;
+}
+
+.margin-right {
+    margin-right: 5px;
+}
+
+/* .col-md-6 {
+    margin-right: 1rem;
+} */
+
+
+/* .col-md-6 {
+    margin-right: 1%;
+}
+
+.col-md-3 {
+    margin-left: 1%;
+} */
