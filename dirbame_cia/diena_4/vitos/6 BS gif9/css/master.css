@@ -16,9 +16,67 @@ h1 {color: red;}
     height: 500px;
 }
 
-.aukstis-auto {
-    height: auto;
-
 .aukstis-50 {
     height: 50px;
 }
+
+/* liko pabandyti flex... */
+
+/* float su isjungimu irgi netinka */
+/* .float {
+  float: bottom;
+}
+
+.isjungti-float {
+  clear: both;
+  content: ""
+} */
+/* <div class="isjungti-float"> </div> */
+
+
+/* antrai eilutei kur du stulpeliai po dvi eilutes */
+/* naudojama 'align-items-end' bet jei 'main' nepilna*/
+/* nusikelia i apacia */
+
+/* irgi netiko */
+/* .eilute2 {
+    display: table;
+    float: none;
+    display: table-cell;
+    vertical-align: bottom;
+} */
+
+/* .stulp-bottom {
+  float: none;
+  /* display: table-cell; */
+    /* vertical-align: bottom;
+} */
+/* irgi netinka */
+/* .apacios {
+   position: absolute;
+   bottom: 0;
+} */
+
+/* netinka nei aside, nei div col > mb-0 */
+
+
+/* main {
+    height: auto;
+} */
+/* main {
+    margin-bottom: -9999px;
+    padding-bottom: 9999px;
+}
+
+div.col {
+    overflow: hidden;
+} */
+
+/* irgi netiko nei pos relative ar absolute */
+/* aside {
+    position: absolute;
+}
+
+footer {
+    position: absolute;
+} */
