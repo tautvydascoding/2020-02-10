@@ -71,28 +71,54 @@ if (vardas1 == vardas2) {
 
 // B)
 // Jeigu vardas1 yra "Tomas" - pasisveikinti su juo
-
+vardas1 = "Romas";
+if (vardas1 == "Tomas") {
+    console.log( "vardas1 yra Tomas: " + vardas1  );
+} else {
+    console.log( "vardas ne Tomas: " + vardas1);
+}
 // C)
 // Patikrinti ar varda1 yra "Tomas", IR butinai vardas2  yra "Karolis"
 // pranesti kad vardai: "Tomas ir Karolis"
 // arba pranesti, kad : "vardai NE Tomas ir Karolis"
 // pakeitineti vardus ir paziureti ar veikia
-
+varda1 = "Tomas";
+vardas2 = "Karolis";
+if (vardas1 == "Tomas" && vardas2 == "Karolis") {
+    console.log(" vardai: Tomas ir Karolis ");
+} else {
+    console.log('vardai NE Tomas ir Karolis');
+}
 // D)
 // Patikrinti ar bent vienas is vardu "Tomas"
 // || - arba
 // pranesti: "kazkuris is vardu yra Tomas"
 // pakeitineti vardus ir paziureti ar veikia
-
+varda1 = "Antanas";
+vardas2 = "Karolis";
+if (varda1 == 'Tomas' || vardas2 == 'Tomas') {
+    console.log("kazkuris is vardu yra Tomas");
+} else {
+    console.log('nei vienas is vardu nera Tomas:' + vardas1 + vardas2);
+}
 // 1 UZDUOTIS
 // turesime vartotojo amziu
-// let age = 24;
 // gapal ji, turesiem isvesti tam tikra reklamos teksta
 
 
 // Salygos:
 
+let age = 24;
 // iki 7 metu
+if (  age <= 7) {
+    console.log("Pliusines varles");
+} else if ( age <= 14 ) {
+    console.log("Mini telefonai");
+} else if (age <= 18) {
+    console.log("new Music App");
+} else if (age <= 21  ) {
+    console.log("Stok i sauliu sajunga");
+}
 //      "Pliusines varles"
 // nuo 7 iki 14
 //      "Mini telefonai"
