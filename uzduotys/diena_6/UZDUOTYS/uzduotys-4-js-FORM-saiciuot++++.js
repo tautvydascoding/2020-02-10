@@ -6,7 +6,7 @@
 
 
 // naudojantis uzduoties 3 pavayzdziu isspresti
-//============== =========
+//=======================
 // UZDUOTIS 1
 // sukurti ivedimo lauka, naudojantis pvz 3,
 // kur reikes ivesti apskritimo spinduli ,,R".
