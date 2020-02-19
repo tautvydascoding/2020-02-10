@@ -20,6 +20,9 @@ document.write("labas ekrane");
 
    // 2 pervadinti pirma stalciu pvz + "ir KO"
    prekiautojai[1] += "ir KO";
+   // arba
+   // prekiautojai[1]  = prekiautojai[1] + "ir KO";
+
    console.log( prekiautojai ); // test
 
    // 3 sukeisti antro ir trecio stalciu reiksmes vietomis
