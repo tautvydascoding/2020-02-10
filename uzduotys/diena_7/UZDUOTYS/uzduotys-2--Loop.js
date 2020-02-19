@@ -11,6 +11,8 @@
 // 1 UZDUOTIS
 // isvesti 30 kartu zodi "Azuolas" i konsole  (! bandant tai padaryti, atsiras skaicius 50)
 
+
+
 // 1.1 UZDUOTIS
 // isvesti i ekrana "<h3> Azuolas </h3>" su document.write arba innerHTML
 

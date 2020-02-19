@@ -13,6 +13,20 @@ console.log(" as veikiu");
 // kur reikes ivesti apskritimo spinduli ,,R".
 // Kai paspaudziamas mygtukas - paskaiciuojamas apskritimo plotas: Plotas = pi * R*R
 // pi = Math.PI;
+
+function apskritimoPlotas(){
+    let ivedimoLaukas = document.querySelector('#spindulys');
+    // console.log( ivedimoLaukas ); // test
+    // bandom paimti teksta is ivedimo lauko
+    let ivestasTekstas = ivedimoLaukas.value;
+    // arba
+    // let ivestasTekstas = document.querySelector('#spindulys');
+    // console.log("ivestas tekstas:" + "ivestasTekstas");
+    let plotas = Math.PI * ivestasTekstas * ivestasTekstas;
+    // console.log("plotas" + plotas); //test
+    document.querySelector('#rezultatas').innerHTML = "Apskritimo plotas:" + " " + Math.round(plotas) + "<br>";
+}
+
 //
 //
 //
