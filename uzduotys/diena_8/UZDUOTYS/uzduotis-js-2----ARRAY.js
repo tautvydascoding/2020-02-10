@@ -3,6 +3,7 @@
 // UZDUOTIS:
 // sukurti vienos masinos duomenu masyva:
 //  pavadinimas, pravaziuota rida, kaina
+var  auto = ["BMW", 300000, 4500];
 // 1. isvesti masyvo duomenis
 // 2. padidinti kaina: 100
 // 3. padidinti rida: -50000
