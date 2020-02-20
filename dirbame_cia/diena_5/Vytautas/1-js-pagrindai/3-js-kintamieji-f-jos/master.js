@@ -7,13 +7,13 @@ let vardas = "Vytautas";
 let pavarde = "Krapikas";
 let amzius = 27; //ne kabutese
 let atlyginimas = 800; //ne kabutese
-console.log( vardas, pavarde);
+console.log(vardas, pavarde);
 
 
 // teo:
 //  typeof( k ); f-ja kuri isveda kintamojo tipa
-console.log(    typeof(vardas)  );
-console.log(    typeof(amzius)  );
+console.log(typeof(vardas));
+console.log(typeof(amzius));
 
 //  2 UZDUOTIS
 // sukurti funkcija "printVardasPavardeAmzius()" , kuri atspausdina i konsole pirmos uzduoties kintamuosius
@@ -28,7 +28,7 @@ printVardasPavardeAmzius();
 // sukurti funkcija "printMetinisPajamuDydis()" ,
 // kuri  atspausdina i konsole suma 12 atlyginimu (vienas atlyginimas yra lygus "uzduotis 1" kintamajam - "atlyginimas")
 function printMetinisPajamuDydis() {
-    console.log(12*atlyginimas);
+    console.log(12 * atlyginimas);
 }
 printMetinisPajamuDydis()
 
@@ -68,12 +68,11 @@ printTekstas("Luko istorijos")
 // F-ja kuri paskaiciuoja trikampio ilgaja krastine (Pitagoro teorema)
 // pitagoroTeorema(x, y)      x*x + y*y ir is visko istraukti sakti (js Math.sqrt())
 
-function Pitagoro teorema (x, y) {
-    let lygtis = (Math.sqrt(x*x + y+y));
-    console.log("lygtis");
+function pitagoroTeorema(x, y) {
+    console.log(Math.sqrt((x * x) + (y * y)));
 }
 
-Pitagoro teorema(5, 6)
+pitagoroTeorema(1, 2);
 
 //==========================KOMANDINE (3-4h) Bootstrap && GIT=================
 // ant lentos
