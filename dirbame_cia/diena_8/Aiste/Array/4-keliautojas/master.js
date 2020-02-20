@@ -6,6 +6,12 @@ console.log("array - testuojam ")
 
 
 
+// mas.toString ( ); ----- pavercia i teksta visa mazyva
+// man.join(); -------- pavers i teksta visa mas
+// 
+
+
+
 
 // ========== LENGHT ==========================================
 console.log("-----------LENGHT-----------");
