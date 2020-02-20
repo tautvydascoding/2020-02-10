@@ -1,10 +1,11 @@
 console.log("labas");
 
 // =================taisyklingas Array copy  =================
-var array = ['a', 'b', 'c'];  // Becomes arr1 = ['a', 'b', 'c']
-var kopijaNEGERAI =  array; // !!! Blogi  - sukurs susietaja kopija ir redaguojant keisis abu masyvai
-var kopija1 = array.slice(0);   // Becomes arr2a = ['a', 'b', 'c'] - deep copy
-var kopija2 = array.concat(  );   // Becomes arr2b = ['a', 'b', 'c'] - deep copy
+// var array = ['a', 'b', 'c'];  // Becomes arr1 = ['a', 'b', 'c']
+// var kopijaNEGERAI = array; // !!! Blogi  - sukurs susietaja kopija ir redaguojant keisis abu masyvai
+// // taisiklingas copijavimas - deep copy
+// var kopija1 = array.slice(0);   // Becomes arr2a = ['a', 'b', 'c'] - deep copy
+// var kopija2 = array.concat(  );   // Becomes arr2b = ['a', 'b', 'c'] - deep copy
 
 // ================= ========= ======== ========
  ieskomiZmones = [2, 16, 17, 18, 19, 25];
