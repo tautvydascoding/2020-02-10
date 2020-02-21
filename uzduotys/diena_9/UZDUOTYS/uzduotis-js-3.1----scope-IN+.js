@@ -1,7 +1,7 @@
 
 
 // ====================Scope====================
-//   UZDUOTIS  A
+//   UZDUOTIS  Aw
 // sukurti funkcija "printDuomenys()" ,
 // funkcijoje sukurti kintamaji: var vardas = "Tomas"
 // kuri  atspausdina i konsole  kintamaji "vardas"
