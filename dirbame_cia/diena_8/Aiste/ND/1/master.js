@@ -62,11 +62,14 @@ let masyvas2 = [15, 14, 13, 12, 11];
 // naudojant for cikla sujungti juos, kas antra elementa
 // [pirmo masyvo, antro masyvo, pirmo masyvo, antro masyvo , ...]
 
+let masyvas3 = masyvas1[i] + masyvas2[i];
 
-for (let i = 0; i < 20; i++) {
-    masyvas1[i] = masyvas2[i++] ;
+for (let i = 0; i < masyvas1.length; i+=2) {
+    masyvas3 ;
 }
 console.log(masyvas1);
+document.querySelector("body").innerHTML += masyvas1 + " kas" + "<br>"
+
 
 
 // sunkesnis
