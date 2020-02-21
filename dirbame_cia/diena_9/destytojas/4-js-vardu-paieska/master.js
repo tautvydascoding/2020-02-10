@@ -1,6 +1,5 @@
 console.log(" as veikiu");
-
-console.log("labas");
+ 
 
 // =================taisyklingas Array copy  =================
 // var array = ['a', 'b', 'c'];  // Becomes arr1 = ['a', 'b', 'c']
