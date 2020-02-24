@@ -2,15 +2,15 @@
 // Ka atspausdina console?
 var x = 10;
 function test1() {
-    console.log(x);
+    console.log(x); // nieko
 }
-test1();
+test1(); // 10
 
 // Ka atspausdina console?
 var x = 10;
 function test1() {
     console.log(x);
-}
+} // nieko
 
 
 // Ka atspausdina console?
@@ -18,8 +18,8 @@ var x = 5;
 function test1() {
     x = 0;
 }
-test1();
-console.log(x);
+test1(); // 0
+console.log(x); // 0
 
 
 // Ka atspausdina console?
@@ -27,7 +27,7 @@ var x = 5;
 function test1() {
     x = 0;
 }
-console.log(x);
+console.log(x); // 0
 test1();
 
 
