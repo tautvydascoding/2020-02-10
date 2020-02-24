@@ -46,7 +46,7 @@ function test1(x) {
     var x = 100;
     console.log(x);
 }
-test1(555); //100
+test1(555);
 
 // Ka atspausdina console?
 var x = 50;
@@ -54,7 +54,7 @@ function test1(x) {
     var x = 10;
 }
 test1(99);
-console.log(x); //50
+console.log(x);
 
 
 // Ka atspausdina console?
@@ -63,7 +63,7 @@ function test1(x) {
      x = 11;
 }
 test1(13);
-console.log(x); //22
+console.log(x);
 
 
 // Ka atspausdina console?
@@ -96,7 +96,7 @@ console.log( x );
 var x = 444;
 fucntion test1(x) {
   x=777;
-  window.x = x; // 444 = 777 globalus tampa local
+  window.x = x;
 
      x = 555;
 }
@@ -118,9 +118,9 @@ let x = 1;
 
 if (true) {
 let x = 2;
-  console.log(x); // 2
+  console.log(x);
 }
-console.log(x);   //  1
+console.log(x);
 
 //---------------------
 let x = 11;
