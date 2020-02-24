@@ -1,11 +1,11 @@
 // //Execute the function when the DOM is ready to be used.
-// $(function() {
-//     // Document is ready
-// });
+$(function() {
+    // Document is ready
+});
 
-// jQuery(function( $ ) {
-//     // Your code using failsafe $ alias here...
-// });
+jQuery(function( $ ) {
+    // Your code using failsafe $ alias here...
+});
 
 // //=============css===============
 // $( "article > p" ).css( "border", "1px solid gray" );
