@@ -1,0 +1,56 @@
+h1 {color: red;}
+
+htmle
+
+<div class="wrapper">
+    <div class="">
+        Lorem
+    </div>
+    <div class="">
+        Lorem
+    </div>
+    <div class="">
+        Lorem
+    </div>
+</div>
+/* ============== */
+.wrapper {
+    display: grid;
+    /* grid-template-columns: 1fr 1fr 1fr; */
+    grid-template-columns: repeat(3, 1fr);
+    /* grid-column-gap: 1em; */
+    /* grid-row-gap: 1em; */
+    grid-gap: 1em;
+    /* grid-auto-rows: 100px; */
+    grid-auto-rows: minmax(100px, auto);
+}
+.nested div {
+    border: #222 1px solid;
+}
+
+.nested {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 1em;
+    grid-auto-rows: 80px;
+}
+
+.wrapper div{
+    background: #eee;
+    padding: 1em;
+}
+
+.wrapper:nth-child(odd) div{
+    background: #bbb;
+}
+
+/*
+.float {
+  float: left;
+}
+
+.isjungti-float {
+  clear: both;
+  content: ""
+} */
+/* <div class="isjungti-float"> </div> */

@@ -22,4 +22,5 @@ index.php
 // 3) template-preke.php faile   isvesti kintamuosius $kaina, $antraste, $aprasymas
 pvz
 <h2> <?php echo $antraste;  ?> </h2>
+<p> <?php echo $aprasymas;  ?> </p>
 // 3.2) index.php faile!! - paleisti FOR cikla 6 kartus include('template-preke.php');
