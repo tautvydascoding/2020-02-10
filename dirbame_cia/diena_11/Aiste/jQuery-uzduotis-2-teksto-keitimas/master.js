@@ -42,8 +42,8 @@ console.log( $('li').text());
 $("#liWithID").replaceWith("<p>Socks</p>");
 
 
-// var Text = $('li.reklama').text()('Galery');
-// var Text2 = $('li.about').text()('Abaut');
+// var Text = $('li.reklama').text()('');
+// var Text2 = $('li.about').text()('');
 
 // $("li.reklama").replaceWith(Text2);
 // $("li.about").replaceWith(Text);
