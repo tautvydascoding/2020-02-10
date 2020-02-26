@@ -8,7 +8,7 @@ show databases;
 
 
 
-CREATE DATABASE hospital10;
+CREATE DATABASE `hospital10`;
 use hospital10; // nurodome darbine duomenu base (DB)
 
 
