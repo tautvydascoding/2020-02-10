@@ -1,4 +1,12 @@
 
+-- ` -  db/tables  pavadinimams
+-- tokios kabutes ` naudojamos senesniuose dokuose. tik pavadinimams lentelius arba DB
+
+-- '  - tekstui/reikmems/values
+
+-- "" - tekstui/reikmems/values
+
+
 
 -- geriau pirma cia programuoti, ir po to copy paste i terminala mysql.exe
 
