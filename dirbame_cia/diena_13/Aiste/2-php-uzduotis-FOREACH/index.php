@@ -27,31 +27,57 @@
 
 <?php
 
-$m = [
-    'vardas' => 'Tom',
-    'amzius' => 21,
-    'miestas' => "Kaunas"
-];
-
-$m [5] = 370678;
-$m ['AK'] = 12345;
+// print_r($darbuotojas); // masyvo arba objekto isvedimas
+// var_dump($darbuotojas); // detalus kintamojo arba  masyvo  isvedimas
 
 
-// foreach ($m as $key => $value) {        galima be key programuoti. nes nereikia stalciaus pavadinimo
-//     # code...
-// }
 
-foreach ($m as $key => $value) {    // isves kartu su vardas amzius miestas 5 ak
-    echo "$key  $value <br>";
+// 0 ) sukurti asociatyvu masyva uzpildyta duomenimis apie darbuotoja:
+// vardas, asmens kodas, gimData, pardavimuKiekis
+    $darbuotojas = [
+        'vardas' => 'Tom',
+        'AK' => 1234456789,
+        'gimData' => '1993-10-07',
+        'pardavimuKiekis' => 115
+    ];
+
+
+// 1)  isvesti visus duomenis apie darbuotoja
+print_r($darbuotojas);
+// var_dump($darbuotojas);
+
+echo "<br>";
+
+
+
+// 2) pakeisti darbuotojo pardavimu skaiciu i 180
+
+$darbuotojas ['pardavimuKiekis'] = 180;
+print_r($darbuotojas);
+echo "<br>";
+
+
+
+// 3) i stalciu/index 0 ideti  darbuotojo adresa:
+//  "Siaures pr. 131"
+$darbuotojas ['adresas'] = "Siaures pr. 131";
+print_r($darbuotojas);
+echo "<br>";
+
+
+
+// 4) ismeginti koda:
+
+foreach ($darbuotojas as $darbuotojoStalcius) {    // isves kartu su vardas amzius miestas 5 ak
+    echo "$darbuotojoStalcius <br>";
 }
 
-foreach ($m as $value) {   // isves tik tom 21 kaunas
-    echo "  $value <br>";
-}
 
 
-
-
+print_r($darbuotojas);
+echo "<br>";
+var_dump($darbuotojas);  // geriau, nes parodo ir koks tipas. ji daugiau naudoja
+echo "<br>";
 
 
 
