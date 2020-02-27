@@ -3,7 +3,7 @@
 // prisijungimas prie duomenu bazes
 define('DB_HOST', 'localhost'); //define konstanta - nekintantis kintamasis
 define('DB_MYSQL_USER', 'root');
-define('DB_MYSQL_PASSWORD', 'root');
+define('DB_MYSQL_PASSWORD', 'root');  // Jei naudoji XAMP, WAMP 'root'-> ''
 define('DB_NAME', 'hospital2');
 
 $prisijungimas = mysqli_connect( DB_HOST, DB_MYSQL_USER, DB_MYSQL_PASSWORD, DB_NAME);
@@ -67,4 +67,29 @@ function editDoctor($nr, $vardas, $pavarde, $zona) {
         echo "ERROR nepavyko redaguoti gydytojo nr:$nr, $vardas, $pavarde, $zona <br>";
     }
 }
-editDoctor(4,'Litas', 'Litaite',  'Z2');
+// test
+//editDoctor(4,'Litas', 'Litaite',  'Z2');
+
+/*
+   paima gydytoja is DB
+   $nr - gydytojo id is DB
+   return - (type: ARRAY)
+*/
+function getDoctor( $nr ) {
+    $manoSQL = "SELECT * FROM doctors  WHERE id = '$nr';  ";
+    // $rezultataiOBJ -  Mysql Objektas
+    $rezultataiOBJ = mysqli_query(getPrisijungimas(), $manoSQL);
+    // ar radom gydytoja
+    if (mysqli_num_rows($rezultataiOBJ) > 0) {     // print_r( $rezultataiOBJ ); // test
+        // is Objekto paimam viena eilute ir paverciam i asociatyvu array
+        $resultARRAY = mysqli_fetch_assoc( $rezultataiOBJ  );
+        // print_r($resultARRAY); // test
+        return $resultARRAY;
+    } else {
+        echo "Atleiskite , tokio gydytojo nera";
+        return NULL;
+    }
+
+}
+$gyd1 = getDoctor(1);
+print_r( $gyd1 );
