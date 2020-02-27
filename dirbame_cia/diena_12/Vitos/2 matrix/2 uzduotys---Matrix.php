@@ -38,7 +38,7 @@
     // B. i masyva visosPrekes, ideti "preke" masyva
     // C. atvaizduodi kiekvienoje eiluteje po 3 prekes (naudojant for arba foreach)
     // ir bootstrap dizaina
-    <article clas='col-...'>
+    <article class='col-md-12' width='30%'>
         <h2> ...
         <img>
         <p>...
