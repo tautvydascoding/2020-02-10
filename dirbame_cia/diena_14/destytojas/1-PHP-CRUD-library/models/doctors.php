@@ -45,3 +45,5 @@ function createDoctor($vardas, $pavarde, $zona) {
 // test
 // createDoctor('Jurgis', 'Jurgaitis', 'A3');
 // createDoctor('Tadas', 'Tadauskas',  'B2');
+
+editDoctor(4,'Litas', 'Litaite',  'Z2');
