@@ -49,3 +49,8 @@ function getVardas3(){
 }
 x =  getVardas3();
 console.log(  x );  // isveda: juozas33
+
+
+function setVardas4(name) {
+    setVardas("kazys")
+}

@@ -33,6 +33,8 @@
     // UZDUOTIS 2 --------------
     // sukurti matrica, kurioje bus saugoma kiekvienos prekes info:
     // Antraste, img pavadinimas, kaina, prekes aprasymas
+    // Antraste, img pavadinimas, kaina, prekes aprasymas
+    // Antraste, img pavadinimas, kaina, prekes aprasymas
 
     // A. sukurti masyva preke: Antraste, img pavadinimas, prekes aprasymas, kaina
     // B. i masyva visosPrekes, ideti "preke" masyva
@@ -43,7 +45,7 @@
         <img>
         <p>...
         <button> ...
-        <a class="btn btn-lg  bg-info"> </a>
+        <a class="btn btn-lg  bg-info"> 100 Eur</a>
     </article>
 
 
