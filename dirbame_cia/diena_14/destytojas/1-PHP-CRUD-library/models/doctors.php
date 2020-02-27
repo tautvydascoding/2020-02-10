@@ -59,7 +59,7 @@ function editDoctor($nr, $vardas, $pavarde, $zona) {
                                     name= '$vardas',
                                     lname = '$pavarde',
                                     area = '$zona'
-                                WHERE id = '4'
+                                WHERE id = '$nr'
                                 LIMIT 1
                 ";
     $arPavyko = mysqli_query( getPrisijungimas(),  $manoSQL  );
