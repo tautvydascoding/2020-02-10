@@ -63,8 +63,7 @@ Select *
 from doctors
 where id < 4;
 
-update doctors set name Koris
-    where id = 5
+update doctors set name = 'Litas' where name = 'Tim
 
 SELECT name FROM doctors
 where lname = 'Pitas'
