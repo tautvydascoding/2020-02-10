@@ -2,7 +2,7 @@ CREATE DATABASE `hospital9`;
 
 show databases;
 
--- ` -  db/tables  pavadinimams
+-- ` -  db/tables  pavadinimams 
 -- '  - tekstui/reikmems/values
 -- "" - tekstui/reikmems/values
 
