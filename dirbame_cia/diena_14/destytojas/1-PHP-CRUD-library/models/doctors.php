@@ -46,4 +46,25 @@ function createDoctor($vardas, $pavarde, $zona) {
 // createDoctor('Jurgis', 'Jurgaitis', 'A3');
 // createDoctor('Tadas', 'Tadauskas',  'B2');
 
+
+/*
+    i DB irasysim nauja gydytoja
+    $nr - id numeris DUomenu Bazeje
+    $vardas - gydytojo vardas
+    $pavarde - gyd. pavarde
+    $zona - gyd. zona kurios pacientus aptarnauja
+*/
+function editDoctor($nr, $vardas, $pavarde, $zona) {
+    $manoSQL = "UPDATE  doctors SET
+                                    name= '$vardas',
+                                    lname = '$pavarde',
+                                    area = '$zona'
+                                WHERE id = '4'
+                                LIMIT 1
+                ";
+    $arPavyko = mysqli_query( getPrisijungimas(),  $manoSQL  );
+    if ( $arPavyko == false) {   // !$arPavyko
+        echo "ERROR nepavyko redaguoti gydytojo nr:$nr, $vardas, $pavarde, $zona <br>";
+    }
+}
 editDoctor(4,'Litas', 'Litaite',  'Z2');
