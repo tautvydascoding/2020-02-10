@@ -2,13 +2,13 @@ CREATE DATABASE `hospital9`;
 
 show databases;
 
--- ` -  db/tables  pavadinimams
+-- ` -  db/tables  pavadinimams 
 -- '  - tekstui/reikmems/values
 -- "" - tekstui/reikmems/values
 
 
 
-CREATE DATABASE hospital10;
+CREATE DATABASE `hospital10`;
 use hospital10; // nurodome darbine duomenu base (DB)
 
 

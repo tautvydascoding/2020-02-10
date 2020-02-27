@@ -9,10 +9,11 @@ $darbuotojas = [];
 //  "Siaures pr. 131"
 // 4) ismeginti koda:
 
-foreach ($darbuotojas as $darbuotojoStalcius ) {
-    echo "$darbuotojoStalcius <br>" ;
-}
+// foreach ($darbuotojas as $darbuotojoStalcius ) {
+//     echo "$darbuotojoStalcius <br>" ;
+// }
 
 
 print_r($darbuotojas); // masyvo arba objekto isvedimas
+
 var_dump($darbuotojas); // detalus kintamojo arba  masyvo  isvedimas
