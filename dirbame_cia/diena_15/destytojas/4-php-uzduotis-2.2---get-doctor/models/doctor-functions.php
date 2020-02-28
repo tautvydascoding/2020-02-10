@@ -117,11 +117,11 @@ function getDoctors($kiekis = 9999999) {
      return $rezultataiMysqlObjek;
 }
 // test
-// $visiGydytojai = getDoctors(); // MYSQL objektas
-// // print_r( $visiGydytojai ) ;
-//
-// visu gydytoju isvedimas
-// $gyd = mysqli_fetch_assoc($visiGydytojai); // is visu paimame viena
+// // $visiGydytojai = getDoctors(); // MYSQL objektas
+// // // print_r( $visiGydytojai ) ;
+// //
+// // visu gydytoju isvedimas
+// // $gyd = mysqli_fetch_assoc($visiGydytojai); // is visu paimame viena
 // while ($gyd) {  // false, 0, NULL, ''
 //     echo "{$gyd['name']}  {$gyd['lname']} <br>";
 //     echo "$gyd[name]  $gyd[lname] <br>";
