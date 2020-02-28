@@ -13,6 +13,9 @@ print_r( $_GET);
 
 // PASIBANDYTI PAPILDOMAI
 pvz.: print_r( $GLOBALS)
+<form class="" action="index.html" method="post">
+
+</form>
 
 
 
