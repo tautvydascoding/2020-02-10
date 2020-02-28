@@ -24,16 +24,20 @@
                 </div>
             </header>
 
-            <main>
-                <?php
-                    include_once('models/doctors.php');
-                    $gydytojas = getDoctor(1);
-                 ?>
-                 <article class="">
-                     <h2><?php echo $gydytojas['name'] . $gydytojas['lname'];  ?></h2>
-                 </article>
+    <main>
+        <form  action="registracija.php" method="GET">
+            <input type="text" name="vardas" value="" placeholder="Jusu vardas">
+            <input type="text" name="pavarde" value="" placeholder="Jusu pavarde">
+            <input type="text" name="tel" value="" placeholder="Jusu tel">
 
-            </main>
+            <button type="submit" >  Registracija </button>
+            <!-- ARBA -->
+            <input type="submit" value="Registracija2">
+        </form>
+
+
+    </main>
+
 
             <footer class="row">
                 <div class="col-md-12">

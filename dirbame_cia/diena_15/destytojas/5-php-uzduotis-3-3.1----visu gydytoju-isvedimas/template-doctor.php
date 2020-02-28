@@ -1,6 +1,6 @@
 <?php
 
-require_once('models/doctor-functions.php');
+require_once('models/doctors.php');
 
 $x = $_GET['aa'];
 
