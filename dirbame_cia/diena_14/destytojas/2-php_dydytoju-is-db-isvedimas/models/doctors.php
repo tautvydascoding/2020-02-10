@@ -83,7 +83,7 @@ function getDoctor( $nr ) {
     if (mysqli_num_rows($rezultataiOBJ) > 0) {
         // print_r( $rezultataiOBJ ); // test
         // is Objekto paimam viena eilute ir paverciam i asociatyvu array
-        $resultARRAY = mysqli_fetch_assoc( $rezultataiOBJ  );
+        $resultARRAY = mysqli_fetch_assoc( $rezultataiOBJ  ); 
         // print_r($resultARRAY); // test
         return $resultARRAY;
     } else {
@@ -92,22 +92,5 @@ function getDoctor( $nr ) {
     }
 
 }
-//test
-// $gyd1 = getDoctor(1);
-// print_r( $gyd1 );
-function getDoctors() {
-    $manoSQL = "SELECT * FROM doctors    ";
-    // $rezultataiOBJ -  Mysql Objektas
-    $rezultataiOBJ = mysqli_query(getPrisijungimas(), $manoSQL);
-    return $rezultataiOBJ;
-}
-// $visiGydytojaiOBJ =  getDoctors();
-// // is Mysqli Obj. paima viena eilute ir pavercia i array/masyva:
-// $gydytojas = mysqli_fetch_assoc($visiGydytojaiOBJ);
-// // test
-// // print_r($gydytojas1);
-// //------------------
-// while($gydytojas) {
-//     echo "<h2>". $gydytojas['name']. $gydytojas['lname'] ."</h2>";
-//     $gydytojas = mysqli_fetch_assoc($visiGydytojaiOBJ);
-// }
+$gyd1 = getDoctor(1);
+print_r( $gyd1 );
