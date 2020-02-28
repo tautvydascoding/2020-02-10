@@ -41,10 +41,12 @@
 let arVedes = true;
 let arDuotiPaskola = false;
 
-if (arVedes = true){
-  console.log(paskola bus duodama);
+if (arVedes === true){
+  arDuotiPaskola = true;
 }
-
+if (arDuotiPaskola) {
+    console.log("paskola bus duodama");
+}
 
 // 0 UZDUOTIS
 // A)
@@ -108,7 +110,7 @@ if (klietoVardas == vardas1) {
 } else {
 	console.log("5% nuolaida kelionems");
 
-}  
+}
 
 // kai "if"-ui padauodame klietoVardas ir vardas2 - isvesti "Buitinei technikai  30% nuolaida"
 // kai "if"-ui padauodame bet ka kita - isvesti "5% nuolaida kelionems"
