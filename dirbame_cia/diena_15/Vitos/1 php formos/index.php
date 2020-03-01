@@ -16,42 +16,37 @@
     </head>
 
     <body>
-<div id="on"> NAKTIS
-
-</div>
-        <img src="img/1.jpg" alt="logo1" />;
-        <img src="img/2.jpg" alt="logo1" />;
-        <img src="img/3.jpg" alt="logo1" />;
-        <img src="img/4.jpg" alt="logo1" />;
 
 
-<?php
-include_once ('models/doctors.php');
-$gydytojas = getDoctor(2);
+<h1> PHP formos ir registracija </h1>
 
-<article class="">
-?>
-    <h2>?php echo $gydytojas ['name']. $gydytojas['lname']</h2>
-</article>
+<!-- 2.0. uzduotis -->
 
+<main>
+    <form action="registracija.php" method="get">
+        <input type="text" name="vardas" value="" placeholder="Iveskite varda">
+        <input type="text" name="pavarde" value="" placeholder="Iveskite pavarde">
+        <input type="text" name="tel" value="" placeholder="Iveskite telefona">
 
+            <button type="submit" > Registracija </button>
+                <!-- arba -->
+                <!-- <input type="submit"  value="Registracija2"> -->
+    </form>
+</main>
 
-
-        <div class="container">
-            <header class="row">
-                <div class="col-md-12">
-                    <h1> Isijunk Inspect Element->console </h1>
-                </div>
-            </header>
+<hr />
 
 
 
-            <footer class="row">
-                <div class="col-md-12">
-                    2020 footer
-                </div>
-            </footer>
-        </div>
+
+
+
+
+
+
+
+
+ 
         <!-- Scriptai FAILO dugne -->
         <!-- <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script> -->
         <script type="text/javascript" src="libs/jQuery/jquery-3.3.1.min.js" ></script>

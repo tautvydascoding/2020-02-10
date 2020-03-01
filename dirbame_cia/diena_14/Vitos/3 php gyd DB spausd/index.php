@@ -16,26 +16,6 @@
     </head>
 
     <body>
-<div id="on"> NAKTIS
-
-</div>
-        <img src="img/1.jpg" alt="logo1" />;
-        <img src="img/2.jpg" alt="logo1" />;
-        <img src="img/3.jpg" alt="logo1" />;
-        <img src="img/4.jpg" alt="logo1" />;
-
-
-<?php
-include_once ('models/doctors.php');
-$gydytojas = getDoctor(2);
-
-<article class="">
-?>
-    <h2>?php echo $gydytojas ['name']. $gydytojas['lname']</h2>
-</article>
-
-
-
 
         <div class="container">
             <header class="row">
@@ -43,6 +23,19 @@ $gydytojas = getDoctor(2);
                     <h1> Isijunk Inspect Element->console </h1>
                 </div>
             </header>
+
+
+<main>
+    <?php
+
+        include_once('models/doctors.php');
+        $gydytojas = getDoctor (7);
+     ?>
+     <article class="">
+         <h2> <?php echo $gydytojas['FirstName']. $gydytojas['LastName']; ?> </h2>
+     </article>
+
+</main>
 
 
 

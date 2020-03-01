@@ -16,26 +16,6 @@
     </head>
 
     <body>
-<div id="on"> NAKTIS
-
-</div>
-        <img src="img/1.jpg" alt="logo1" />;
-        <img src="img/2.jpg" alt="logo1" />;
-        <img src="img/3.jpg" alt="logo1" />;
-        <img src="img/4.jpg" alt="logo1" />;
-
-
-<?php
-include_once ('models/doctors.php');
-$gydytojas = getDoctor(2);
-
-<article class="">
-?>
-    <h2>?php echo $gydytojas ['name']. $gydytojas['lname']</h2>
-</article>
-
-
-
 
         <div class="container">
             <header class="row">
@@ -43,6 +23,31 @@ $gydytojas = getDoctor(2);
                     <h1> Isijunk Inspect Element->console </h1>
                 </div>
             </header>
+<?php
+    include("models/doctors.php");
+    $gydytojas = getDoctor(4);
+    echo $gydytojas["name"] .  $gydytojas['lname'] ;
+
+    $visiGydytojaiOBJ =  getDoctors();
+    // is Mysqli Obj. paima viena eilute ir pavercia i array/masyva:
+    $gydytojas = mysqli_fetch_assoc($visiGydytojaiOBJ);
+    // test
+    // print_r($gydytojas1);
+    //------------------
+    while($gydytojas) {
+        echo "<a href='template-doctor.php?aa=$gydytojas[id]'> $gydytojas[name]   $gydytojas[lname]</a><br>";
+        $gydytojas = mysqli_fetch_assoc($visiGydytojaiOBJ);
+}
+            // uzduotis 2: atspausdinti gydytoja i <p> </p>, kurio 'id' yra 4
+            // uzduotis istrinti 2 uzduoti
+            // uzduotis 3.1: atspausdinti visas gydytoju pavardes , kaip list item "ul li"
+            // uzduotis 3.2: patobulinti 'uzduotis3',
+            //     kad paspaudus ant gydytojo pavardes   atidarytu doctor.php faila
+            // // uzduotis 3.3:
+            //         doctor.php faile isvesti info apie - paspausta gydytoja:
+            //         vardas pavarde numeris
+?>
+                // HINT: 'a' nuorodoje, prideti '?kintamasis=...'   ir doctor.php faile su $_GET pasiimti kintamaji
 
 
 
