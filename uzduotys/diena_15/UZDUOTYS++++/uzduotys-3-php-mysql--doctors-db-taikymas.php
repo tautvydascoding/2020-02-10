@@ -10,4 +10,5 @@
 
     HINT: 'a' nuorodoje, prideti '?kintamasis=...'   ir page-doctor.php faile su $_GET pasiimti kintamaji
 <a href="page-doctor.php?sk=1">   pavarde  </a>
+ 
 <a href="https://google.com?q=elfas">   tekstas  </a>
