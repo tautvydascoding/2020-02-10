@@ -4,7 +4,7 @@
 define('DB_HOST', 'localhost'); //define konstanta - nekintantis kintamasis
 define('DB_MYSQL_USER', 'root');
 define('DB_MYSQL_PASSWORD', 'root');  // Jei naudoji XAMP, WAMP 'root'-> ''
-define('DB_NAME', 'hospital2');
+define('DB_NAME', 'zvakes');
 
 $prisijungimas = mysqli_connect( DB_HOST, DB_MYSQL_USER, DB_MYSQL_PASSWORD, DB_NAME,3307);
 // jeigu MAMP'e pakeitet MYSQL porta is 3306 i kitoki, privalot ji nurodyti
@@ -21,8 +21,8 @@ function getPrisijungimas() {
     return $prisijungimas;
 }
 
-function deleteDoctor($nr) {
-    $manoSQL = "DELETE FROM doctors WHERE id = '$nr'  LIMIT 1";
+function deleteZvake($nr) {
+    $manoSQL = "DELETE FROM prekes WHERE id = '$nr'  LIMIT 1";
     $arPavyko = mysqli_query( getPrisijungimas(),  $manoSQL  );
     if ( $arPavyko == false) {   // !$arPavyko
         echo "ERROR nepavyko atleisti gydytojo nr: $nr <br>";
@@ -35,15 +35,15 @@ function deleteDoctor($nr) {
     $pavarde - gyd. pavarde
     $zona - gyd. zona kurios pacientus aptarnauja
 */
-function createDoctor($vardas, $pavarde, $zona) {
-    $manoSQL = "INSERT INTO  doctors VALUES( NULL, '$vardas', '$pavarde', '$zona' )";
+function createZvake( $pavadinimas, $kaina) {
+    $manoSQL = "INSERT INTO  prekes VALUES( NULL, '$pavadinimas', '$kaina' )";
     $arPavyko = mysqli_query( getPrisijungimas(),  $manoSQL  );
     if ( $arPavyko == false) {   // !$arPavyko
-        echo "ERROR nepavyko sukurti gydytojo vardas: $vardas, $pavarde, $zona <br>";
+        echo "ERROR nepavyko sukurti gydytojo vardas:  $pavadinimas, $kaina <br>";
     }
 }
 // test
-// createDoctor('Jurgis', 'Jurgaitis', 'A3');
+ //createZvake('marmeladas', 15);
 // createDoctor('Tadas', 'Tadauskas',  'B2');
 
 
@@ -54,8 +54,8 @@ function createDoctor($vardas, $pavarde, $zona) {
     $pavarde - gyd. pavarde
     $zona - gyd. zona kurios pacientus aptarnauja
 */
-function editDoctor($nr, $vardas, $pavarde, $zona) {
-    $manoSQL = "UPDATE  doctors SET
+function editZvake($nr, $vardas, $pavarde, $zona) {
+    $manoSQL = "UPDATE  prekes SET
                                     name= '$vardas',
                                     lname = '$pavarde',
                                     area = '$zona'
@@ -75,8 +75,8 @@ function editDoctor($nr, $vardas, $pavarde, $zona) {
    $nr - gydytojo id is DB
    return - (type: ARRAY)
 */
-function getDoctor( $nr ) {
-    $manoSQL = "SELECT * FROM doctors  WHERE id = '$nr';  ";
+function getZvake( $nr ) {
+    $manoSQL = "SELECT * FROM prekes  WHERE id = '$nr';  ";
     // $rezultataiOBJ -  Mysql Objektas
     $rezultataiOBJ = mysqli_query(getPrisijungimas(), $manoSQL);
     // ar radom gydytoja
@@ -95,8 +95,8 @@ function getDoctor( $nr ) {
 //test
 // $gyd1 = getDoctor(1);
 // print_r( $gyd1 );
-function getDoctors() {
-    $manoSQL = "SELECT * FROM doctors    ";
+function getZvakes() {
+    $manoSQL = "SELECT * FROM prekes    ";
     // $rezultataiOBJ -  Mysql Objektas
     $rezultataiOBJ = mysqli_query(getPrisijungimas(), $manoSQL);
     return $rezultataiOBJ;
