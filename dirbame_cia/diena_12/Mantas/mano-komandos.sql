@@ -7,11 +7,12 @@ CREATE DATABASE hospital2;
 gydytojo lenteles kurimas
 -- auto_increment
 
-CREATE TABLE pacientai (
+CREATE TABLE Nuotrauku_aprasymai (
     id int AUTO_INCREMENT PRIMARY KEY NOT NULL,
-    name varchar(60) NOT NULL,
-    lname varchar (60) NOT NULL,
-    doctor_id varchar (15) NOT NULL
+    Sukurimo_Data date NOT NULL,
+    Pavadinimas varchar (60) NOT NULL,
+    Aprasymas varchar (15) NOT NULL,
+    Reitingas int
 );
 
 CREATE TABLE img (
