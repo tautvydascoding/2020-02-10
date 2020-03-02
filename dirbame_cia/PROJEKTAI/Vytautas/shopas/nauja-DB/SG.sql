@@ -17,36 +17,39 @@ CREATE TABLE sapnu_gaudykles (
     id int AUTO_INCREMENT   PRIMARY KEY   NOT NULL,
     dydis varchar(60)   NOT NULL,
     spalva varchar(60)   NOT NULL,
-    kaina varchar(15)   NOT NULL
+    kaina varchar(15)   NOT NULL,
+    aprasymas varchar(200)   NOT NULL
 );
 show tables; -- matysim doctor lentele
 
-INSERT INTO sapnu_gaudykles VALUES (NULL, 50, 'balta', 30);
-INSERT INTO sapnu_gaudykles VALUES (NULL, 45, 'balta', 28);
-INSERT INTO sapnu_gaudykles VALUES (NULL, 40, 'balta', 26);
-INSERT INTO sapnu_gaudykles VALUES (NULL, 35, 'balta', 24);
-INSERT INTO sapnu_gaudykles VALUES (NULL, 30, 'balta', 22);
-INSERT INTO sapnu_gaudykles VALUES (NULL, 25, 'balta', 20);
-INSERT INTO sapnu_gaudykles VALUES (NULL, 20, 'balta', 18);
-INSERT INTO sapnu_gaudykles VALUES (NULL, 15, 'balta', 16);
+INSERT INTO sapnu_gaudykles VALUES (NULL, 50, 'balta', 30, "ranku darbo sapnu gaudykles");
+INSERT INTO sapnu_gaudykles VALUES (NULL, 45, 'balta', 28, "ranku darbo sapnu gaudykles");
+INSERT INTO sapnu_gaudykles VALUES (NULL, 40, 'balta', 26, "ranku darbo sapnu gaudykles");
+INSERT INTO sapnu_gaudykles VALUES (NULL, 35, 'balta', 24, "ranku darbo sapnu gaudykles");
+INSERT INTO sapnu_gaudykles VALUES (NULL, 30, 'balta', 22, "ranku darbo sapnu gaudykles");
+INSERT INTO sapnu_gaudykles VALUES (NULL, 25, 'balta', 20, "ranku darbo sapnu gaudykles");
+INSERT INTO sapnu_gaudykles VALUES (NULL, 20, 'balta', 18, "ranku darbo sapnu gaudykles");
+INSERT INTO sapnu_gaudykles VALUES (NULL, 15, 'balta', 16, "ranku darbo sapnu gaudykles");
 SELECT * FROM sapnu_gaudykles; --test
 
 
 -- sukuriam Patients elementus
-CREATE TABLE Patients (
+CREATE TABLE sg_nuotraukos (
     id int AUTO_INCREMENT   PRIMARY KEY   NOT NULL,
-    name varchar(60)   NOT NULL,
-    Lname varchar(60)   NOT NULL,
-    doctor_id int (15)   NOT NULL
+    pavadinimas varchar(60)   NOT NULL,
+    aprasymas varchar(60)   NOT NULL,
+    pozicija int (99)   NOT NULL,
+    prekes_id int (99)   NOT NULL
 );
-INSERT INTO Patients VALUES (NULL, 'Mark', 'John', 2);
-INSERT INTO Patients VALUES (NULL, 'Tom', 'Karlas', 2);
-INSERT INTO Patients VALUES (NULL, 'Aris', 'Tiedo', 1);
-INSERT INTO Patients VALUES (NULL, 'Tom', 'Kori', 3);
-INSERT INTO Patients VALUES (NULL, 'Co', 'Jo', 1);
-INSERT INTO Patients VALUES (NULL, 'Tom', 'Naro', 5);
-INSERT INTO Patients VALUES (NULL, 'Jili', 'Joli', 4);
-SELECT * FROM Patients; --test
+INSERT INTO sg_nuotraukos VALUES (NULL, '50.jpg', '50 dydzio', 1, 1);
+INSERT INTO sg_nuotraukos VALUES (NULL, '45.jpg', '45 dydzio', 2, 2);
+INSERT INTO sg_nuotraukos VALUES (NULL, '40.jpg', '40 dydzio', 3, 3);
+INSERT INTO sg_nuotraukos VALUES (NULL, '35.jpg', '35 dydzio', 4, 4);
+INSERT INTO sg_nuotraukos VALUES (NULL, '30.jpg', '30 dydzio', 5, 5);
+INSERT INTO sg_nuotraukos VALUES (NULL, '25.jpg', '25 dydzio', 6, 6);
+INSERT INTO sg_nuotraukos VALUES (NULL, '20.jpg', '20 dydzio', 7, 7);
+INSERT INTO sg_nuotraukos VALUES (NULL, '15.jpg', '15 dydzio', 8, 8);
+SELECT * FROM sg_nuotraukos; --test
 
 
 
