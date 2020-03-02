@@ -4,10 +4,11 @@
 
 // 1.1 sukurti PHP faila  naujasGydytojas.php
 // 1.2. faile paleisti:
-include('db_functions.php');
+include('models/doctors.php');
+print_r($_GET);
 $vard = $_GET['vardas'];
 $parv = $_GET['pavarde'];
-createDoctor($vard, $parv);
+createDoctor($vard, $parv, "Z2");
 // 1.3. Narsykleje nueiti (pamatysite klaida):
     localhost/ ... /naujasGydytojas.php
 
