@@ -1,4 +1,7 @@
 <?php
+
+//https://myaccount.google.com/lesssecureapps
+ 
 // print_r( $_POST );
 $klientoVardas = $_POST['vardas'];
 $klientoKlausimas = $_POST['klausimas'];

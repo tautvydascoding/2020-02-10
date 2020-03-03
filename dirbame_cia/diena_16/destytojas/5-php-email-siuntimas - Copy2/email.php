@@ -1,4 +1,9 @@
 <?php
+
+// !!!! isijungti i ON :
+// https://myaccount.google.com/lesssecureapps
+
+
 // print_r( $_POST );
 $klientoVardas = $_POST['vardas'];
 $klientoKlausimas = $_POST['klausimas'];
@@ -23,26 +28,25 @@ date_default_timezone_set('Etc/UTC');
     $mail = new PHPMailer(true);
 
     try {
-
-
-        $mail->SMTPOptions = array(
-            'ssl' => array(
-            'verify_peer' => false,
-            'verify_peer_name' => false,
-            'allow_self_signed' => true
-            )
-        );
-
+        $mail->IsSMTP();
         $mail->Mailer = "smtp";
-        $mail->Host = 'tls://smtp.gmail.com:587';
-        $mail->SMTPAuth   = true;                                   // Enable SMTP authentication
-        $mail->SMTPSecure = 'ssl';                              // Enable TLS encryption, `ssl` also accepted
+
+        $mail->SMTPDebug  = 1;
+        $mail->SMTPAuth   = TRUE;
+        $mail->SMTPSecure = "tls";
+        $mail->Port       = 587;
+        $mail->Host       = "smtp.gmail.com";
+        // $mail->Host       = "ssl://smtp.gmail.com";
+        // OLD
+        // $mail->Host = 'tls://smtp.gmail.com:587';
+        // $mail->SMTPSecure = 'ssl';                              // Enable TLS encryption, `ssl` also accepted
         // $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;
-        $mail->Port = 465;                                      // TCP port to connect to
+        // $mail->Port = 465;                                      // TCP port to connect to
 
         //Server settings
         // $mail->SMTPDebug = SMTP::DEBUG_SERVER;                      // Enable verbose debug output
-        $mail->isSMTP();                                               // Set the SMTP server to send through
+        // $mail->isSMTP();                                               // Set the SMTP server to send through
+        // $mail->SMTPAuth   = true;                                   // Enable SMTP authentication
 
         $mail->Username = 'testascoding@gmail.com';                 // SMTP username
         $mail->Password = 'slaptazodis';                          // SMTP username
@@ -63,7 +67,7 @@ date_default_timezone_set('Etc/UTC');
 
         // Content
         $mail->isHTML(true);                                  // Set email format to HTML
-        $mail->Subject = 'Here is the subject2';
+        $mail->Subject = 'Here is the subject';
         $mail->Body    = 'This is the HTML message body <b>in bold!</b>';
         $mail->AltBody = 'This is the body in plain text for non-HTML mail clients';
 
