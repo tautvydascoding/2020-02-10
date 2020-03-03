@@ -24,6 +24,19 @@
         <img src="img/3.jpg" alt="logo1" />;
         <img src="img/4.jpg" alt="logo1" />;
 
+
+<?php
+include_once ('models/doctors.php');
+$gydytojas = getDoctor(2);
+
+<article class="">
+?>
+    <h2>?php echo $gydytojas ['name']. $gydytojas['lname']</h2>
+</article>
+
+
+
+
         <div class="container">
             <header class="row">
                 <div class="col-md-12">
