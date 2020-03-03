@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,14 +7,14 @@
 
     <!-- bootstrap linkas -->
     
-    <link rel="stylesheet" href="libs/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../libs/bootstrap/css/bootstrap.min.css">
     
     <title></title>
 
     <!-- mano CSS failas turi buti VISADA zemiau nei kiti CSS failai
     todel lengviau butu, jei mano CSS failas butu po TITLE -->
 
-    <link rel="stylesheet" href="css/master.css">
+    <link rel="stylesheet" href="../../css/master.css">
 </head>
 <body>
 
@@ -21,8 +22,9 @@
 <h1>projektas</h1>
     
 <?php
-include ('komandos/models/visos.php');
+include ('../models/visos.php');
 ?>
+
 
     <header class="container tarpas-apacia">
         <nav class="row  float">
@@ -41,26 +43,34 @@ include ('komandos/models/visos.php');
 
             <main class="col-3 spalva tarpas-desine">
                 <div class="row paddingas"> 
-                    <a href="komandos/controller/komandos.php">Komandos</a>
+                    <a href="../../komandos/controller/komandos.php">Komandos</a>
                 </div>
                 <div class="row paddingas">
-                    <a href="tvarkarasciai/controller/tvarkarasciai.php">Tvarkarasciai</a>
+                    <a href="tvarkarasciai.php">Tvarkarasciai</a>
                 </div>
                 <div class="row paddingas">
-                    <a href="kontaktai/controller/kontaktai.php">Kontaktai</a>
-                </div>
-                <div class="row paddingas">
-                    <a href="">Naujienos</a>
+                    <a href="../../kontaktai/controller/kontaktai.php">Kontaktai</a>
                 </div>
             </main>
 
             <aside class="col spalva">
-                <div class="row paddingas">aa</div>
+                <div class="row paddingas">
+                    <?php
+                        $visosKomandosOBJ =  getTvarkarasciaiVisi();
+                        $komandos = mysqli_fetch_assoc($visosKomandosOBJ);
+                        // print_r($komandos);
+                        while($komandos) {
+                        echo "<a href='page-doctor.php?sk=$komandos[ID]'>" . $komandos['ID'] . " " . $komandos['data'] . " " . $komandos['sale'] . " " . $komandos['komandos'] . " " . $komandos['rezultatas'] . "</a>" . "<br>";
+                        $komandos = mysqli_fetch_assoc($visosKomandosOBJ);
+                        }
+                    ?>
+                </div>
                 <div class="row paddingas">bb</div>
             </aside>
 
         </div>
     </section>
+
 
     <footer class="container spalva">
         <div class="row paddingas">Footer</div>
@@ -76,3 +86,13 @@ include ('komandos/models/visos.php');
 
     </body>
 </html>
+
+
+
+
+    
+
+
+
+
+

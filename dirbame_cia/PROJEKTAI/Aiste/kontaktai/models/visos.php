@@ -11,6 +11,7 @@ $prisijungimas = mysqli_connect( DB_HOST, DB_MYSQL_USER, DB_MYSQL_PASSWORD, DB_N
 //$prisijungimas = mysqli_connect( $DB_HOST, $DB_MYSQL_USER, $DB_MYSQL_PASSWORD, $DB_NAME, 3307);
 
 if ($prisijungimas) {
+    echo "pavyko prisijungti prie DB:" . mysqli_connect_error($prisijungimas);
    
 } else {
     echo "ERROR: nepavyko prisijungti prie DB:" . mysqli_connect_error($prisijungimas);
@@ -21,8 +22,8 @@ function getPrisijungimas() {
     return $prisijungimas;
 }
 
-function deleteDoctor($nr) {
-    $manoSQL = "DELETE FROM komandos WHERE id = '$nr'  LIMIT 1";
+function deleteKontaktai($nr) {
+    $manoSQL = "DELETE FROM kontaktai WHERE id = '$nr'  LIMIT 1";
     $arPavyko = mysqli_query( getPrisijungimas(),  $manoSQL  );
     if ( $arPavyko == false) {   // !$arPavyko
         echo "ERROR nepavyko atleisti gydytojo nr: $nr <br>";
@@ -35,8 +36,8 @@ function deleteDoctor($nr) {
     $pavarde - gyd. pavarde
     $zona - gyd. zona kurios pacientus aptarnauja
 */
-function createDoctor($vardas, $pavarde, $zona) {
-    $manoSQL = "INSERT INTO  komandos VALUES( NULL, '$vardas', '$pavarde', '$zona' )";
+function createKontaktai($vardas, $pavarde, $zona) {
+    $manoSQL = "INSERT INTO  kontaktai VALUES( NULL, '$vardas', '$pavarde', '$zona' )";
     $arPavyko = mysqli_query( getPrisijungimas(),  $manoSQL  );
     if ( $arPavyko == false) {   // !$arPavyko
         echo "ERROR nepavyko sukurti gydytojo vardas: $vardas, $pavarde, $zona <br>";
@@ -54,8 +55,8 @@ function createDoctor($vardas, $pavarde, $zona) {
     $pavarde - gyd. pavarde
     $zona - gyd. zona kurios pacientus aptarnauja
 */
-function editDoctor($nr, $vardas, $pavarde, $zona) {
-    $manoSQL = "UPDATE  komandos SET
+function editKontaktai($nr, $vardas, $pavarde, $zona) {
+    $manoSQL = "UPDATE  kontaktai SET
                                     name= '$vardas',
                                     lname = '$pavarde',
                                     area = '$zona'
@@ -75,8 +76,8 @@ function editDoctor($nr, $vardas, $pavarde, $zona) {
    $nr - gydytojo id is DB
    return - (type: ARRAY)
 */
-function getDoctor( $nr ) {
-    $manoSQL = "SELECT * FROM komandos  WHERE id = '$nr';  ";
+function getKontaktai( $ID ) {
+    $manoSQL = "SELECT * FROM kontaktai WHERE id = '$ID';  ";
     // $rezultataiOBJ -  Mysql Objektas
     $rezultataiOBJ = mysqli_query(getPrisijungimas(), $manoSQL);
     // ar radom gydytoja
@@ -95,12 +96,14 @@ function getDoctor( $nr ) {
 //test
 // $gyd1 = getDoctor(1);
 // print_r( $gyd1 );
-function getDoctors() {
-    $manoSQL = "SELECT * FROM komandos    ";
+
+function getKontaktaiVisi() {
+    $manoSQL = "SELECT * FROM kontaktai    ";
     // $rezultataiOBJ -  Mysql Objektas
     $rezultataiOBJ = mysqli_query(getPrisijungimas(), $manoSQL);
     return $rezultataiOBJ;
 }
+
 // $visiGydytojaiOBJ =  getDoctors();
 // // is Mysqli Obj. paima viena eilute ir pavercia i array/masyva:
 // $gydytojas = mysqli_fetch_assoc($visiGydytojaiOBJ);
