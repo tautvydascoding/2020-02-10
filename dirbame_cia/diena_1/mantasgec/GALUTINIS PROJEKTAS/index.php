@@ -36,6 +36,19 @@ session_start();
 </div>
 </div>
 <h1>Welcome <?php echo $_SESSION['username']; ?></h1>
+<!---------------------------------------------------------- -->
+<?php
+include("models/prekes.php");
+
+$visosZvakes = getZvakes();
+
+$zvakes = mysqli_fetch_assoc( $visosZvakes  );
+while ($zvakes) {
+    include('models/preke.php');
+    $zvakes =mysqli_fetch_assoc($visosZvakes);
+}
+
+ ?>
 
 
 
