@@ -17,8 +17,8 @@
 
 // UZDUOTIS 2.2
 // Atspasudinti varda ir ugi naudojant
-// f-ja 'manoUgis()'
-// f-ja 'manoVardas()'
+// f-ja 'getManoUgis()'
+// f-ja 'getManoVardas()'
 
 
 // UZDUOTIS 3:
