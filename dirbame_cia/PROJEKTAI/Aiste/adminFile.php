@@ -1,40 +1,23 @@
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <!-- bootstrap linkas -->
-    
-    <link rel="stylesheet" href="../../libs/bootstrap/css/bootstrap.min.css">
-    
-    <title></title>
-
-    <!-- mano CSS failas turi buti VISADA zemiau nei kiti CSS failai
-    todel lengviau butu, jei mano CSS failas butu po TITLE -->
-
-    <link rel="stylesheet" href="../../css/master.css">
-</head>
-<body>
+<?php
+include ("header.php");
+session_start();
+?>
 
 
 <h1>projektas</h1>
     
-<?php
-include ('../models/visos.php');
-?>
-
 
     <header class="container tarpas-apacia">
-        <nav class="row  float">
+        <nav class="row">
             <div class="col-2 spalva paddingas tarpas-desine">Home</div>
             <div class="col-2 spalva paddingas tarpas-desine">About</div>
             <div class="col-2 spalva paddingas tarpas-desine">Contact</div>
             <div class="col spalva paddingas">
-                <input type="button" value="sign in">
+                <form action="registracija-form.php">
+                    <input type="submit" value="Sign in" method="get">
+                    <input type="submit" value="+new" method="get">
+                </form>
             </div>
-            <div class="float-isjungiu"></div>
         </nav>
     </header>
 
@@ -43,25 +26,32 @@ include ('../models/visos.php');
 
             <main class="col-3 spalva tarpas-desine">
                 <div class="row paddingas"> 
-                    <a href="../../komandos/controller/komandos.php">Komandos</a>
+                    <a href="komandos.php">Komandos</a>
                 </div>
                 <div class="row paddingas">
                     <a href="tvarkarasciai.php">Tvarkarasciai</a>
                 </div>
                 <div class="row paddingas">
-                    <a href="../../kontaktai/controller/kontaktai.php">Kontaktai</a>
+                    <a href="kontaktai.php">Kontaktai</a>
+                </div>
+                <div class="row paddingas">
+                    <a href="">Naujienos</a>
                 </div>
             </main>
 
             <aside class="col spalva">
                 <div class="row paddingas">
-                    <?php
-                        $visosKomandosOBJ =  getTvarkarasciaiVisi();
-                        $komandos = mysqli_fetch_assoc($visosKomandosOBJ);
-                        // print_r($komandos);
-                        while($komandos) {
-                        echo "<a href='page-doctor.php?sk=$komandos[ID]'>" . $komandos['ID'] . " " . $komandos['data'] . " " . $komandos['sale'] . " " . $komandos['komandos'] . " " . $komandos['rezultatas'] . "</a>" . "<br>";
-                        $komandos = mysqli_fetch_assoc($visosKomandosOBJ);
+                <?php
+                include ('models/naujienos.php');
+
+
+
+                        $visosNaujienosOBJ =  getNaujienosVisi();
+                        $naujienos = mysqli_fetch_assoc($visosNaujienosOBJ);
+                        while($naujienos) {
+                        echo $naujienos['id'] . " " . $naujienos['titel'] . " " . $naujienos['text'] . " "  .  "<hr>";
+                        echo "<img width='100%' src='img/$naujienos[foto]' alt=''>";
+                        $naujienos = mysqli_fetch_assoc($visosNaujienosOBJ);
                         }
                     ?>
                 </div>
@@ -70,7 +60,6 @@ include ('../models/visos.php');
 
         </div>
     </section>
-
 
     <footer class="container spalva">
         <div class="row paddingas">Footer</div>
@@ -86,13 +75,3 @@ include ('../models/visos.php');
 
     </body>
 </html>
-
-
-
-
-    
-
-
-
-
-

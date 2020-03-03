@@ -1,22 +1,20 @@
+   
 <?php
 include ("header.php");
-session_start();
+include ('models/komandos.php');
 ?>
 
 
+
 <h1>projektas</h1>
-    
 
     <header class="container tarpas-apacia">
-        <nav class="row">
+        <nav class="row ">
             <div class="col-2 spalva paddingas tarpas-desine">Home</div>
             <div class="col-2 spalva paddingas tarpas-desine">About</div>
             <div class="col-2 spalva paddingas tarpas-desine">Contact</div>
             <div class="col spalva paddingas">
-                <form action="registracija-form.php">
-                    <input type="submit" value="Sign in" method="get">
-                    <input type="submit" value="+new" method="get">
-                </form>
+                <input type="button" value="sign in">
             </div>
         </nav>
     </header>
@@ -34,33 +32,25 @@ session_start();
                 <div class="row paddingas">
                     <a href="kontaktai.php">Kontaktai</a>
                 </div>
-                <div class="row paddingas">
-                    <a href="">Naujienos</a>
-                </div>
             </main>
 
             <aside class="col spalva">
-                <div class="row paddingas">
+                <div class="paddingas">
                     <?php
-                        include ('models/naujienos.php');
-                        $visosNaujienosOBJ =  getNaujienosVisi();
-                        $naujiena = mysqli_fetch_assoc($visosNaujienosOBJ);
-                        while($naujiena) {
-                            $string = $naujiena['text'];
-                            echo "<div class='col-6'>" . "<h5>" . $naujiena['titel'] ."</h5>" . substr($string,0,400) . "..." . "<img width='100%' src='img/$naujiena[foto]' alt=''>" . "<hr>". "</div>" ;
-                        // echo  "<h5>" . $naujiena['titel'] ."</h5>";
-                        // echo substr($string,0,400) . "...";
-                        // echo "<img width='100%' src='img/$naujiena[foto]' alt=''>";
-                        $naujiena = mysqli_fetch_assoc($visosNaujienosOBJ);
-                        // "</div>"
+                        $visosKomandosOBJ =  getKomandos();
+                        $komandos = mysqli_fetch_assoc($visosKomandosOBJ);
+                        // print_r($komandos);
+                        while($komandos) {
+                        echo "<a href='page-doctor.php?sk=$komandos[ID]'>" . $komandos['ID'] . " " . $komandos['Pavadinimas'] . " " . $komandos['Miestas'] . "</a>" . "<hr>";
+                        $komandos = mysqli_fetch_assoc($visosKomandosOBJ);
                         }
-                    ?> 
+                    ?>
                 </div>
-
             </aside>
 
         </div>
     </section>
+
 
     <footer class="container spalva">
         <div class="row paddingas">Footer</div>
@@ -76,3 +66,16 @@ session_start();
 
     </body>
 </html>
+
+
+
+
+
+
+
+    
+
+
+
+
+

@@ -1,38 +1,24 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<?php
+include ("header.php");
+?>
 
-    <!-- bootstrap linkas -->
-    
-    <link rel="stylesheet" href="../../libs/bootstrap/css/bootstrap.min.css">
-    
-    <title></title>
-
-    <!-- mano CSS failas turi buti VISADA zemiau nei kiti CSS failai
-    todel lengviau butu, jei mano CSS failas butu po TITLE -->
-
-    <link rel="stylesheet" href="../../css/master.css">
-</head>
-<body>
 
 
 <h1>projektas</h1>
     
 <?php
-include ('../models/visos.php');
+include ('models/tvarkarasciai.php');
 ?>
 
+
     <header class="container tarpas-apacia">
-        <nav class="row  float">
+        <nav class="row ">
             <div class="col-2 spalva paddingas tarpas-desine">Home</div>
             <div class="col-2 spalva paddingas tarpas-desine">About</div>
             <div class="col-2 spalva paddingas tarpas-desine">Contact</div>
             <div class="col spalva paddingas">
                 <input type="button" value="sign in">
             </div>
-            <div class="float-isjungiu"></div>
         </nav>
     </header>
 
@@ -44,25 +30,26 @@ include ('../models/visos.php');
                     <a href="komandos.php">Komandos</a>
                 </div>
                 <div class="row paddingas">
-                    <a href="../../tvarkarasciai/controller/tvarkarasciai.php">Tvarkarasciai</a>
+                    <a href="tvarkarasciai.php">Tvarkarasciai</a>
                 </div>
                 <div class="row paddingas">
-                    <a href="../../kontaktai/controller/kontaktai.php">Kontaktai</a>
+                    <a href="kontaktai.php">Kontaktai</a>
                 </div>
             </main>
 
             <aside class="col spalva">
                 <div class="row paddingas">
                     <?php
-                        $visosKomandosOBJ =  getKomandos();
+                        $visosKomandosOBJ =  getTvarkarasciaiVisi();
                         $komandos = mysqli_fetch_assoc($visosKomandosOBJ);
                         // print_r($komandos);
                         while($komandos) {
-                        echo "<a href='page-doctor.php?sk=$komandos[ID]'>" . $komandos['ID'] . " " . $komandos['Pavadinimas'] . " " . $komandos['Miestas'] . "</a>" . "<br>";
+                        echo $komandos['ID'] . " " . $komandos['data'] . " " . $komandos['sale'] . " " . $komandos['komandos'] . " " . $komandos['rezultatas'] .  "<br>";
                         $komandos = mysqli_fetch_assoc($visosKomandosOBJ);
                         }
                     ?>
                 </div>
+                <div class="row paddingas">bb</div>
             </aside>
 
         </div>
