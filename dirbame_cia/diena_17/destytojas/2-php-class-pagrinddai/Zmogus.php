@@ -13,6 +13,7 @@ class Zmogus
     public $ugis = 0;
     public $vardas = "bevardis";
     public function einu() {
+          $this->ugis = 155;
         echo "Einu einu jau einu";
     }
 }
