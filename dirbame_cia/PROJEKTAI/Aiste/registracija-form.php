@@ -3,29 +3,38 @@ include ("header.php");
 ?>
 
 
-
-<h1>projektas</h1>
-    
 <?php
 include ('models/registracijas.php');
 ?>
 
 
-    <header class="container tarpas-apacia">
-        <nav class="row ">
-            <div class="col-2 spalva paddingas tarpas-desine">Home</div>
-            <div class="col-2 spalva paddingas tarpas-desine">About</div>
-            <div class="col-2 spalva paddingas tarpas-desine">Contact</div>
-            <div class="col spalva paddingas">
-                <input type="button" value="sign in">
-            </div>
-        </nav>
-    </header>
+<header class="container tarpas-apacia tarpas-virsus">
+    <nav class="row ">
+        <div class="col-2 spalva paddingas tarpas-desine">
+            <a href="index.php">Pradžia</a>
+        </div>
+        <div class="col-2 spalva paddingas tarpas-desine">
+            <a href="">Apie</a>
+        </div>
+        <div class="col-2 spalva paddingas tarpas-desine">
+            <a href="kontaktai.php">Kontaktai</a>
+        </div>
+        <div class="col-3 spalva paddingas tarpas-desine">
+            <input type="search" placeholder="search">
+        </div>
+        <div class="col spalva paddingas">
+            <form action="registracija-form.php">
+                <input type="submit" value="Prisijungti" method="get">
+                <input type="submit" value="Registruotis" method="get">
+            </form>
+        </div>
+    </nav>
+</header>
 
     <section class="container  tarpas-apacia">
         <div class="row hight-col">
 
-            <main class="col-3 spalva tarpas-desine">
+        <main class="col-3 spalva tarpas-desine">
                 <div class="row paddingas"> 
                     <a href="komandos.php">Komandos</a>
                 </div>
@@ -33,13 +42,16 @@ include ('models/registracijas.php');
                     <a href="tvarkarasciai.php">Tvarkarasciai</a>
                 </div>
                 <div class="row paddingas">
-                    <a href="kontaktai.php">Kontaktai</a>
+                    <a href="">papildomai</a>
+                </div>
+                <div class="row paddingas">
+                    <a href="">papildomai2</a>
                 </div>
             </main>
 
             <aside class="col spalva">
                <div class="row paddingas">
-                  <form action="controller/create.php" method="get">
+                  <form action="adminFile.php" method="get">
                      <label for="name">Jusu vardas</label>
                      <input type="text" name="name" placeholder="Vardas"> <hr>
                      <label for="lname">Jusu pavarde</label>

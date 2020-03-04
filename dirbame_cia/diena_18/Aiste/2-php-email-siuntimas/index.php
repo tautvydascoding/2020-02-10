@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title></title>
+        <!-- reikalinga kad prisitaikantis dizainas veiktu tvarkingai -->
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="stylesheet" href="libs/bootstrap/css/bootstrap.min.css">
+        <!-- galimos klaidos -->
+        <!-- blogas kelias iki failo -->
+        <!-- "/" ne i ta puse -->
+        <!-- neuzdarete ">" -->
+        <link rel="stylesheet" href="css/master.css">
+        <!-- !!!! VISSA MANO CSS failas pats zemiausias -->
+    </head>
+
+    <body>
+
+    <h2>Klauskite</h2>
+        <form action="controller/email.php" method="POST">
+            <input type="text" name="vardas" value="" placeholder="Jusu vardas"> <br> <br>
+            <input type="email" name="email" value="" placeholder="Jusu email" required> <br> <br>
+            <textarea name="klausimas" id="" cols="100" rows="10" placeholder="Jusu klausimas" ></textarea> <br> <br>
+
+            <button type="submit"> Klauskite </button>
+
+        </form>
+    </body>
+</html>
