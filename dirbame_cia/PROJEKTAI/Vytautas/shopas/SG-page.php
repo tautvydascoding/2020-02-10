@@ -20,22 +20,31 @@
         <div class="container">
             <header class="row">
                 <div class="col-md-12">
-                    <h1> Isijunk Inspect Element->console </h1>
+                    <?php include('nav.php') ?>
+                    <h1> Sapnu gaudykles </h1>
                 </div>
             </header>
+        <div class="container ">
 
-            <?php
+            <div class="row ">
+                <div class="col-md-12 ">
+                    <?php
+                    include ('controllers/sapnu_gaudykles.php');
+                    $visosSG = getSGS();
+                    // is Mysqli objekto paima viena eilute ir pavercia i array:
+                    $SG = mysqli_fetch_assoc($visosSG);
+                        //-------------
+                     while($SG ){
+                        include ('preke-template.php');
+                        $SG = mysqli_fetch_assoc($visosSG);
+                    }?>
 
-            include_once('controllers/sapnu_gaudykles.php');
-            $dydis = $_GET['dydis'];
-            $spalva = $_GET['spalva'];
-            $kaina = $_GET['kaina'];
-            $aprasymas = $_GET['aprasymas'];
-            createSG($dydis, $spalva, $kaina, $aprasymas);
-            //perkeliam vartotoja i kita puslapi
-            header("Location: index.php");
-            exit();
-             ?>
+                </div>
+
+            </div>
+        </div>
+
+
 
             <footer class="row">
                 <div class="col-md-12">
