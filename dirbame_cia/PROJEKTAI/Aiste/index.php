@@ -4,14 +4,21 @@ session_start();
 ?>
 
 
-<h1>projektas</h1>
-    
 
-    <header class="container tarpas-apacia">
-        <nav class="row">
-            <div class="col-2 spalva paddingas tarpas-desine">Home</div>
-            <div class="col-2 spalva paddingas tarpas-desine">About</div>
-            <div class="col-2 spalva paddingas tarpas-desine">Contact</div>
+    <header class="container tarpas-apacia tarpas-virsus">
+        <nav class="row ">
+            <div class="col-2 spalva paddingas tarpas-desine">
+                <a href="">Home</a>
+            </div>
+            <div class="col-2 spalva paddingas tarpas-desine">
+                <a href="">Abaut</a>
+            </div>
+            <div class="col-2 spalva paddingas tarpas-desine">
+                <a href="">Contact</a>
+            </div>
+            <div class="col-3 spalva paddingas tarpas-desine">
+                <input type="search" placeholder="search">
+            </div>
             <div class="col spalva paddingas">
                 <form action="registracija-form.php">
                     <input type="submit" value="Sign in" method="get">
@@ -20,6 +27,7 @@ session_start();
             </div>
         </nav>
     </header>
+
 
     <section class="container  tarpas-apacia">
         <div class="row hight-col">
@@ -40,6 +48,7 @@ session_start();
             </main>
 
             <aside class="col spalva">
+
                 <div class="row paddingas">
                     <?php
                         include ('models/naujienos.php');
@@ -47,7 +56,19 @@ session_start();
                         $naujiena = mysqli_fetch_assoc($visosNaujienosOBJ);
                         while($naujiena) {
                             $string = $naujiena['text'];
-                            echo "<div class='col-6'>" . "<h5>" . $naujiena['titel'] ."</h5>" . substr($string,0,400) . "..." . "<img width='100%' src='img/$naujiena[foto]' alt=''>" . "<hr>". "</div>" ;
+                            echo "<div class='col-4'>" . 
+                                    "<div class='thumbnail'>" . 
+                                        "<img width='100%' src='img/$naujiena[foto]' alt=''>" .
+                                        "<div class='caption'>" . 
+                                            "<h5>" . $naujiena['titel'] . "</h5>" . 
+                                            "<p>" .substr($string,0,111) . "</p>" .
+                                            "<p><a href='' class='btn btn-primary' role='button'>Read more</a> </p>" . 
+                                        "</div>" . 
+                                    "</div>" .
+                                "</div>";
+
+                        // echo "<div class='col-6'>" . "<h5>" . $naujiena['titel'] ."</h5>" . substr($string,0,200) . "..." . "<img width='100%' src='img/$naujiena[foto]' alt=''>" . "<hr>". "</div>" ;
+
                         // echo  "<h5>" . $naujiena['titel'] ."</h5>";
                         // echo substr($string,0,400) . "...";
                         // echo "<img width='100%' src='img/$naujiena[foto]' alt=''>";
@@ -63,7 +84,7 @@ session_start();
     </section>
 
     <footer class="container spalva">
-        <div class="row paddingas">Footer</div>
+        <div class="row paddingas">© 2020</div>
     </footer>
 
 
