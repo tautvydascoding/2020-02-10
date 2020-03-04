@@ -101,13 +101,13 @@ function getDoctors() {
     $rezultataiOBJ = mysqli_query(getPrisijungimas(), $manoSQL);
     return $rezultataiOBJ;
 }
-// $visiGydytojaiOBJ =  getDoctors();
-// // is Mysqli Obj. paima viena eilute ir pavercia i array/masyva:
-// $gydytojas = mysqli_fetch_assoc($visiGydytojaiOBJ);
-// // test
-// // print_r($gydytojas1);
-// //------------------
-// while($gydytojas) {
-//     echo "<h2>". $gydytojas['name']. $gydytojas['lname'] ."</h2>";
-//     $gydytojas = mysqli_fetch_assoc($visiGydytojaiOBJ);
-// }
+$visiGydytojaiOBJ =  getDoctors();
+// is Mysqli Obj. paima viena eilute ir pavercia i array/masyva:
+$gydytojas = mysqli_fetch_assoc($visiGydytojaiOBJ);
+// test
+// print_r($gydytojas1);
+//------------------
+while($gydytojas) {
+    echo "<h2>". $gydytojas['name']. $gydytojas['lname'] ."</h2>";
+    $gydytojas = mysqli_fetch_assoc($visiGydytojaiOBJ);
+}

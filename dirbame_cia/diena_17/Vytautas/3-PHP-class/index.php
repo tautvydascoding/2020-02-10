@@ -17,31 +17,14 @@
 
     <body>
 
-        <div class="container ">
+        <div class="container">
             <header class="row">
-                <nav class=" col-md-12 navbar navbar-expand-lg navbar-light bg-light">
-
-  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-    <div class="navbar-nav">
-      <a class="nav-item nav-link active" href="#">Pradzia <span class="sr-only">(current)</span></a>
-      <a class="nav-item nav-link" href="#">Sapnu gaudykles</a>
-      <a class="nav-item nav-link" href="#">Kombinuotos sapnu gaudykles</a>
-      <a class="nav-item nav-link disabled" href="#">POM POM gaminiai</a>
-    </div>
-  </div>
-</nav>
+                <div class="col-md-12">
+                    <h1> Isijunk Inspect Element->console </h1>
+                </div>
             </header>
 
-                <?php
-                include ('controllers/sapnu_gaudykles.php');
-                $visosSG = getSGS();
-                // is Mysqli objekto paima viena eilute ir pavercia i array:
-                $SG = mysqli_fetch_assoc($visosSG);
-                    //-------------
-                while($SG ){
-                    include ('preke-template.php');
-                    $SG = mysqli_fetch_assoc($visosSG);
-                }?>
+
 
             <footer class="row">
                 <div class="col-md-12">
