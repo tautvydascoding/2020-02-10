@@ -1,28 +1,11 @@
 <?php
-
-//prisijungimas prie duomenu bazes
-define('DB_HOST', 'localhost'); //konstanta - nekintantis elementas
-define('DB_MYSQL_USER', 'root');
-define('DB_MYSQL_PASSWORD', 'root');
-define('DB_NAME', 'sapnu_gaudykles');
-$prisijungimas = mysqli_connect(DB_HOST, DB_MYSQL_USER, DB_MYSQL_PASSWORD, DB_NAME);
-if ($prisijungimas) {
-    echo "pavyko prisijungimas prie DB <br>";
-}else {
-    echo "ERROR: nepavyko prisijungti prie DB: " . mysqli_connect_error;
-}
-
-function getPrisijungimas(){
-    //isvardinti globalius kinamuosius, kuriuos nori naudoti f-jos viduje
-    global $prisijungimas;  //!! sioje eiluteje globaliu kint. negalima keisti, bet galima zemiau
-    return $prisijungimas;
-}
+include ("prisijungimas.php");
 
 function deleteSG($nr){
     $manoSQL = "DELETE FROM sapnu_gaudykles WHERE id = '$nr' LIMIT 1";
     $arPavyko = mysqli_query(getPrisijungimas(), $manoSQL);
     if (!$arPavyko) {
-        echo "ERROR nepavyko atleisti sapnu gaudykles nr: $nr <br>";
+        echo "ERROR nepavyko istrinti sapnu gaudykles nr: $nr <br>";
     }
 }
 // deleteDoctor(3); //kad veiktu reikia perkraut svetaine, tada issitrina is serverio
@@ -36,7 +19,7 @@ $zona - gyd. zona kurioje aptarnauja pacientus
 */
 
 function createSG($dydis, $spalva, $kaina, $aprasymas){
-    $manoSQL = "INSERT INTO doctors VALUES(NULL, '$dydis', '$spalva', '$kaina', '$aprasymas')";
+    $manoSQL = "INSERT INTO sapnu_gaudykles VALUES(NULL, '$dydis', '$spalva', '$kaina', '$aprasymas')";
     $arIsikele = mysqli_query(getPrisijungimas(), $manoSQL);
     if (!$arPavyko) {
         echo "ERROR nepavyko prideti sapnu gaudykles: $dydis, $spalva, $kaina, $aprasymas <br>";
@@ -48,7 +31,7 @@ function createSG($dydis, $spalva, $kaina, $aprasymas){
 
 
 function editSG($nr, $dydis, $spalva, $kaina, $aprasymas){
-    $manoSQL = "UPDATE doctors SET
+    $manoSQL = "UPDATE sapnu_gaudykles SET
                                 dydis = '$dydis',
                                 spalva = '$spalva',
                                 kaina = '$kaina',
@@ -96,20 +79,20 @@ function getSGS(){
     $rezultataiOBJ = mysqli_query(getPrisijungimas(), $manoSQL);
     return $rezultataiOBJ;
 }
-$visosSG = getSGS();
-// is Mysqli objekto paima viena eilute ir pavercia i array:
-$SG1 = mysqli_fetch_assoc($visosSG);
-// $gydytojas2 = mysqli_fetch_assoc($visiGydytojaiOBJ);
-// $gydytojas13 = mysqli_fetch_assoc($visiGydytojaiOBJ);
-//test
-// print_r($gydytojas1);
-// echo "<hr>";
-// print_r($gydytojas2);
-//-------------
-while($SG1){
-    echo "<h2>". $SG1['dydis']. " ". $SG1['spalva']. "</h2>";
-    $SG1 = mysqli_fetch_assoc($visosSG);
-}
+// $visosSG = getSGS();
+// // is Mysqli objekto paima viena eilute ir pavercia i array:
+// $SG = mysqli_fetch_assoc($visosSG);
+// // $gydytojas2 = mysqli_fetch_assoc($visiGydytojaiOBJ);
+// // $gydytojas13 = mysqli_fetch_assoc($visiGydytojaiOBJ);
+// //test
+// // print_r($gydytojas1);
+// // echo "<hr>";
+// // print_r($gydytojas2);
+// //-------------
+// while($SG){
+//     echo "<h2>". $SG['dydis']. " ". $SG['spalva']. "</h2>";
+//     $SG = mysqli_fetch_assoc($visosSG);
+// }
 
 
 //

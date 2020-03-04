@@ -31,9 +31,17 @@
   </div>
 </nav>
             </header>
-                <?php include_once('controllers/preke.php') ?>
 
-
+                <?php
+                include ('controllers/sapnu_gaudykles.php');
+                $visosSG = getSGS();
+                // is Mysqli objekto paima viena eilute ir pavercia i array:
+                $SG = mysqli_fetch_assoc($visosSG);
+                    //-------------
+                while($SG ){
+                    include ('preke-template.php');
+                    $SG = mysqli_fetch_assoc($visosSG);
+                }?>
 
             <footer class="row">
                 <div class="col-md-12">
