@@ -1,0 +1,32 @@
+h1 {
+    color: green;
+    margin-bottom: 50px;
+}
+
+.header {
+    height: 70px;
+}
+
+.hight-col {
+    min-height: 150px;
+}
+
+.tarpai-tarp-sekciju {
+    margin-bottom: 5px;
+}
+
+.tarpai-bodyje {
+    margin-right: 5px;
+}
+
+.aukstis-body {
+    height: 100px;
+}
+
+.paddingas {
+    padding: 15px;
+}
+
+.spalvos {
+    background-color: rgb(125, 218, 125);
+}
