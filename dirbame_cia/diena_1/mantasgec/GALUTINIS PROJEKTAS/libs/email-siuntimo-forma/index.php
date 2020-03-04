@@ -18,11 +18,10 @@
          <h1>Isijuk inspect->console</h1>
 
          <!-- uzduotis email.php faile patestuoti ar gaunat ivestu duomenis -->
-         <form  action="libs/email-siuntimo-forma/email.php" method="post">
-               <input type="text" name="vardas" placeholder="Jusu vardas"  value="rokas" > <br>
+         <form  action="email.php" method="post">
+               <input type="text" name="vardas" placeholder="Jusu vardas"  value="Rokas" > <br>
                <input type="text" name="pastas" placeholder="Jusu email"  value="ROkas@gmail.com" > <br>
-               <input type="text" name="klausimas" placeholder="Sritis"     value="del dviraciu" > <br>
-               <input type="text" name="antraste" placeholder="antraste"     value="del dviraciu" > <br>
+               <input type="text" name="sritis" placeholder="Sritis"     value="del dviraciu" > <br>
                <textarea name="klausimas" rows="4" cols="40">
                    Kiek kainuoja raudonas dviratis?
                 </textarea><br>
