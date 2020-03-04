@@ -10,6 +10,8 @@
       <h1>Sukurti naujo gydytojo duomenis</h1>
 
    <form action="registracija-form.php">
+      <input type="submit" value="Sign in" method="get">
+
       <input type="submit" value="+new" method="get">
    </form>
    
