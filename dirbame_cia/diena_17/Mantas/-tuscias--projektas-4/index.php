@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+d<!DOCTYPE html>
 <html>
     <head>
         <meta charset="utf-8">
@@ -15,8 +15,16 @@
         <!-- !!!! VISSA MANO CSS failas pats zemiausias -->
     </head>
 
-    <body>
 
+
+    <body>
+        <?php
+        session_start();
+         echo "div class='bg-info'>";
+          $_SESSION['zinute'] .
+         "</div>";
+         $_SESSION['zinute'] = ""; //zinutes istrinimas
+?>
         <div class="container">
             <header class="row">
                 <div class="col-md-12">
@@ -24,29 +32,26 @@
                 </div>
             </header>
 
-<form class="" action="index.html" method="post">
-    <button type="Mygtukas" name="Mygtukas"></button>
-</form>
-<a href='naujasGydytojas.php?vardas=TOMAS&pavarde=TOMAUSKIS'> Kurti Nauja</a>
+<!-- vardas, slaptazodis1, slaptazodis2, data, now() -->
+
+<main>
+    <form action="controller/registracija.php" method="post">
+        Name: <input type="text" name="name" value="TOMAS" placeholder='jusu vardas'>
+        Password <input type="password" name="slaptazodis1" value="" placeholder='slaptazodis'>
+        Pakartotinas Password <input type="password" name="slaptazodis1" value="" placeholder='slaptazodis'>
+        Data <input type="date" name="data" value="" placeholder='laikas'>
+
 
 <?php
+print_r($_SESSION);
+echo $_SESSION
 
-   include_once('models/doctors.php');
-   // test
-   $visiGydytojai = getDoctors(); // MYSQL objektas
-   // // print_r( $visiGydytojai ) ;
 
-   //visu gydytoju isvedimas
-   $gyd = mysqli_fetch_assoc($visiGydytojai); // is visu paimame viena
-   while ($gyd) {  // false, 0, NULL, ''
-       echo $gyd['name'] . " " . $gyd['lname'] ;
-       ?>
-       <a class="btn bg-danger" href='trintiGydytoja.php?nr=<?php echo $gyd['id']?>'> Istrinti 5 gyd</a> <br>
-       <?php
-       // is visu paimame sekanti gydytoja
-       $gyd = mysqli_fetch_assoc($visiGydytojai);
-   }
  ?>
+        <button type="submit" Registracija </button>
+    </form>
+</main>
+
             <footer class="row">
                 <div class="col-md-12">
                     2020 footer

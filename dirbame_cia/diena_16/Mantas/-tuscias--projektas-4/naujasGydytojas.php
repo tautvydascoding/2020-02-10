@@ -1,5 +1,7 @@
 <?php
 
 include('models/doctors.php');
-createDoctor("Juozas", "Juozaitis", "Z1");
-echo "pavyko sukurti";
+print_r ($_GET);
+$vard = $_GET ['vardas'];
+$parv = $_GET ['pavarde'];
+createDoctor ($vard, $parv, "Z2");
