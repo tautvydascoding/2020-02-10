@@ -35,4 +35,14 @@ function crawl_page($url, $depth = 5)
     }
     echo "URL:",$url,PHP_EOL,"CONTENT:",PHP_EOL,$dom->saveHTML(),PHP_EOL,PHP_EOL;
 }
-crawl_page("https://www.flashscore.com/handball/austria/hla/results/", 2);
+crawl_page("http://www.rankiniolyga.lt/turnyro-lentele/", 1);
+
+
+$divs = $dom->getElementsByTagName('div');
+foreach ($divs as $div) {
+    foreach ($div->attributes as $attr) {
+      $name = $attr->nodeName;
+      $value = $attr->nodeValue;
+      echo "Attribute '$name' :: '$value'<br />";
+    }
+}
