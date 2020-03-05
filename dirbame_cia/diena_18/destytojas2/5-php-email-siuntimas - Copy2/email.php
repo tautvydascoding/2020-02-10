@@ -32,7 +32,7 @@ date_default_timezone_set('Etc/UTC');
         $mail->IsSMTP();
         $mail->Mailer = "smtp";
 
-        $mail->SMTPDebug  = 1;
+        $mail->SMTPDebug  = 0;
         $mail->SMTPAuth   = TRUE;
         $mail->SMTPSecure = "tls";
         $mail->Port       = 587;
@@ -65,7 +65,7 @@ date_default_timezone_set('Etc/UTC');
         // Attachments
         // $mail->addAttachment('/var/tmp/file.tar.gz');         // Add attachments
         // $mail->addAttachment('/tmp/image.jpg', 'new.jpg');    // Optional name
-
+ 
         // Content
         $mail->isHTML(true);                                  // Set email format to HTML
         $mail->Subject = $klientoKlausimoAntraste;
