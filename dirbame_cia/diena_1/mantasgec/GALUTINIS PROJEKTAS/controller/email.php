@@ -4,11 +4,11 @@
 // https://myaccount.google.com/lesssecureapps
 
 
-print_r( $_POST );
+// print_r( $_POST );
 $klientoVardas = $_POST['vardas'];
-$klientoKlausimoAntraste =$_POST['antraste'];
+$klientoTema = $_POST['tema'];
 $klientoKlausimas = $_POST['klausimas'];
-$klientoPastas = $_POST['pastas'];
+$klientoPastas = $_POST['email'];
 // echo "  $klientoVardas  $klientoPavarde  <hr /> ";
 // echo "  $klientoAntraste  <hr /> $klientoKlausimas   ";
 // echo "  <hr /> $klientoPastas   ";
@@ -20,9 +20,9 @@ $klientoPastas = $_POST['pastas'];
     use PHPMailer\PHPMailer\PHPMailer;
     use PHPMailer\PHPMailer\Exception;
 date_default_timezone_set('Etc/UTC');
-    require 'libs/PHPMailer-master/src/Exception.php';
-    require 'libs/PHPMailer-master/src/PHPMailer.php';
-    require 'libs/PHPMailer-master/src/SMTP.php';
+    require '../libs/PHPMailer-master/src/Exception.php';
+    require '../libs/PHPMailer-master/src/PHPMailer.php';
+    require '../libs/PHPMailer-master/src/SMTP.php';
     // Load Composer's autoloader
     // require 'vendor/autoload.php';
     // Instantiation and passing `true` enables exceptions
@@ -32,7 +32,7 @@ date_default_timezone_set('Etc/UTC');
         $mail->IsSMTP();
         $mail->Mailer = "smtp";
 
-        $mail->SMTPDebug  = 0;
+        $mail->SMTPDebug  = 1;
         $mail->SMTPAuth   = TRUE;
         $mail->SMTPSecure = "tls";
         $mail->Port       = 587;
@@ -49,15 +49,15 @@ date_default_timezone_set('Etc/UTC');
         // $mail->isSMTP();                                               // Set the SMTP server to send through
         // $mail->SMTPAuth   = true;                                   // Enable SMTP authentication
 
-        $mail->Username = 'ikrekremaster@gmail.com';                 // SMTP username
-        $mail->Password = 'teteris123';                          // SMTP username
+        $mail->Username = 'samdo1987@gmail.com';                 // SMTP username
+        $mail->Password = 'Tysonas0111';                          // SMTP username
                       // SMTP password
         // $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;         // Enable TLS encryption; `PHPMailer::ENCRYPTION_SMTPS` also accepted
         // $mail->Port       = 587;                                    // TCP port to connect to
 
         //Recipients
-        $mail->setFrom('ikrekremaster@gmail.com', 'Programuotojai');
-        $mail->addAddress('ikrekremaster@gmail.com', 'Programuotojai');     // Add a recipient
+        $mail->setFrom('samdo1987@gmail.com', 'Programuotojai');
+        $mail->addAddress('samdo1987@gmail.com', 'Programuotojai');     // Add a recipient
          $mail->addReplyTo($klientoPastas , $klientoVardas);
         // $mail->addCC('cc@example.com');
         // $mail->addBCC('bcc@example.com');
@@ -68,12 +68,12 @@ date_default_timezone_set('Etc/UTC');
 
         // Content
         $mail->isHTML(true);                                  // Set email format to HTML
-        $mail->Subject = $klientoKlausimoAntraste;
+        $mail->Subject = $klientoTema;
         $mail->Body    = $klientoKlausimas;
         $mail->AltBody = $klientoKlausimas;
 
         $mail->send();
-        echo 'Message has been sent';
+        echo 'Zinute issiusta';
     } catch (Exception $e) {
-        echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
+        echo "Nepavyko issiusti zinutes: {$mail->ErrorInfo}";
     }
