@@ -43,9 +43,8 @@
                 <hr>
 
                 <?php
-                    echo "<div class='bg-warning'>". $_SESSION['zinute'] . "</div>";
+                    echo "<p class='bg-warning'>". $_SESSION['zinute'] . "</p>";
 
-                    // zinutes istrinimas
                     $_SESSION['zinute'] = "";
                 ?>
                 

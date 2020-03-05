@@ -36,11 +36,11 @@ function deleteNaujiena($nr) {
     $pavarde - gyd. pavarde
     $zona - gyd. zona kurios pacientus aptarnauja
 */
-function createNaujiena($vardas, $pavarde, $zona) {
-    $manoSQL = "INSERT INTO  naujienos VALUES( NULL, '$vardas', '$pavarde', '$zona' )";
+function createNaujiena($titel, $text, $foto) {
+    $manoSQL = "INSERT INTO  naujienos VALUES( NULL, '$titel', '$text', '$foto' )";
     $arPavyko = mysqli_query( getPrisijungimas(),  $manoSQL  );
     if ( $arPavyko == false) {   // !$arPavyko
-        echo "ERROR nepavyko sukurti gydytojo vardas: $vardas, $pavarde, $zona <br>";
+        echo "ERROR nepavyko sukurti gydytojo vardas: $titel, $text, $foto <br>";
     }
 }
 // test
@@ -55,17 +55,17 @@ function createNaujiena($vardas, $pavarde, $zona) {
     $pavarde - gyd. pavarde
     $zona - gyd. zona kurios pacientus aptarnauja
 */
-function editNaujiena($nr, $vardas, $pavarde, $zona) {
+function editNaujiena($id, $titel, $text, $foto) {
     $manoSQL = "UPDATE  naujienos SET
-                                    name= '$vardas',
-                                    lname = '$pavarde',
-                                    area = '$zona'
-                                WHERE id = '$nr'
+                                    name= '$titel',
+                                    lname = '$text',
+                                    area = '$foto'
+                                WHERE id = '$id'
                                 LIMIT 1
                 ";
     $arPavyko = mysqli_query( getPrisijungimas(),  $manoSQL  );
     if ( $arPavyko == false) {   // !$arPavyko
-        echo "ERROR nepavyko redaguoti gydytojo nr:$nr, $vardas, $pavarde, $zona <br>";
+        echo "ERROR nepavyko redaguoti gydytojo nr:$id, $titel, $text, $foto <br>";
     }
 }
 // test

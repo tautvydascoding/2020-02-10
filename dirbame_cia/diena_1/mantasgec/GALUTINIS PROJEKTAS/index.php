@@ -31,6 +31,7 @@ session_start();
       <button type="submit" class="btn btn-primary">Register</button>
     </form>
 </div>
+<a href="contacts.php">kontaktai</a>
 
     </div>
 </div>
@@ -44,12 +45,12 @@ $visosZvakes = getZvakes();
 
 $zvakes = mysqli_fetch_assoc( $visosZvakes  );
 while ($zvakes) {
-    include('models/preke.php');
+    include('preke.php');
     $zvakes =mysqli_fetch_assoc($visosZvakes);
 }
 
  ?>
-
+<!----------------------------------------------------------- -- >
 
 
 
