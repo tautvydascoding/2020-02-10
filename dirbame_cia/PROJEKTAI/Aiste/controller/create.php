@@ -2,6 +2,7 @@
 
 include ('../models/doctors.php');
 
+
 $vard = $_GET['name'];
 $parv = $_GET['lname'];
 $zona = $_GET['area'];
