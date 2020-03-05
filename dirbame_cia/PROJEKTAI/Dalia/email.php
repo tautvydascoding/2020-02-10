@@ -4,7 +4,7 @@
 // https://myaccount.google.com/lesssecureapps
 
 
-// print_r( $_POST );
+print_r( $_POST );
     $klientoVardas = $_POST['vardas'];
     $klientoKlausimas = $_POST['klausimas'];
     $klientoPastas = $_POST['pastas'];
@@ -48,16 +48,16 @@ date_default_timezone_set('Etc/UTC');
         // $mail->isSMTP();                                               // Set the SMTP server to send through
         // $mail->SMTPAuth   = true;                                   // Enable SMTP authentication
 
-        $mail->Username = 'testascoding@gmail.com';                 // SMTP username
-        $mail->Password = 'slaptazodis';                          // SMTP username
+        $mail->Username = 'budriene.dalia1@gmail.com';                 // SMTP username
+        $mail->Password = 'testas123';                          // SMTP username
                       // SMTP password
         // $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;         // Enable TLS encryption; `PHPMailer::ENCRYPTION_SMTPS` also accepted
         // $mail->Port       = 587;                                    // TCP port to connect to
 
         //Recipients
-        $mail->setFrom('testascoding@gmail.com', 'Mailer');
-        $mail->addAddress('testascoding@gmail.com', 'Joe User');     // Add a recipient
-         $mail->addReplyTo($klientoPastas , 'Information');
+            $mail->setFrom('budriene.dalia1@gmail.com', 'Mailer');
+        $mail->addAddress('budriene.dalia1@gmail.com', 'Joe User');     // Add a recipient
+         $mail->addReplyTo($klientoPastas , $klientoVardas);
         // $mail->addCC('cc@example.com');
         // $mail->addBCC('bcc@example.com');
 
