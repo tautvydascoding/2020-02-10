@@ -15,14 +15,14 @@ $('#btn-isvedimas').on('click', function(){
 
             //====== jei PHP darot: echo parseTOJSON( $manoAray);====
             // kintamasis 'grizo' - yra string tipo:  { 'vardas': 'John', 'vietove': 'Boston' }
-            gryzoPaverstasIJSON = JSON.parse(grizo);
+            gyd_objektas = JSON.parse(grizo);
             // JSON.parse sukuria is String (kuris atrodo kaip JSON)
             // tikra JSON objekta
-            console.log(gryzoPaverstasIJSON);
+            console.log(gyd_objektas);
             //this is what I am unsure about?
-            document.querySelector('#gyd-duomenys').innerHTML += gryzoPaverstasIJSON.lname;
-            document.querySelector('#gyd-duomenys').innerHTML += gryzoPaverstasIJSON.name;
-            document.querySelector('#gyd-duomenys').innerHTML += gryzoPaverstasIJSON.id;
+            document.querySelector('#gyd-duomenys').innerHTML += gyd_objektas.lname;
+            document.querySelector('#gyd-duomenys').innerHTML += gyd_objektas.name;
+            document.querySelector('#gyd-duomenys').innerHTML += gyd_objektas.id;
        },
 
       error: function(e) {
