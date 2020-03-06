@@ -6,7 +6,7 @@
 
 print_r( $_POST );
 $klientoVardas = $_POST['vardas'];
-$klientoKlausimoAntraste =$_POST['antraste'];
+$klientoKlausimoAntraste = $_POST['sritis'];
 $klientoKlausimas = $_POST['klausimas'];
 $klientoPastas = $_POST['pastas'];
 // echo "  $klientoVardas  $klientoPavarde  <hr /> ";
@@ -49,15 +49,15 @@ date_default_timezone_set('Etc/UTC');
         // $mail->isSMTP();                                               // Set the SMTP server to send through
         // $mail->SMTPAuth   = true;                                   // Enable SMTP authentication
 
-        $mail->Username = 'ikrekremaster@gmail.com';                 // SMTP username
-        $mail->Password = 'teteris123';                          // SMTP username
+        $mail->Username = 'jusu_name@gmail.com';                 // SMTP username
+        $mail->Password = '---';                          // SMTP username
                       // SMTP password
         // $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;         // Enable TLS encryption; `PHPMailer::ENCRYPTION_SMTPS` also accepted
         // $mail->Port       = 587;                                    // TCP port to connect to
 
         //Recipients
-        $mail->setFrom('ikrekremaster@gmail.com', 'Programuotojai');
-        $mail->addAddress('ikrekremaster@gmail.com', 'Programuotojai');     // Add a recipient
+        $mail->setFrom('testascoding@gmail.com', 'Programuotojai');
+        $mail->addAddress('testascoding@gmail.com', 'Programuotojai');     // Add a recipient
          $mail->addReplyTo($klientoPastas , $klientoVardas);
         // $mail->addCC('cc@example.com');
         // $mail->addBCC('bcc@example.com');
@@ -65,7 +65,7 @@ date_default_timezone_set('Etc/UTC');
         // Attachments
         // $mail->addAttachment('/var/tmp/file.tar.gz');         // Add attachments
         // $mail->addAttachment('/tmp/image.jpg', 'new.jpg');    // Optional name
-
+ 
         // Content
         $mail->isHTML(true);                                  // Set email format to HTML
         $mail->Subject = $klientoKlausimoAntraste;

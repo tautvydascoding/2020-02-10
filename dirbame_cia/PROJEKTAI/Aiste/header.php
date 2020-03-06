@@ -16,3 +16,6 @@
     <link rel="stylesheet" href="css/master.css">
 </head>
 <body>
+<?php
+session_start();
+?>

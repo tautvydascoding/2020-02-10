@@ -1,9 +1,10 @@
 <?php
-session_start();
+
 include ('../models/naujienos.php');
 
 
-hidden()
+
+
 $titel = $_GET['titel'];
 $text = $_GET['text'];
 $foto = $_GET['foto'];

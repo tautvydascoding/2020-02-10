@@ -1,38 +1,42 @@
 <?php
 include ("header.php");
-session_start();
+include ('models/naujienos.php');
+
 ?>
 
 
 
-<header class="container tarpas-apacia tarpas-virsus">
-    <nav class="row ">
-        <div class="col-2 spalva paddingas tarpas-desine">
-            <a href="index.php">Pradžia</a>
-        </div>
-        <div class="col-2 spalva paddingas tarpas-desine">
-            <a href="">Apie</a>
-        </div>
-        <div class="col-2 spalva paddingas tarpas-desine">
-            <a href="kontaktai.php">Kontaktai</a>
-        </div>
-        <div class="col-3 spalva paddingas tarpas-desine">
-            <input type="search" placeholder="search">
-        </div>
-        <div class="col spalva paddingas">
-            <form action="registracija-form.php">
-                <input type="submit" value="Prisijungti" method="get">
-                <input type="submit" value="Registruotis" method="get">
-            </form>
-        </div>
-    </nav>
-</header>
+<nav class="container navbar navbar-expand-lg navbar-dark bg-dark">
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="index.php">Pradžia <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link" href="index.php">Apie <span class="sr-only">(current)</span></a>
+      </li>
+
+      <li class="nav-item active">
+        <a class="nav-link" href="kontaktai.php">Kontaktai <span class="sr-only">(current)</span></a>
+      </li> 
+    </ul>
+    <form class="form-inline my-2 my-lg-0">
+      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+      <button class="btn btn-outline-success my-2 my-sm-0 mr-sm-2" type="submit">Search</button>
+    </form>
+    <form action="registracija-form.php">
+        <input class="btn btn-success my-2 my-sm-0 mr-sm-2" type="submit" value="Prisijungti" method="get">
+        <input class="btn btn-info my-2 my-sm-0 mr-sm-2" type="submit" value="Registruotis" method="get">
+    </form>
+  </div>
+</nav>
 
 
-    <section class="container  tarpas-apacia">
-        <div class="row hight-col">
+<section class="container  tarpas-apacia mt-2">
+    <div class="row hight-col">
 
-            <main class="col-3 spalva tarpas-desine">
+        <main class="col-3 spalva tarpas-desine bg-dark mr-2">
                 <div class="row paddingas"> 
                     <a href="komandos.php">Komandos</a>
                 </div>
@@ -42,9 +46,7 @@ session_start();
                 <div class="row paddingas">
                     <a href="">papildomai</a>
                 </div>
-                <div class="row paddingas">
-                    <a href="">papildomai2</a>
-                </div>
+
             </main>
 
             <aside class="col spalva">
@@ -54,7 +56,7 @@ session_start();
                 </div>
                 <div class="row paddingas">
                     <?php
-                        include ('models/naujienos.php');
+                        
                         $visosNaujienosOBJ =  getNaujienosVisi();
                         $naujiena = mysqli_fetch_assoc($visosNaujienosOBJ);
                         while($naujiena) {
@@ -63,9 +65,8 @@ session_start();
                                     "<div class='thumbnail'>" . 
                                         "<img width='100%' src='img/$naujiena[foto]' alt=''>" .
                                         "<div class='caption'>" . 
-                                            "<h5>" . $naujiena['titel'] . "</h5>" . 
-                                            "<p>" .substr($string,0,111) . "</p>" .
-                                            "<p><a href='controller/naujienaDelete.php?id={$naujiena['id']}' class='btn btn-danger' role='button'>Ištrinti</a> </p>" . "<p><a href='' class='btn btn-info' role='button'>Koreguoti</a> </p>" . 
+                                            "<h7>" . $naujiena['titel'] . "</h7>" . 
+                                            "<p><a href='controller/naujienaDelete.php?id={$naujiena['id']}' class='btn btn-danger' role='button'>Ištrinti</a> </p>" . "<p><a href='controller/naujienaUpdate.php' class='btn btn-info' role='button'>Koreguoti</a> </p>" . 
                                         "</div>" . 
                                     "</div>" .
                                 "</div>";
@@ -92,9 +93,7 @@ session_start();
                         // $_SESSION['zinute'] = "";
                     ?> 
                 </div>
-
             </aside>
-
         </div>
     </section>
 
