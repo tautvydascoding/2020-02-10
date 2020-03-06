@@ -20,11 +20,13 @@
         <div class="container">
             <header class="row">
                 <div class="col-md-12">
-                    <a href='nauja-preke/prekes-ikelimas-forma.php'> prideti preke </a>
-
+                    <h1> Isijunk Inspect Element->console </h1>
                 </div>
             </header>
-
+                <div class="dezute paslepti-phone">1</div>
+                <div class="dezute">2</div>
+                <div class="dezute paslepti-tablet">3</div>
+                <div class="dezute paslepti-phone">4</div>
 
 
             <footer class="row">
