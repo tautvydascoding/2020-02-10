@@ -24,8 +24,8 @@ function getPrisijungimas() {
 
 function deleteNaujiena($nr) {
     $manoSQL = "DELETE FROM naujienos WHERE id = '$nr'  LIMIT 1";
-    $arPavyko = mysqli_query( getPrisijungimas(),  $manoSQL  );
-    if ( $arPavyko == false) {   // !$arPavyko
+    $rezultatas = mysqli_query( getPrisijungimas(),  $manoSQL  );
+    if ( $rezultatas == false) {   // !$arPavyko
         echo "ERROR nepavyko atleisti gydytojo nr: $nr <br>";
     }
 }
@@ -38,11 +38,21 @@ function deleteNaujiena($nr) {
 */
 function createNaujiena($titel, $text, $foto) {
     $manoSQL = "INSERT INTO  naujienos VALUES( NULL, '$titel', '$text', '$foto' )";
-    $arPavyko = mysqli_query( getPrisijungimas(),  $manoSQL  );
-    if ( $arPavyko == false) {   // !$arPavyko
-        echo "ERROR nepavyko sukurti gydytojo vardas: $titel, $text, $foto <br>";
+    $rezultatas = mysqli_query( getPrisijungimas(),  $manoSQL  );
+    if ( $rezultatas == false) {   // !$arPavyko
+        echo "ERROR nepavyko sukurti: $titel, $text, $foto <br>";
     }
 }
+
+function getFotos($id) {
+    $manoSQL = "SELECT fotos.naujienos_id, fotos.id, fotos.name FROM fotos INNER JOIN naujienos ON fotos.naujienos_id = naujienos.id WHERE naujienos.id = $id";
+    $rezultatas = mysqli_query( getPrisijungimas(),  $manoSQL  );
+    if ( $rezultatas == false) {   // !$arPavyko
+        echo "ERROR nepavyko sukurti: $id <br>";
+    }
+    return $rezultatas;
+}
+
 // test
 // createDoctor('Jurgis', 'Jurgaitis', 'A3');
 // createDoctor('Tadas', 'Tadauskas',  'B2');
@@ -63,8 +73,8 @@ function editNaujiena($id, $titel, $text, $foto) {
                                 WHERE id = '$id'
                                 LIMIT 1
                 ";
-    $arPavyko = mysqli_query( getPrisijungimas(),  $manoSQL  );
-    if ( $arPavyko == false) {   // !$arPavyko
+    $rezultatas = mysqli_query( getPrisijungimas(),  $manoSQL  );
+    if ( $rezultatas == false) {   // !$arPavyko
         echo "ERROR nepavyko redaguoti gydytojo nr:$id, $titel, $text, $foto <br>";
     }
 }
