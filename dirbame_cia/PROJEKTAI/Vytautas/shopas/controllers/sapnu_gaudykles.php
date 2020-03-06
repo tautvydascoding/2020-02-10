@@ -36,7 +36,7 @@ function editSG($nr, $dydis, $spalva, $kaina, $aprasymas){
                                 spalva = '$spalva',
                                 kaina = '$kaina',
                                 aprasymas = '$aprasymas'
-                                WHERE id = 6
+                                WHERE id = '6'
                                 LIMIT 1
         ";
     $arPasikeite = mysqli_query(getPrisijungimas(), $manoSQL);

@@ -1,6 +1,6 @@
 console.log("ar veikia?");
 
-<!-- // JavaScript -->
+ 
 $.ajax({
   url: "test.php",
   type: "POST",
