@@ -6,7 +6,8 @@ $visosZvakes = getZvakes();
 $zvakes = mysqli_fetch_assoc( $visosZvakes  );
 
 while($zvakes){
-    echo "<h3>". "<br>" . $zvakes['pavadinimas']. "<br>" . $zvakes['kaina']."</h3>";
+    echo "<h3>". "<br>" . $zvakes['pavadinimas']. "<br>" . $zvakes['kaina']."</h3>"
+    "<br>" .  $zvakes['aprasymas'].;
         $zvakes =mysqli_fetch_assoc($visosZvakes);
 }
 
