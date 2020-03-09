@@ -18,6 +18,7 @@ session_start();
               <button type="submit" class="btn btn-primary">Login</button>
             </form>
 </div>
+<a href="Logout.php">Logout</a>
 
 <div class="col-sm-2">
     <h5>Register Here</h5>
@@ -36,6 +37,7 @@ session_start();
     </div>
 </div>
 </div>
+
 <h1>Welcome <?php echo $_SESSION['username']; ?></h1>
 <!---------------------------------------------------------- -->
 <?php
