@@ -10,9 +10,9 @@ $username = htmlspecialchars(strip_tags($_POST["name"]), ENT_QUOTES);
 
 
 //=============return "STRING"=================
-// echo "vardas: " . $username . " vietove: " . $_POST['location'] ;
+// echo "vardas222: " . $username . " vietove222: " . $_POST['location'] ;
 //    OR
 //============ return json objekta=================
 $x = $_POST["name"];
 $manoAray = ['vardas' => $x, 'vietove' => $_POST["location"] ];
-echo json_encode( $manoAray ); // { 'vardas': 'John', 'vietove': 'Boston' }
+echo json_encode( $manoAray ); // { 'vardas': 'Tautvis', 'vietove': 'Boston' }

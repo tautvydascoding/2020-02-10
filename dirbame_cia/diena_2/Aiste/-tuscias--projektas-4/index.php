@@ -17,63 +17,37 @@
 
     <body>
 
-        <div class="container">
-            <header class="row">
-                <div class="col-md-12">
-                    <h1> Isijunk Inspect Element->console </h1>
-                </div>
-            </header>
 
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
 
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav mr-auto">
-      <li class="nav-item active">
-        <a class="nav-link" href="index.php">Pradžia <span class="sr-only">(current)</span></a>
-      </li>
-      <li class="nav-item active">
-        <a class="nav-link" href="index.php">Apie <span class="sr-only">(current)</span></a>
-      </li>
+<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+  <ol class="carousel-indicators">
+    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+    <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+    <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+  </ol>
 
-      <li class="nav-item active">
-        <a class="nav-link" href="kontaktai.php">Kontaktai <span class="sr-only">(current)</span></a>
-      </li> 
-    </ul>
-    <form class="form-inline my-2 my-lg-0">
-      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-      <button class="btn btn-outline-success my-2 my-sm-0 mr-sm-2" type="submit">Search</button>
-    </form>
-    <form action="registracija-form.php">
-        <input class="btn btn-success my-2 my-sm-0 mr-sm-2" type="submit" value="Prisijungti" method="get">
-        <input class="btn btn-info my-2 my-sm-0 mr-sm-2" type="submit" value="Registruotis" method="get">
-    </form>
+  <div class="carousel-inner " >
+    <div class="carousel-item active">
+      <img class="d-block"  src="images/1.jpg" alt="First slide">
+    </div>
+    <div class="carousel-item">
+      <img class="d-block" src="images/2.jpg" alt="Second slide">
+    </div>
+    <div class="carousel-item">
+      <img class="d-block "  src="images/3.jpg" alt="Third slide">
+    </div>
   </div>
-</nav>
 
+  <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </a>
 
-
-<header class="container tarpas-apacia tarpas-virsus">
-    <nav class="row ">
-        <div class="col-2 spalva paddingas tarpas-desine">
-            <a href="index.php">Pradžia</a>
-        </div>
-        <div class="col-2 spalva paddingas tarpas-desine">
-            <a href="">Apie</a>
-        </div>
-        <div class="col-2 spalva paddingas tarpas-desine">
-            <a href="kontaktai.php">Kontaktai</a>
-        </div>
-        <div class="col-3 spalva paddingas tarpas-desine">
-            <input type="search" placeholder="search">
-        </div>
-        <div class="col spalva paddingas">
-            <form action="registracija-form.php">
-                <input type="submit" value="Prisijungti" method="get">
-                <input type="submit" value="Registruotis" method="get">
-            </form>
-        </div>
-    </nav>
-</header>
+</div>
 
         </div>
         <!-- Scriptai FAILO dugne -->

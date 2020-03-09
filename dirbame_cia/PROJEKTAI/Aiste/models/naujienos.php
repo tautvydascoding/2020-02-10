@@ -67,15 +67,15 @@ function getFotos($id) {
 */
 function editNaujiena($id, $titel, $text, $foto) {
     $manoSQL = "UPDATE  naujienos SET
-                                    name= '$titel',
-                                    lname = '$text',
-                                    area = '$foto'
+                                    titel = '$titel',
+                                    text = '$text',
+                                    foto = '$foto'
                                 WHERE id = '$id'
                                 LIMIT 1
                 ";
     $rezultatas = mysqli_query( getPrisijungimas(),  $manoSQL  );
     if ( $rezultatas == false) {   // !$arPavyko
-        echo "ERROR nepavyko redaguoti gydytojo nr:$id, $titel, $text, $foto <br>";
+        echo "ERROR nepavyko redaguoti gydytojo nr: $id, $titel, $text, $foto <br>";
     }
 }
 // test
@@ -87,7 +87,7 @@ function editNaujiena($id, $titel, $text, $foto) {
    return - (type: ARRAY)
 */
 function getNaujiena( $id ) {
-    $manoSQL = "SELECT * FROM naujienos  WHERE id = '$id';  ";
+    $manoSQL = "SELECT * FROM naujienos  WHERE id = '$id' order by id DESC;  ";
     // $rezultataiOBJ -  Mysql Objektas
     $rezultataiOBJ = mysqli_query(getPrisijungimas(), $manoSQL);
     // ar radom gydytoja
@@ -108,7 +108,7 @@ function getNaujiena( $id ) {
 // print_r( $gyd1 );
 
 function getNaujienosVisi() {
-    $manoSQL = "SELECT * FROM naujienos   ";
+    $manoSQL = "SELECT * FROM naujienos  order by id DESC ";
     // $rezultataiOBJ -  Mysql Objektas
     $rezultataiOBJ = mysqli_query(getPrisijungimas(), $manoSQL);
     return $rezultataiOBJ;

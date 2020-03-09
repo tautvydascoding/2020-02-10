@@ -15,9 +15,6 @@
     <body>
 
         <h1> Isijunk Inspect-console (mokomes js) </h1>
-<div id ="gyd-duomenys"> Cia atsiras duomenys</div>
-    <button id="btn-isvedimas"> Isvesti 4 gydytoja</button>
-
 
 
         <div id='results'> AAA: </div>
