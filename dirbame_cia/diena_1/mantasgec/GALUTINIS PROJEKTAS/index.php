@@ -18,7 +18,6 @@ session_start();
               <button type="submit" class="btn btn-primary">Login</button>
             </form>
 </div>
-<a href="Logout.php">Logout</a>
 
 <div class="col-sm-2">
     <h5>Register Here</h5>
@@ -32,14 +31,18 @@ session_start();
       <button type="submit" class="btn btn-primary">Register</button>
     </form>
 </div>
-<a href="contacts.php">kontaktai</a>
 
-    </div>
+ <?php echo $_SESSION['username'] ;?>
+ <ul>
+<li><a href="contacts.php">kontaktai</a></li>
+<li><a href="controller/Logout.php">Logout</a></li>
+<li><a href="img">Fotoalbumas</a></li>
+</ul>
+
+
 </div>
 </div>
-
-<h1>Welcome <?php echo $_SESSION['username']; ?></h1>
-<!---------------------------------------------------------- -->
+<!-------------------------------------------------- -->
 <?php
 include("models/prekes.php");
 
@@ -52,7 +55,7 @@ while ($zvakes) {
 }
 
  ?>
-<!----------------------------------------------------------- -- >
+<!----------------------------------------- -->
 
 
 
@@ -61,3 +64,4 @@ while ($zvakes) {
 
 
     </body>
+<?php include('footer.php'); ?>
