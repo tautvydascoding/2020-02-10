@@ -1,5 +1,7 @@
 <?php
 session_start();
+include ('../models/prisijungimas.php');
+
 include ('../models/naujienos.php');
 
 $id = $_GET['id'];

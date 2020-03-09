@@ -1,6 +1,6 @@
 <?php
 include ("header.php");
-
+include ('models/prisijungimas.php');
 include ('models/tvarkarasciai.php');
 ?>
 
@@ -15,7 +15,7 @@ include ('models/tvarkarasciai.php');
             <a href="tvarkarasciai.php">Tvarkarasciai</a>
         </div>
         <div class="row paddingas">
-            <a href="">papildomai</a>
+            <a href="">Čempionato lentelė</a>
         </div>
 
         </main>
@@ -27,7 +27,7 @@ include ('models/tvarkarasciai.php');
                   $komandos = mysqli_fetch_assoc($visosKomandosOBJ);
                   // print_r($komandos);
                   while($komandos) {
-                  echo $komandos['ID'] . " " . $komandos['data'] . " " . $komandos['sale'] . " " . $komandos['komandos'] . " " . $komandos['rezultatas'] .  "<br>";
+                  echo $komandos['ID'] . " " . $komandos['data'] . " " . $komandos['sale'] . " " . $komandos['komandos']  .  "<br>";
                   $komandos = mysqli_fetch_assoc($visosKomandosOBJ);
                   }
               ?>

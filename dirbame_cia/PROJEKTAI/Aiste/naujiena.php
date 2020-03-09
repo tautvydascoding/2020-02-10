@@ -1,5 +1,7 @@
 <?php
 include ("header.php");
+include ('models/prisijungimas.php');
+
 
 ?>
 
@@ -15,11 +17,9 @@ include ("header.php");
                 <a href="tvarkarasciai.php">Tvarkarasciai</a>
             </div>
             <div class="row paddingas">
-                <a href="">papildomai</a>
+                <a href="">Čempionato lentelė</a>
             </div>
-            <div class="row paddingas">
-                <a href="">papildomai2</a>
-            </div>
+
         </main>
 
         <aside class="col spalva">
