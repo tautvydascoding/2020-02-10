@@ -59,3 +59,22 @@ CREATE TABLE skalbykles (
 INSERT INTO skalbykles VALUES (NULL, 'Bosh', 'Skalbykles aprasymas pirmas', 600, 10, 2);
 INSERT INTO skalbykles VALUES (NULL, 'Philips', 'Skalbykles aprasymas antras', 550, 15, 2);
 INSERT INTO skalbykles VALUES (NULL, 'AEG', 'Skalbykles aprasymas trecias', 650, 25, 2);
+
+CREATE TABLE prekes (
+    id    int          PRIMARY KEY     AUTO_INCREMENT,
+    category varchar(40) NOT NULL,
+    name  varchar(40) NOT NULL,
+    description  varchar(200) NOT NULL,
+    price int,
+    discount int,
+    seller_id int
+);
+INSERT INTO prekes VALUES (NULL, 'Skalbykle','Bosh' 'Skalbykles aprasymas pirmas', 600, 10, 2);
+INSERT INTO prekes VALUES (NULL, 'Skalbykle','Philips', 'Skalbykles aprasymas antras', 550, 15, 2);
+INSERT INTO prekes VALUES (NULL, 'Skalbykle','AEG', 'Skalbykles aprasymas trecias', 650, 25, 2);
+INSERT INTO prekes VALUES (NULL, 'Kompiuteris','Apple', 'Nesiojamas kompiuteris, istrizaine 13', 1000, 10, 2);
+INSERT INTO prekes VALUES (NULL, 'Kompiuteris','Lenovo', 'Nesiojamas kompiuteris, istrizaine 15', 500, 15, 2);
+INSERT INTO prekes VALUES (NULL, 'Kompiuteris','Asus', 'Nesiojamas kompiuteris, istrizaine 18', 600, 25, 2);
+INSERT INTO prekes VALUES (NULL, 'Televizorius','Sony', 'Didelis grazus televizorius, istrizaine 100', 300, 20, 1);
+INSERT INTO prekes VALUES (NULL, 'Televizorius','Samsung', 'Baltas televizorius, istrizaine 150', 250, 25, 1);
+INSERT INTO prekes VALUES (NULL, 'Televizorius', 'Philips', 'Blizgantis televizorius, istrizaine 120', 200, 15, 1);

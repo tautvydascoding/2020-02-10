@@ -28,7 +28,7 @@ $('#btn-isvedimas').on('click', function(){
       error: function(e) {
            //called when there is an error
            //console.log(e.message);
-           $("#results").append( "Request failed: " + e );
+           $("#gyd-duomenys").append( "Request failed: " + e );
            console.log("NESUVEIKE PHP failas!@@@");
      }
     });

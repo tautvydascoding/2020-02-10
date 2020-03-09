@@ -20,7 +20,7 @@
         <div class="container">
             <header class="row">
                 <div class="col-md-12">
-                    <a href='nauja-preke/prekes-ikelimo-forma.php'> prideti preke </a>
+                    <a href='nauja-preke/prekes-ikelimas-forma.php'> prideti preke </a>
 
                 </div>
             </header>
