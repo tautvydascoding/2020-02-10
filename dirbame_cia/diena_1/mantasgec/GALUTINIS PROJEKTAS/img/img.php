@@ -1,24 +1,25 @@
 <?php
-if(isset($_POST['upload'])){
-$target = "img/".basename($_FILES['foto']['name']);
-mysqli_select_db($prisijungimas,'foto');
-$image= $_FILES['image']['name'];
-$text =$_POST['text'];
-$sql = "INSERT INTO img (image, text) VALUES ('$image', '$text')";
-mysqli_query($prisijungimas, $sql);
+define("DB_HOST", 'localhost');
+define("DB_MYSQL_USER", 'root');
+define("DB_MYSQL_PASSWORD", 'root');
+define("DB_NAME", 'zvakes');
+$prisijungimas = mysqli_connect(DB_HOST, DB_MYSQL_USER, DB_MYSQL_PASSWORD, DB_NAME,3307);
 
-if(move_uploaded_file($_FILES['image']['tmp_name'],$target)){
-    $msg = "image uploaded successfuly";
-}else{
-    $msg = "There was a problem uploading image";
-}
-}
+if(isset($_POST['upload']))
+$filename = $_FILES['upload']
+$filetmpname = $_FILES['upload']['tmp_name'];
+$folder='imguploads/';
+
+move_uploaded_files($filetmpname, $folder.destination)
+
+$s = "INSERT INTO 'foto'('imagename')VALUES ('')"
+
 
  ?>
 
 
 <div class="content">
-    <form  action="../index.php" method="post" enctype="multipart/form-data">
+    <form  action="img/img.php" method="post" enctype="multipart/form-data">
         <input type="hidden" name="size">
         <div >
             <input type="file" name="foto">
