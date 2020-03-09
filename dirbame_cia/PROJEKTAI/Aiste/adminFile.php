@@ -4,35 +4,6 @@ include ('models/naujienos.php');
 
 ?>
 
-
-
-<nav class="container navbar navbar-expand-lg navbar-dark bg-dark">
-
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav mr-auto">
-      <li class="nav-item active">
-        <a class="nav-link" href="index.php">Pradžia <span class="sr-only">(current)</span></a>
-      </li>
-      <li class="nav-item active">
-        <a class="nav-link" href="index.php">Apie <span class="sr-only">(current)</span></a>
-      </li>
-
-      <li class="nav-item active">
-        <a class="nav-link" href="kontaktai.php">Kontaktai <span class="sr-only">(current)</span></a>
-      </li> 
-    </ul>
-    <form class="form-inline my-2 my-lg-0">
-      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-      <button class="btn btn-outline-success my-2 my-sm-0 mr-sm-2" type="submit">Search</button>
-    </form>
-    <form action="registracija-form.php">
-        <input class="btn btn-success my-2 my-sm-0 mr-sm-2" type="submit" value="Prisijungti" method="get">
-        <input class="btn btn-info my-2 my-sm-0 mr-sm-2" type="submit" value="Registruotis" method="get">
-    </form>
-  </div>
-</nav>
-
-
 <section class="container  tarpas-apacia mt-2">
     <div class="row hight-col">
 
@@ -52,8 +23,15 @@ include ('models/naujienos.php');
             <aside class="col spalva">
 
                 <div class="row paddingas">
-               <p><a href='formNaujienaNauja.php' class='btn btn-success' role='button'>Naujas</a> </p>
+                <div class="col-2">
+                    <p><a href='formNaujienaNauja.php' class='btn btn-success' role='button'>Naujas</a> </p>
                 </div>
+                <div class="col">
+                    <p> <?php echo "<p class='bg-warning'>". $_SESSION['zinute'] . "</p>";
+                        $_SESSION['zinute'] = "";?>  </p>
+                </div>
+                </div>
+                
                 <div class="row paddingas">
                     <?php
                         
@@ -66,31 +44,14 @@ include ('models/naujienos.php');
                                         "<img width='100%' src='img/$naujiena[foto]' alt=''>" .
                                         "<div class='caption'>" . 
                                             "<h7>" . $naujiena['titel'] . "</h7>" . 
-                                            "<p><a href='controller/naujienaDelete.php?id={$naujiena['id']}' class='btn btn-danger' role='button'>Ištrinti</a> </p>" . "<p><a href='controller/naujienaUpdate.php' class='btn btn-info' role='button'>Koreguoti</a> </p>" . 
+                                            "<p><a href='controller/naujienaDelete.php?id={$naujiena['id']}' class='btn btn-danger' role='button'>Ištrinti</a> </p>" . "<p><a href='formNaujienaUpdate.php?id={$naujiena['id']}' class='btn btn-info' role='button'>Koreguoti</a> </p>" . 
                                         "</div>" . 
                                     "</div>" .
                                 "</div>";
 
-                   
-
-                        // echo "<div class='col-6'>" . "<h5>" . $naujiena['titel'] ."</h5>" . substr($string,0,200) . "..." . "<img width='100%' src='img/$naujiena[foto]' alt=''>" . "<hr>". "</div>" ;
-
-                        // echo  "<h5>" . $naujiena['titel'] ."</h5>";
-                        // echo substr($string,0,400) . "...";
-                        // echo "<img width='100%' src='img/$naujiena[foto]' alt=''>";
                         $naujiena = mysqli_fetch_assoc($visosNaujienosOBJ);
-                        // "</div>"
                         }
 
-                        echo "<p class='bg-warning'>". $_SESSION['zinute'] . "</p>";
-
-                        $_SESSION['zinute'] = "";
-
-                                                 
-                        // echo "<div class='bg-warning'>". $_SESSION['zinute'] . "</div>";
-            
-                        // // zinutes istrinimas
-                        // $_SESSION['zinute'] = "";
                     ?> 
                 </div>
             </aside>

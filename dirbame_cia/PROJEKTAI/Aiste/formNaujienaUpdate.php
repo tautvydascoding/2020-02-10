@@ -1,75 +1,53 @@
 <?php
 include ("header.php");
-include ('models/registracijas.php');
+include ('models/naujienos.php');
 ?>
 
-
-
-<nav class="container navbar navbar-expand-lg navbar-dark bg-dark">
-
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav mr-auto">
-      <li class="nav-item active">
-        <a class="nav-link" href="index.php">Pradžia <span class="sr-only">(current)</span></a>
-      </li>
-      <li class="nav-item active">
-        <a class="nav-link" href="index.php">Apie <span class="sr-only">(current)</span></a>
-      </li>
-
-      <li class="nav-item active">
-        <a class="nav-link" href="kontaktai.php">Kontaktai <span class="sr-only">(current)</span></a>
-      </li> 
-    </ul>
-    <form class="form-inline my-2 my-lg-0">
-      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-      <button class="btn btn-outline-success my-2 my-sm-0 mr-sm-2" type="submit">Search</button>
-    </form>
-    <form action="registracija-form.php">
-        <input class="btn btn-success my-2 my-sm-0 mr-sm-2" type="submit" value="Prisijungti" method="get">
-        <input class="btn btn-info my-2 my-sm-0 mr-sm-2" type="submit" value="Registruotis" method="get">
-    </form>
-  </div>
-</nav>
 
 <section class="container  tarpas-apacia mt-2">
     <div class="row hight-col">
 
-        <main class="col-3 spalva tarpas-desine bg-dark mr-2">
-                <div class="row paddingas"> 
-                    <a href="komandos.php">Komandos</a>
-                </div>
-                <div class="row paddingas">
-                    <a href="tvarkarasciai.php">Tvarkarasciai</a>
-                </div>
-                <div class="row paddingas">
-                    <a href="">papildomai</a>
-                </div>
-                <div class="row paddingas">
-                    <a href="">papildomai2</a>
-                </div>
-            </main>
+    <main class="col-3 spalva tarpas-desine bg-dark mr-2">
+            <div class="row paddingas"> 
+                <a href="komandos.php">Komandos</a>
+            </div>
+            <div class="row paddingas">
+                <a href="tvarkarasciai.php">Tvarkarasciai</a>
+            </div>
+            <div class="row paddingas">
+                <a href="">papildomai</a>
+            </div>
 
-            <aside class="col spalva">
-                <div class="row paddingas">
+        </main>
 
-                    <form action="controller/naujienaNew.php" method="get">
-                        
-                        <input type="hidden" name="id" value="id">
+        <aside class="col spalva">
+          <div class="row paddingas">
 
-                        <input type="text" name="titel" placeholder="titel"> <hr>
+            <?php
 
-                        <textarea name="text" id="" cols="100" rows="10" placeholder="text" ></textarea> <hr>
+            $id = $_GET['id'];
+            $naujiena = getNaujiena( $id );
 
-                        <input type="text" name="foto" placeholder="foto"> <hr>
+            ?> 
+              <form action="controller/naujienaUpdate.php" method="get">
 
-                        <button type="submit"> Kurti </button>
-                    </form>
-               </div>
+                <textarea name="titel" id="" cols="100" rows="3" placeholder="titel" >
+                <?php echo $naujiena['titel'] ?> </textarea> <hr>
 
-               <div class="row paddingas">papildomai</div>
+                <textarea name="text" id="" cols="100" rows="10" placeholder="text" >
+                <?php echo $naujiena['text'] ?> </textarea> <hr>
 
-            </aside>
-        </div>
+                <textarea name="foto" id="" cols="100" rows="1" placeholder="foto" >
+                <?php echo $naujiena['foto'] ?> </textarea> <hr>
+
+                <input type="hidden" value=" <?php echo $naujiena['id'] ?>" name="id">
+                <button type="submit"> Saugoti </button>
+              </form>
+
+            </div>
+          <div class="row paddingas"></div>
+        </aside>
+      </div>
     </section>
 
     <footer class="container spalva">
