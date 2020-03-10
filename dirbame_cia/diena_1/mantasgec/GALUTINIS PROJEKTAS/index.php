@@ -36,7 +36,7 @@ session_start();
  <ul>
 <li><a href="contacts.php">kontaktai</a></li>
 <li><a href="controller/Logout.php">Logout</a></li>
-<li><a href="img">Fotoalbumas</a></li>
+<li><a href="photos/img.php">Fotoalbumas</a></li>
 </ul>
 
 
