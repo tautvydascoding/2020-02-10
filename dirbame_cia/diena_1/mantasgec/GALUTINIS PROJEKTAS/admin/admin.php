@@ -1,17 +1,18 @@
 <?php
+session_start();
+include_once("../models/prekes.php");
+if(isset($_SESSION['uname'])){
+}else{
 
-include("../models/prekes.php");
-$visosZvakes = getZvakes();
-
-$zvakes = mysqli_fetch_assoc( $visosZvakes  );
-
-while($zvakes){
-    echo "<h3>". "<br>" . $zvakes['pavadinimas']. "<br>" . $zvakes['kaina']."</h3>"
-    "<br>" .  $zvakes['aprasymas'].;
-        $zvakes =mysqli_fetch_assoc($visosZvakes);
 }
-
-
-
-
  ?>
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <title></title>
+    </head>
+    <body>
+<h1>Welcome to admin panel</h1>
+    </body>
+</html>

@@ -1,9 +1,5 @@
 <?php
-define("DB_HOST", 'localhost');
-define("DB_MYSQL_USER", 'root');
-define("DB_MYSQL_PASSWORD", 'root');
-define("DB_NAME", 'zvakes');
-$prisijungimas = mysqli_connect(DB_HOST, DB_MYSQL_USER, DB_MYSQL_PASSWORD, DB_NAME,3307);
+include_once("../models/prekes.php");
 
 if(isset($_POST['submit'])){
     $title = $_POST['title'];
@@ -19,7 +15,8 @@ if(isset($_POST['submit'])){
         }
 }
 
- ?>
+
+  ?>
 
 
 <div class="content">
