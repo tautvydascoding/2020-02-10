@@ -1,5 +1,8 @@
 <?php include("header.php");
 session_start();
+    if(isset($_SESSION['username'])){
+
+    }
 ?>
 
     <body>
@@ -32,13 +35,14 @@ session_start();
     </form>
 </div>
 
- <?php echo $_SESSION['username'] ;?>
+
  <ul>
 <li><a href="contacts.php">kontaktai</a></li>
-<li><a href="controller/Logout.php">Logout</a></li>
 <li><a href="photos/img.php">Fotoalbumas</a></li>
+<li><a href="controller/Logout.php">Logout</a></li>
 </ul>
 
+<h3>Welcome <?php echo $_SESSION['username'];?></h3>
 
 </div>
 </div>
