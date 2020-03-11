@@ -67,12 +67,14 @@ date_default_timezone_set('Etc/UTC');
 
         // Content
         $mail->isHTML(true);                                  // Set email format to HTML
-        $mail->Subject = 'Here is the subject';
-        $mail->Body    = 'This is the HTML message body <b>in bold!</b>';
+        $mail->Subject = $klientoVardas;
+        $mail->Body    = $klientoKlausimas;
         $mail->AltBody = 'This is the body in plain text for non-HTML mail clients';
 
         $mail->send();
-        echo 'Message has been sent';
+        // echo 'Message has been sent';
+        header("Location: email-sent.php");
+exit();
     } catch (Exception $e) {
         echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
     }
