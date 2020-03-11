@@ -75,6 +75,7 @@ function pre_r($array){
 <!-------------------------------------- -->
 <div class="row justify-content-center">
 <form  action="process.php" method="post">
+    <input type="hidden" name="id" value="<?php echo $id ?>">
     <div class="form-group">
         <label>pavadinimas</label>
         <input type="text" name="pavadinimas" class="form-control" value="<?php echo $pavadinimas; ?>" placeholder="enter your name">
