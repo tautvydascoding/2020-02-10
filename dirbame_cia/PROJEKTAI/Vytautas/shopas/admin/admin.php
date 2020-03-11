@@ -1,3 +1,4 @@
+<a href="../login/logout.php"> Atsijungti </a><br><br><br>
 <?php
 include('../controllers/sapnu_gaudykles.php');
 $visosSG = getSGS();
