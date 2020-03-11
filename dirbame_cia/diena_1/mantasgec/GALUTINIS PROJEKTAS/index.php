@@ -1,8 +1,8 @@
 <?php include("header.php");
 session_start();
-    if(isset($_SESSION['username'])){
-
-    }
+if(isset($_SESSION['username'])){
+    header("");
+}
 ?>
 
     <body>
@@ -34,7 +34,6 @@ session_start();
       <button type="submit" class="btn btn-primary">Register</button>
     </form>
 </div>
-
 
  <ul>
 <li><a href="contacts.php">kontaktai</a></li>
