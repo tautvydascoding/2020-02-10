@@ -30,13 +30,13 @@ function createSG($dydis, $spalva, $kaina, $aprasymas){
 // createDoctor('Tadas', 'Tadauskas', 'B1');
 
 
-function editSG($nr, $dydis, $spalva, $kaina, $aprasymas){
+function editSG($dydis, $spalva, $kaina, $aprasymas){
     $manoSQL = "UPDATE sapnu_gaudykles SET
                                 dydis = '$dydis',
                                 spalva = '$spalva',
                                 kaina = '$kaina',
                                 aprasymas = '$aprasymas'
-                                WHERE id = '6'
+                                WHERE id = ''
                                 LIMIT 1
         ";
     $arPasikeite = mysqli_query(getPrisijungimas(), $manoSQL);

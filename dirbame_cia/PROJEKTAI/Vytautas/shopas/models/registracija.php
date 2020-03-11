@@ -20,12 +20,22 @@
         <div class="container">
             <header class="row">
                 <div class="col-md-12">
-                    <a href='nauja-preke/update-preke/prekes-update-forma.php'> update preke </a>
-
+                    <h1> Isijunk Inspect Element->console </h1>
                 </div>
             </header>
 
+            <?php
 
+            include_once('controllers/sapnu_gaudykles.php');
+            $dydis = $_GET['dydis'];
+            $spalva = $_GET['spalva'];
+            $kaina = $_GET['kaina'];
+            $aprasymas = $_GET['aprasymas'];
+            createSG($dydis, $spalva, $kaina, $aprasymas);
+            //perkeliam vartotoja i kita puslapi
+            header("Location: index.php");
+            exit();
+             ?>
 
             <footer class="row">
                 <div class="col-md-12">
