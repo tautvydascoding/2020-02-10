@@ -70,6 +70,19 @@ CREATE TABLE apiemus (
 INSERT INTO apiemus VALUES (NULL, 'Mes esame imone dirbanti Lietuvos rinkoje jau 20 metu.');
 INSERT INTO apiemus VALUES (NULL, 'Musu meistru komanda turi ilgamete darbo patirti.');
 
+
+INSERT INTO nuotraukos VALUES (NULL, '1', 'kede', 'pav3.jpg');
+INSERT INTO nuotraukos VALUES (NULL, '2', 'fotelis', 'pav1.jpg');
+INSERT INTO nuotraukos VALUES (NULL, '3', 'stalas', 'pav5.jpg');
+INSERT INTO nuotraukos VALUES (NULL, '4', 'komoda', 'pav7.jpg');
+INSERT INTO nuotraukos VALUES (NULL, '4', 'fotelis', 'pav6.jpg');
+INSERT INTO nuotraukos VALUES (NULL, '2', 'fotelis', 'pav5.jpg');
+INSERT INTO nuotraukos VALUES (NULL, '3', 'fotelis', 'pav4.jpg');
+INSERT INTO nuotraukos VALUES (NULL, '2', 'fotelis', 'pav7.jpg');
+INSERT INTO nuotraukos VALUES (NULL, '1', 'fotelis', 'pav2.jpg');
+INSERT INTO nuotraukos VALUES (NULL, '1', 'fotelis', 'pav3.jpg');
+INSERT INTO nuotraukos VALUES (NULL, '1', 'fotelis', 'pav4.jpg');
+
 --
 -- -- update - papildyti lenteles
 --

@@ -9,7 +9,7 @@
     <input type="text" name="pavarde" value="">
     <br />
     <label for="">Jusu emailas:</label>
-    <input type="email" name="email" value="" required>
+    <input type="email" name="emailas" value="" required>
     <br />
     <label for="">Suveskite slaptazodi</label>
     <input type="password" name="passw1" value="" placeholder="Slaptazodis">

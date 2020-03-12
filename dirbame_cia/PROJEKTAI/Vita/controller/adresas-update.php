@@ -1,7 +1,5 @@
 
 <?php
-session_start();
-include('../models/loginas.php');
 include('../models/funkc-gaminiai.php');
 
 print_r($_GET);
@@ -17,12 +15,11 @@ $foto = $_POST['foto'];
 
 updateGaminys ($id, $preke, $aprasas, $dydis, $kaina, $meistro, $foto);
 
-$_SESSION['zinute'] =  "Pavyko pakoreguoti gamini";
-// echo "pavyko pakoreguoti gamini";
+echo "pavyko pakoreguoti gamini";
 
 //redirect - perkelimas
-header("Location: ../Pradzia.php");
-exit();
+// header("Location: ../Pradzia.php");
+// exit();
 
 // echo "Pavyko sukurti";
 

@@ -1,19 +1,47 @@
+
 <?php
-// session_start();
+include('../models/loginas.php');
 include('../models/funkc-vartotojo.php');
+
+session_start();
+$em = "admin@admin.lt";
+$pwd = "admin";
+
 
 print_r($_POST);
 
-// ( [vardas] => Saule [pavarde] => Saulute [email] => kitas@kitas.kt [passw1] => asdf [passw2] => asdf [button] => )
-// $vardas = $_POST['vardas'];
-// $pavarde = $_POST['pavarde'];
-$koks = $_POST['email'];
+$koks = $_POST['emailas'];
 $pass = $_POST['passw1'];
-// $slaptaz2 = $_POST['passw2'];
+
+// ==================
+
+    if ($_POST['emailas'] == $em && $_POST['passw1'] == $pwd) {
+        $_SESSION['em'] = $em;
+        echo "<h2>Welcome".$_SESSION['em']."</h2>";
+        echo "<script>location.href='../adminFiles.php'</script>";
+    } else {
+        echo "<script>alert('emailas or passw neteisingas!')</script>";
+        echo "<script>location.href'vartotojas-prisijung-form.php'</script>";
+    }
 
 
-// =====
-// pavyko prisijungti prie DB Array ( [email] => mano.litas@litas.ktu [passw1] => karti [button] => )
+
+// ========================
+// if (isset($_SESSION['em'])) {
+//     echo "<h2>Welcome".$_SESSION['em']."</h2>";
+//     echo "<a href='../adminFiles.php'>adminpsl</a>";
+//     echo "<a href='logout.php'><input type='button' name='logout' value='logout'></a>";
+// }
+// else {
+//     if ($_POST['emailas'] == $em && $_POST['passw1'] == $pwd) {
+//         $_SESSION['em'] = $em;
+//         echo "<script>location.href='adminFiles.php'</script>";
+//     } else {
+//         echo "<script>alert('emailas or passw neteisingas!')</script>";
+//         echo "<script>location.href'vartotojas-prisijung-form.php'</script>";
+//     }
+// }
+
 // =====
 // select elpastas From vartotojai;
 
