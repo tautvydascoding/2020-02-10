@@ -46,8 +46,11 @@ if(isset($_SESSION['username'])){
 </div>
 </div>
 <!-------------------------------------------------- -->
-<?php
-include("models/prekes.php");
+
+    <?php
+    include("models/prekes.php");
+?>  <main class="row h-auto ">
+    <?php
 $visosZvakes = getZvakes();
 $zvakes = mysqli_fetch_assoc( $visosZvakes  );
 while($zvakes) {
@@ -58,11 +61,13 @@ while($zvakes) {
     echo "<h4>". $zvakes['kaina']." Eur"."</h4>";
     echo "</article>";
     $zvakes = mysqli_fetch_assoc($visosZvakes);
-echo "</div>";
+
+
 
 }
 
  ?>
+</main>
 <!----------------------------------------- -->
 
 

@@ -33,7 +33,7 @@ include('Navigacija.php');
                         echo "</article>";
                         $gaminys = mysqli_fetch_assoc($visiGaminiaiOBJ);
                     }
-                    echo "</div>";
+                     echo "<div class='row'>";
 
 
                      ?>
