@@ -37,11 +37,12 @@ $nuotrauku_aprasymai = mysqli_fetch_assoc($visinuotrauku_aprasymai);
 // print_r($nuotrauku_aprasymai);
 // //------------------
 while($nuotrauku_aprasymai) {
-    echo "<h2>". $nuotrauku_aprasymai['Sukurimo_Data'] . "<br />" . $nuotrauku_aprasymai['Pavadinimas'] ."<br />".  $nuotrauku_aprasymai['Aprasymas']."</h2>";
+    echo "<h4>". $nuotrauku_aprasymai['Sukurimo_Data'] . "<br />" . $nuotrauku_aprasymai['Pavadinimas'] ."<br />".  $nuotrauku_aprasymai['Aprasymas']."</h4>";
     $nuotrauku_aprasymai = mysqli_fetch_assoc($visinuotrauku_aprasymai);
 }
 
 // -------------PASAKOS--------------
+
 
 include 'Models/pasakos.php';
 
@@ -53,13 +54,24 @@ $pasakos = mysqli_fetch_assoc($visipasakos);
 // print_r($pasakos);
 //------------------
 while($pasakos) {
-    echo "<h2>". $pasakos['Sukurimo_Data'] . $pasakos['Pavadinimas'] . $pasakos['Pasaka'] ."</h2>";
+    echo "<h4>". $pasakos['Sukurimo_Data'] . "<br />" . $pasakos['Pavadinimas'] ."<br />". $pasakos['Pasaka'] ."</h4>";
     $pasakos = mysqli_fetch_assoc($visipasakos);
 }
 
+include 'Models/seo.php';
 
+// -------------SEO--------------
 
-
+$visiseo =  getseo();
+// is Mysqli Obj. paima viena eilute ir pavercia i array/masyva:
+$seo = mysqli_fetch_assoc($visiseo);
+// test
+// print_r($pasakos);
+//------------------
+while($seo) {
+    echo "<h4>". $seo['Sukurimo_Data'] . "<br />" . $seo['Pavadinimas'] ."<br />". $seo['Straipsnis'] ."</h4>";
+    $seo = mysqli_fetch_assoc($visiseo);
+}
 
 
 ?>
