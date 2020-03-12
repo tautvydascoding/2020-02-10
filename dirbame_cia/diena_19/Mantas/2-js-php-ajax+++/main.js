@@ -1,19 +1,14 @@
 console.log("ar veikia?");
 
-
-
-
-
-
 $('#btn-isvedimas').on('click', function(){
     console.log("veikia mygtukas");
     // $('body').css('background-color', 'black');
     // $('body').css('color', 'white');
 
     $.ajax({
-      url: "controller/getDoctor-ajax.php",
-      type: "POST",
-      data: { sk: "4" },
+      url: "controller/delete-php-ajax.php",
+      type: "GET",
+      data: { sk: "8" },
       success: function(grizo){
             console.log("ajax success, php faile nera sintakses klaidu");
             console.log(grizo);

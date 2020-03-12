@@ -1,0 +1,40 @@
+h1 {
+    color: red;
+}
+.aukstis-100 {
+    height: 100px;
+}
+.aukstis-200 {
+    height: 200px;
+}
+.aukstis-300 {
+    height: 300px;
+}
+.aukstis-500 {
+    height: 500px;
+}
+.dezute {
+    width: 23%;
+    display: inline-block;
+    border: solid 1px black;
+    background-color: pink;
+}
+
+/* // for tablet nuo 0 iki 768px */
+
+@media (max-width: 768px) {
+    .dezute {
+        width: 80%;
+}
+        .paslepti-tablet {
+            display: none;
+}
+}
+@media (max-width: 425px) {
+    .paslepti-on-phone{
+        display: none;
+}
+        .paslepti-tablet {
+            display: inline-block;
+        }
+]
