@@ -29,15 +29,28 @@
             <a class="nav-link" href="kontaktai.php">KONTAKTAI<span class="sr-only">(current)</span></a>
           </li>
           <li class="nav-item active">
-            <a class="nav-link" href="#">PRISIJUNGTI<span class="sr-only">(current)</span></a>
+            <a class="nav-link" href="registration/login.php">PRISIJUNGTI<span class="sr-only">(current)</span></a>
           </li>
           <li class="nav-item active">
-            <a class="nav-link" href="#">ADMIN<span class="sr-only">(current)</span></a>
+            <a class="nav-link" href="registration/register.php">REGISTRUOTIS<span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link" href="pardavejai_crud/crud.php">ADMIN<span class="sr-only">(current)</span></a>
           </li>
 
         </ul>
         <form class="form-inline my-2 my-lg-0">
-          <input class="form-control mr-sm-2" type="search" placeholder="Įveskite žodį" aria-label="Search">
+          <input class="form-control mr-sm-2" type="text" name="srch" id="srch" list="prekiuSarasas" placeholder="Įveskite prekę" aria-label="Search">
+          <datalist id="prekiuSarasas">
+  <option value="Skalbykle LG">
+  <option value="Kompiuteris Apple">
+  <option value="Kompiuteris Lenovo">
+  <option value="Kompiuteris Asus">
+  <option value="Televizorius Sony">
+  <option value="Televizorius Samsung">
+  <option value="Televizorius Philips">
+  <option value="Skalbyklė Bosh">   
+</datalist>
           <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Ieškoti</button>
         </form>
       </div>
