@@ -12,5 +12,5 @@
         <!-- "/" ne i ta puse -->
         <!-- neuzdarete ">" -->
         <link rel="stylesheet" href="css/master.css">
-        <!-- !!!! VISSA MANO CSS failas pats zemiausias -->
+    
 </head>
