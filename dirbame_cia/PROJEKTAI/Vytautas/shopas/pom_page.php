@@ -20,22 +20,30 @@
         <div class="container">
             <header class="row">
                 <div class="col-md-12">
-                    <h1> Isijunk Inspect Element->console </h1>
+                    <?php include('nav.php') ?>
+                    <h1> POM POM gaminiai </h1>
                 </div>
             </header>
+        <div class="container ">
+            <section class="row">
 
-            <?php
+                <?php
+                include ('controllers/pom.php');
+                $visosSG = getSGS();
+                // is Mysqli objekto paima viena eilute ir pavercia i array:
+                $SG = mysqli_fetch_assoc($visosSG);
+                //-------------
+                while($SG ){?>
+                    <section class="col-md-3">
+                    <?php echo "<h3>". "<br>". $SG['dydis']."<br>".
+                    $SG['kaina']."<br>". $SG['aprasymas']."</h3>"; ?>
+                    </section>
+                    <?php $SG = mysqli_fetch_assoc($visosSG); 
+                }?>
+            </section>
+        </div>
 
-            include_once('controllers/sapnu_gaudykles.php');
-            $dydis = $_GET['dydis'];
-            $spalva = $_GET['spalva'];
-            $kaina = $_GET['kaina'];
-            $aprasymas = $_GET['aprasymas'];
-            createSG($dydis, $spalva, $kaina, $aprasymas);
-            //perkeliam vartotoja i kita puslapi
-            header("Location: index.php");
-            exit();
-             ?>
+
 
             <footer class="row">
                 <div class="col-md-12">

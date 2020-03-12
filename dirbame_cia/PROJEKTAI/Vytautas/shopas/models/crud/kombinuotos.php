@@ -16,12 +16,13 @@
     </head>
 
     <body>
-        <h2>Sapnu gaudykles</h2><br />
-        <?php require_once 'process.php'; ?>
+        <h2>Kombinuotos sapnu gaudykles</h2><br />
+        <?php include_once 'navSG.php' ?>
+        <?php require_once 'process1.php'; ?>
 
         <?php
         if (isset ($_SESSION['message'])): ?>
-        <div class="alert alert-<?=$_SESSION['msg_type']?>">
+        <div class="container alert alert-<?=$_SESSION['msg_type']?>">
             <?php echo $_SESSION['message'];
             unset($_SESSION['message']);
              ?>
@@ -31,7 +32,7 @@
     <div class="container">
         <?php
         $mysqli = new mysqli('localhost', 'root', 'root', 'sapnu_gaudykles') or die(mysqli_error($mysqli));
-        $result = $mysqli->query("SELECT * FROM gaudykles") or die($mysqli->error);
+        $result = $mysqli->query("SELECT * FROM kombinuotos_sg") or die($mysqli->error);
         // pre_r($result);
         // pre_r($result->fetch_assoc());?>
 
@@ -40,23 +41,21 @@
                 <thead>
                     <tr>
                         <th>Dydis</th>
-                        <th>Spalva</th>
                         <th>Kaina</th>
                         <th>Aprasymas</th>
-                        <th colspan="4">Pakeitimai</th>
+                        <th colspan="3">Pakeitimai</th>
                     </tr>
                 </thead>
                 <?php
                 while ($row = $result->fetch_assoc()): ?>
                 <tr>
                     <td><?php  echo $row['dydis']; ?></td>
-                    <td><?php  echo $row['spalva']; ?></td>
                     <td><?php  echo $row['kaina']; ?></td>
                     <td><?php  echo $row['aprasymas']; ?></td>
                     <td>
-                        <a href="index.php?Keisti=<?php echo $row['id']; ?>"
+                        <a href="kombinuotos.php?Keisti=<?php echo $row['id']; ?>"
                         class="btn btn-info"> Keisti </a>
-                        <a href="process.php?Istrinti=<?php echo $row['id']; ?>"
+                        <a href="process1.php?Istrinti=<?php echo $row['id']; ?>"
                         class="btn btn-danger"> Istrinti </a>
                     </td>
                 </tr>
@@ -73,15 +72,11 @@
 
 
         <div class="row justify-content-center">
-            <form class="" action="process.php" method="post">
+            <form class="" action="process1.php" method="post">
                 <input type="hidden" name="id" value="<?php echo $id; ?>">
                 <div class="form-group">
                     <label> Dydis </label>
                     <input type="text" name="dydis" class="form-control" value="<?php echo $dydis; ?>" placeholder="Iveskite dydi">
-                </div>
-                <div class="form-group">
-                    <label> Spalva </label>
-                    <input type="text" name="spalva" class="form-control" value="<?php echo $spalva; ?>" placeholder="Iveskite spalva">
                 </div>
                 <div class="form-group">
                     <label> Kaina </label>
@@ -103,8 +98,8 @@
     </div>
         <!-- Scriptai FAILO dugne -->
         <!-- <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script> -->
-        <script type="text/javascript" src="libs/jQuery/jquery-3.3.1.min.js" ></script>
-        <script type="text/javascript" src="libs/bootstrap/js/bootstrap.bundle.min.js">    </script>
+        <script type="text/javascript" src="../../libs/jQuery/jquery-3.3.1.min.js" ></script>
+        <script type="text/javascript" src="../../libs/bootstrap/js/bootstrap.bundle.min.js">    </script>
         <!--  mano js pats zemiausias!!!-->
         <script type="text/javascript" src="master.js"></script>
 

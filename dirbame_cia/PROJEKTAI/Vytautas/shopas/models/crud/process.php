@@ -22,7 +22,7 @@ if (isset($_POST['issaugoti'])) {
 
     $_SESSION['message'] = "Preke issaugota";
     $_SESSION['msg_type'] = "success";
-    header("location: index.php");
+    header("location: gaudykles.php");
 }
 
 if (isset($_GET['Istrinti'])) {
@@ -31,7 +31,7 @@ if (isset($_GET['Istrinti'])) {
 
     $_SESSION['message'] = "Preke istrinta";
     $_SESSION['msg_type'] = "danger";
-    header("location: index.php");
+    header("location: gaudykles.php");
 }
 
 if (isset($_GET['Keisti'])) {
@@ -59,7 +59,7 @@ if (isset($_POST['pakeisti'])) {
     $_SESSION['message'] = "Preke pakoreguota";
     $_SESSION['msg-type'] = "warning";
 
-    header('location: index.php');
+    header('location: gaudykles.php');
 }
 
  ?>

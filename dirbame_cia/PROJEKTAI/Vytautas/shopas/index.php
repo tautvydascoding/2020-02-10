@@ -1,35 +1,10 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="utf-8">
-        <title></title>
-        <!-- reikalinga kad prisitaikantis dizainas veiktu tvarkingai -->
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-
-        <link rel="stylesheet" href="libs/bootstrap/css/bootstrap.min.css">
-        <!-- galimos klaidos -->
-        <!-- blogas kelias iki failo -->
-        <!-- "/" ne i ta puse -->
-        <!-- neuzdarete ">" -->
-        <link rel="stylesheet" href="css/master.css">
-        <!-- !!!! VISSA MANO CSS failas pats zemiausias -->
-    </head>
-
-    <body>
+<?php include('index-header.php') ?>
 
     <div class="container ">
         <header class="row">
-            <nav class=" col-md-12 navbar navbar-expand-lg navbar-light bg-light">
-                 <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-                    <div class="navbar-nav">
-                      <a class="nav-item nav-link active" href="#">Pradzia <span class="sr-only">(current)</span></a>
-                      <a class="nav-item nav-link" href="SG-page.php">Sapnu gaudykles</a>
-                      <a class="nav-item nav-link" href="#">Kombinuotos sapnu gaudykles</a>
-                      <a class="nav-item nav-link disabled" href="#">POM POM gaminiai</a>
-                    </div>
-                </div>
-            </nav>
-            <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+            <?php include('nav.php') ?>
+            <h1> Sapnu gaudykles </h1>
+            <!-- <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
   <div class="carousel-inner">
     <div class="carousel-item active">
       <img class="d-block w-100" src="img/sapnu-gaudykles/50.jpg" alt="First slide">
@@ -49,20 +24,30 @@
     <span class="carousel-control-next-icon" aria-hidden="true"></span>
     <span class="sr-only">Next</span>
   </a>
-</div>
+</div> -->
         </header>
             <section class="row">
 
                 <?php
                 include ('controllers/sapnu_gaudykles.php');
+
+                // $id = $_GET['nr'];
+                // $visosFotoOBJ =  getFotos();
+                // $foto = mysqli_fetch_assoc($visosFotoOBJ);
+                // print_r($foto);
+
                 $visosSG = getSGS();
                 // is Mysqli objekto paima viena eilute ir pavercia i array:
                 $SG = mysqli_fetch_assoc($visosSG);
                 //-------------
-                while($SG ){
-                    include ('preke-template.php');
-                    $SG = mysqli_fetch_assoc($visosSG);
-                }?>
+                while($SG ){?>
+                    <section class="col-md-3">
+                    <?php echo "<h3>". "<br>". $SG['dydis']. "<br>". $SG['spalva'] ."<br>".
+                    $SG['kaina']."<br>". $SG['aprasymas']."</h3>"; ?>
+                    </section>
+                    <?php $SG = mysqli_fetch_assoc($visosSG);
+                }
+                ?>
             </section>
 
         <footer class="row">
