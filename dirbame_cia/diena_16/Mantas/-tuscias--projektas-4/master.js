@@ -1,4 +1,14 @@
 console.log(" as veikiu");
+
+1.5 faile index.php
+// susikurti mygtuka "Naujas gydytojas" su "a" linku.
+// "a" linkas turi rodyti i :   naujasGydytojas.php?vard=TOMAS&parv=TOMAUSKIS
+// pvz:
+<a href='naujasGydytojas.php?vardas=TOMAS&pavarde=TOMAUSKIS'> Kurti Nauja</a>
+
+
+
+
 <!--
  HEAD:uzduotys/diena_16/UZDUOTYS/uzduotys-3.0-php-doctor-register.php
 // // createDoctor() paleidimas per narsykle

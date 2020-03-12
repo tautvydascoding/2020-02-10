@@ -4,18 +4,14 @@
 define('DB_HOST', 'localhost'); //define konstanta - nekintantis kintamasis
 define('DB_MYSQL_USER', 'root');
 define('DB_MYSQL_PASSWORD', 'root');  // Jei naudoji XAMP, WAMP 'root'-> ''
-define('DB_NAME', 'zvakes');
+define('DB_NAME', 'hospital2');
 
-$prisijungimas = mysqli_connect( DB_HOST, DB_MYSQL_USER, DB_MYSQL_PASSWORD, DB_NAME,3307);
+$prisijungimas = mysqli_connect( DB_HOST, DB_MYSQL_USER, DB_MYSQL_PASSWORD, DB_NAME);
 // jeigu MAMP'e pakeitet MYSQL porta is 3306 i kitoki, privalot ji nurodyti
 //$prisijungimas = mysqli_connect( $DB_HOST, $DB_MYSQL_USER, $DB_MYSQL_PASSWORD, $DB_NAME, 3307);
 
 if ($prisijungimas) {
-<<<<<<< HEAD
-    //echo "pavyko prisijungti prie DB <br>";
-=======
-     echo "pavyko prisijungti prie DB <br>";
->>>>>>> 91f420c023371cb09fc861f5319ce3d07f0f26a5
+    // echo "pavyko prisijungti prie DB <br>";
 } else {
     echo "ERROR: nepavyko prisijungti prie DB:" . mysqli_connect_error($prisijungimas);
 }
@@ -25,8 +21,8 @@ function getPrisijungimas() {
     return $prisijungimas;
 }
 
-function deleteZvake($nr) {
-    $manoSQL = "DELETE FROM prekes WHERE id = '$nr'  LIMIT 1";
+function deleteDoctor($nr) {
+    $manoSQL = "DELETE FROM doctors WHERE id = '$nr'  LIMIT 1";
     $arPavyko = mysqli_query( getPrisijungimas(),  $manoSQL  );
     if ( $arPavyko == false) {   // !$arPavyko
         echo "ERROR nepavyko atleisti gydytojo nr: $nr <br>";
@@ -39,15 +35,15 @@ function deleteZvake($nr) {
     $pavarde - gyd. pavarde
     $zona - gyd. zona kurios pacientus aptarnauja
 */
-function createZvake( $pavadinimas, $kaina) {
-    $manoSQL = "INSERT INTO  prekes VALUES( NULL, '$pavadinimas', '$kaina' )";
+function createDoctor($vardas, $pavarde, $zona) {
+    $manoSQL = "INSERT INTO  doctors VALUES( NULL, '$vardas', '$pavarde', '$zona' )";
     $arPavyko = mysqli_query( getPrisijungimas(),  $manoSQL  );
     if ( $arPavyko == false) {   // !$arPavyko
-        echo "ERROR nepavyko sukurti gydytojo vardas:  $pavadinimas, $kaina <br>";
+        echo "ERROR nepavyko sukurti gydytojo vardas: $vardas, $pavarde, $zona <br>";
     }
 }
 // test
- //createZvake('marmeladas', 15);
+// createDoctor('Jurgis', 'Jurgaitis', 'A3');
 // createDoctor('Tadas', 'Tadauskas',  'B2');
 
 
@@ -58,8 +54,8 @@ function createZvake( $pavadinimas, $kaina) {
     $pavarde - gyd. pavarde
     $zona - gyd. zona kurios pacientus aptarnauja
 */
-function editZvake($nr, $vardas, $pavarde, $zona) {
-    $manoSQL = "UPDATE  prekes SET
+function editDoctor($nr, $vardas, $pavarde, $zona) {
+    $manoSQL = "UPDATE  doctors SET
                                     name= '$vardas',
                                     lname = '$pavarde',
                                     area = '$zona'
@@ -79,8 +75,8 @@ function editZvake($nr, $vardas, $pavarde, $zona) {
    $nr - gydytojo id is DB
    return - (type: ARRAY)
 */
-function getZvake( $nr ) {
-    $manoSQL = "SELECT * FROM prekes  WHERE id = '$nr';  ";
+function getDoctor( $nr ) {
+    $manoSQL = "SELECT * FROM doctors  WHERE id = '$nr';  ";
     // $rezultataiOBJ -  Mysql Objektas
     $rezultataiOBJ = mysqli_query(getPrisijungimas(), $manoSQL);
     // ar radom gydytoja
@@ -99,8 +95,8 @@ function getZvake( $nr ) {
 //test
 // $gyd1 = getDoctor(1);
 // print_r( $gyd1 );
-function getZvakes() {
-    $manoSQL = "SELECT * FROM prekes    ";
+function getDoctors() {
+    $manoSQL = "SELECT * FROM doctors    ";
     // $rezultataiOBJ -  Mysql Objektas
     $rezultataiOBJ = mysqli_query(getPrisijungimas(), $manoSQL);
     return $rezultataiOBJ;
