@@ -11,7 +11,11 @@ $prisijungimas = mysqli_connect( DB_HOST, DB_MYSQL_USER, DB_MYSQL_PASSWORD, DB_N
 //$prisijungimas = mysqli_connect( $DB_HOST, $DB_MYSQL_USER, $DB_MYSQL_PASSWORD, $DB_NAME, 3307);
 
 if ($prisijungimas) {
-    echo "pavyko prisijungti prie DB <br>";
+<<<<<<< HEAD
+    //echo "pavyko prisijungti prie DB <br>";
+=======
+     echo "pavyko prisijungti prie DB <br>";
+>>>>>>> 91f420c023371cb09fc861f5319ce3d07f0f26a5
 } else {
     echo "ERROR: nepavyko prisijungti prie DB:" . mysqli_connect_error($prisijungimas);
 }

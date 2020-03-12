@@ -1,8 +1,8 @@
 <?php include("header.php");
 session_start();
-    if(isset($_SESSION['username'])){
-
-    }
+if(isset($_SESSION['username'])){
+    header("");
+}
 ?>
 
     <body>
@@ -35,7 +35,6 @@ session_start();
     </form>
 </div>
 
-
  <ul>
 <li><a href="contacts.php">kontaktai</a></li>
 <li><a href="photos/img.php">Fotoalbumas</a></li>
@@ -60,7 +59,6 @@ while ($zvakes) {
 
  ?>
 <!----------------------------------------- -->
-
 
 
 
