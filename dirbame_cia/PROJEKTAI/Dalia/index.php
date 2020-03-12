@@ -10,7 +10,7 @@ $preke = mysqli_fetch_assoc($visosPrekesOBJ);
 <section class="container bg-light">
 
     <br>
-    <h1 class='text-center text-success'>E-PARDUOTUVĖ</h1>
+    <h1 class='text-center text-success'>TOPO CENTRAS</h1>
     <br>
 
 

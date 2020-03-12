@@ -15,6 +15,7 @@
     <body>
 
     <div class="container  bg-light">
+        <?php include('nav.php') ?>
          <h1>Kontaktai</h1>
 
          <!-- uzduotis email.php faile patestuoti ar gaunat ivestu duomenis -->

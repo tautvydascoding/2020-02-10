@@ -7,11 +7,12 @@ CREATE DATABASE hospital2;
 gydytojo lenteles kurimas
 -- auto_increment
 
-CREATE TABLE Nuotrauku_aprasymai (
+CREATE TABLE SEO (
     id int AUTO_INCREMENT PRIMARY KEY NOT NULL,
     Sukurimo_Data date NOT NULL,
     Pavadinimas varchar (60) NOT NULL,
-    Aprasymas varchar (15) NOT NULL,
+    Straipsnis varchar (15) NOT NULL,
+    Straipsnio_tipas varchar (15) NOT NULL,
     Reitingas int
 );
 

@@ -24,8 +24,29 @@
                 </div>
             </header>
 
+<form class="" action="index.html" method="post">
+    <button type="Mygtukas" name="Mygtukas"></button>
+</form>
+<a href='naujasGydytojas.php?vardas=TOMAS&pavarde=TOMAUSKIS'> Kurti Nauja</a>
 
+<?php
 
+   include_once('models/doctors.php');
+   // test
+   $visiGydytojai = getDoctors(); // MYSQL objektas
+   // // print_r( $visiGydytojai ) ;
+
+   //visu gydytoju isvedimas
+   $gyd = mysqli_fetch_assoc($visiGydytojai); // is visu paimame viena
+   while ($gyd) {  // false, 0, NULL, ''
+       echo $gyd['name'] . " " . $gyd['lname'] ;
+       ?>
+       <a class="btn bg-danger" href='trintiGydytoja.php?nr=<?php echo $gyd['id']?>'> Istrinti 5 gyd</a> <br>
+       <?php
+       // is visu paimame sekanti gydytoja
+       $gyd = mysqli_fetch_assoc($visiGydytojai);
+   }
+ ?>
             <footer class="row">
                 <div class="col-md-12">
                     2020 footer
