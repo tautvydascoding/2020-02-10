@@ -11,11 +11,11 @@ $prisijungimas = mysqli_connect( DB_HOST, DB_MYSQL_USER, DB_MYSQL_PASSWORD, DB_N
 //$prisijungimas = mysqli_connect( $DB_HOST, $DB_MYSQL_USER, $DB_MYSQL_PASSWORD, $DB_NAME, 3307);
 
 if ($prisijungimas) {
-<<<<<<< HEAD
+
     //echo "pavyko prisijungti prie DB <br>";
-=======
+
      echo "pavyko prisijungti prie DB <br>";
->>>>>>> 91f420c023371cb09fc861f5319ce3d07f0f26a5
+
 } else {
     echo "ERROR: nepavyko prisijungti prie DB:" . mysqli_connect_error($prisijungimas);
 }
@@ -25,7 +25,7 @@ function getPrisijungimas() {
     return $prisijungimas;
 }
 
-function deleteZvake($nr) {
+function deleteZvake($id) {
     $manoSQL = "DELETE FROM prekes WHERE id = '$nr'  LIMIT 1";
     $arPavyko = mysqli_query( getPrisijungimas(),  $manoSQL  );
     if ( $arPavyko == false) {   // !$arPavyko
@@ -39,11 +39,11 @@ function deleteZvake($nr) {
     $pavarde - gyd. pavarde
     $zona - gyd. zona kurios pacientus aptarnauja
 */
-function createZvake( $pavadinimas, $kaina) {
-    $manoSQL = "INSERT INTO  prekes VALUES( NULL, '$pavadinimas', '$kaina' )";
+function createZvake( $preke, $kaina) {
+    $manoSQL = "INSERT INTO  prekes VALUES( NULL, '$preke', '$kaina' )";
     $arPavyko = mysqli_query( getPrisijungimas(),  $manoSQL  );
     if ( $arPavyko == false) {   // !$arPavyko
-        echo "ERROR nepavyko sukurti gydytojo vardas:  $pavadinimas, $kaina <br>";
+        echo "ERROR nepavyko sukurti gydytojo vardas:  $preke, $kaina <br>";
     }
 }
 // test
@@ -58,17 +58,18 @@ function createZvake( $pavadinimas, $kaina) {
     $pavarde - gyd. pavarde
     $zona - gyd. zona kurios pacientus aptarnauja
 */
-function editZvake($nr, $vardas, $pavarde, $zona) {
+function editZvake($id, $preke, $aprasymas, $kaina, $foto) {
     $manoSQL = "UPDATE  prekes SET
-                                    name= '$vardas',
-                                    lname = '$pavarde',
-                                    area = '$zona'
-                                WHERE id = '$nr'
+                                    preke = '$preke',
+                                    foto = $foto
+                                    aprasymas = '$aprasymas',
+                                    kaina = '$kaina',
+                                WHERE id = '$id'
                                 LIMIT 1
                 ";
     $arPavyko = mysqli_query( getPrisijungimas(),  $manoSQL  );
     if ( $arPavyko == false) {   // !$arPavyko
-        echo "ERROR nepavyko redaguoti gydytojo nr:$nr, $vardas, $pavarde, $zona <br>";
+        echo "ERROR nepavyko redaguoti gydytojo nr:$id <br>";
     }
 }
 // test
@@ -100,7 +101,7 @@ function getZvake( $nr ) {
 // $gyd1 = getDoctor(1);
 // print_r( $gyd1 );
 function getZvakes() {
-    $manoSQL = "SELECT * FROM prekes    ";
+    $manoSQL = "SELECT * FROM prekes1    ";
     // $rezultataiOBJ -  Mysql Objektas
     $rezultataiOBJ = mysqli_query(getPrisijungimas(), $manoSQL);
     return $rezultataiOBJ;

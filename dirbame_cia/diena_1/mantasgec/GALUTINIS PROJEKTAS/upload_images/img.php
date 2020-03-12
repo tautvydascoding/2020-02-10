@@ -19,7 +19,7 @@ if(isset($_POST['upload'])){
   ?>
 
 
-<div class="content">
+<div id="content">
     <?php
 $prisijungimas= mysqli_connect('localhost', 'root','root', 'zvakes',3307);
 $sql = "SELECT * FROM images";
@@ -31,7 +31,7 @@ while ($row = mysqli_fetch_array($result)){
     echo "</div>";
 }
      ?>
-    <form  action="img.php" method="post" enctype="multipart/form-data">
+    <form  action="../upload_images/img.php" method="post" enctype="multipart/form-data">
         <input type="text" name="title" placeholder="title">
         <div >
             <input type="file" name="image">

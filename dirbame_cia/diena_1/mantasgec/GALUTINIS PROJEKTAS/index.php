@@ -37,7 +37,7 @@ if(isset($_SESSION['username'])){
 
  <ul>
 <li><a href="contacts.php">kontaktai</a></li>
-<li><a href="photos/img.php">Fotoalbumas</a></li>
+<li><a href="upload_images\img.php">Fotoalbumas</a></li>
 <li><a href="controller/Logout.php">Logout</a></li>
 </ul>
 
@@ -48,14 +48,20 @@ if(isset($_SESSION['username'])){
 <!-------------------------------------------------- -->
 <?php
 include("models/prekes.php");
-
 $visosZvakes = getZvakes();
-
 $zvakes = mysqli_fetch_assoc( $visosZvakes  );
-while ($zvakes) {
-    include('preke.php');
-    $zvakes =mysqli_fetch_assoc($visosZvakes);
+while($zvakes) {
+    echo "<article class='col-md-3 gallery'>";
+    echo "<h4>". $zvakes['preke']."</h4>";
+    echo "<img src='{$zvakes['foto']}' width='100px' height='100px'>";
+    echo "<p>". $zvakes['aprasymas']."</p>";
+    echo "<h4>". $zvakes['kaina']." Eur"."</h4>";
+    echo "</article>";
+    $zvakes = mysqli_fetch_assoc($visosZvakes);
+    break;
 }
+echo "</div>";
+
 
  ?>
 <!----------------------------------------- -->
