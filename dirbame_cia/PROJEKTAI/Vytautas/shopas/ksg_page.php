@@ -21,27 +21,27 @@
             <header class="row">
                 <div class="col-md-12">
                     <?php include('nav.php') ?>
-                    <h1> Sapnu gaudykles </h1>
+                    <h1> Kombinuotos sapnu gaudykles </h1>
                 </div>
             </header>
         <div class="container ">
 
-            <div class="row ">
-                <div class="col-md-12 ">
-                    <?php
-                    include ('controllers/sapnu_gaudykles.php');
-                    $visosSG = getSGS();
-                    // is Mysqli objekto paima viena eilute ir pavercia i array:
-                    $SG = mysqli_fetch_assoc($visosSG);
-                        //-------------
-                     while($SG ){
-                        include ('preke-template.php');
-                        $SG = mysqli_fetch_assoc($visosSG);
-                    }?>
+            <section class="row">
 
-                </div>
-
-            </div>
+                <?php
+                include ('controllers/kombinuotos_sg.php');
+                $visosSG = getSGS();
+                // is Mysqli objekto paima viena eilute ir pavercia i array:
+                $SG = mysqli_fetch_assoc($visosSG);
+                //-------------
+                while($SG ){?>
+                    <section class="col-md-3">
+                        <?php echo "<h3>". "<br>". $SG['dydis']."<br>".
+                    $SG['kaina']."<br>". $SG['aprasymas']."</h3>";?>
+                    </section>
+                    <?php $SG = mysqli_fetch_assoc($visosSG);
+                }?>
+            </section>
         </div>
 
 

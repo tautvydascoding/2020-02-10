@@ -13,7 +13,7 @@ $rezultatai = mysqli_query($prisijungimas, $select);
 $number = mysqli_num_rows($rezultatai);
 
 if ($number == 1) {
-header('location: ../admin/admin.php');
+header('location: ../gaudykles.php');
 }else {
 header('location: login.php');
 }

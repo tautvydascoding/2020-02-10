@@ -5,10 +5,10 @@
         <nav class=" col-md-12 navbar navbar-expand-lg navbar-light bg-light">
           <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
             <div class="navbar-nav">
-              <a class="nav-item nav-link active" href="#">Pradzia <span class="sr-only">(current)</span></a>
-              <a class="nav-item nav-link" href="SG-page.php">Sapnu gaudykles</a>
-              <a class="nav-item nav-link" href="#">Kombinuotos sapnu gaudykles</a>
-              <a class="nav-item nav-link disabled" href="#">POM POM gaminiai</a>
+              <a class="nav-item nav-link" href="index.php">Sapnu gaudykles</a>
+              <a class="nav-item nav-link" href="ksg_page.php">Kombinuotos sapnu gaudykles</a>
+              <a class="nav-item nav-link disabled" href="pom_page.php">POM POM gaminiai</a>
+              <a class="nav-item nav-link disabled" href="kontaktai.php">Kontaktai</a>
             </div>
           </div>
         </nav>
