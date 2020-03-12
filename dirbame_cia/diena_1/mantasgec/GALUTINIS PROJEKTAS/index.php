@@ -58,10 +58,9 @@ while($zvakes) {
     echo "<h4>". $zvakes['kaina']." Eur"."</h4>";
     echo "</article>";
     $zvakes = mysqli_fetch_assoc($visosZvakes);
-    break;
-}
 echo "</div>";
 
+}
 
  ?>
 <!----------------------------------------- -->

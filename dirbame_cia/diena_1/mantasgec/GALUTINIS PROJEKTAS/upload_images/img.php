@@ -26,11 +26,12 @@ $sql = "SELECT * FROM images";
 $result = mysqli_query($prisijungimas, $sql);
 while ($row = mysqli_fetch_array($result)){
     echo "<div id= 'img_div'>";
-    echo "<img src='images/".$row['image']."' >";
+    echo "<img src='images/".$row['image']."'  >";
     echo "<p>". $row['text']."</p>";
     echo "</div>";
 }
      ?>
+
     <form  action="../upload_images/img.php" method="post" enctype="multipart/form-data">
         <input type="text" name="title" placeholder="title">
         <div >

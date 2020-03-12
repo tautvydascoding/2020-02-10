@@ -36,7 +36,7 @@ unset($_SESSION['message']);
 
 <?php
 $mysqli= new mysqli('localhost', 'root','root', 'zvakes',3307);
-$result = $mysqli->query( "SELECT * FROM prekes");
+$result = $mysqli->query( "SELECT * FROM prekes1");
 //pre_r($result);
  ?>
 
@@ -46,14 +46,18 @@ $result = $mysqli->query( "SELECT * FROM prekes");
             <tr>
                 <th>pavadinimas</th>
                 <th>kaina</th>
+                <th>foto</th>
+                <th>aprasymas</th>
                 <th colspan="2">Action</th>
             </tr>
         </thread>
         <?php
         while ($row = $result->fetch_assoc()):?>
         <tr>
-            <td><?php echo $row['pavadinimas']; ?></td>
+            <td><?php echo $row['preke']; ?></td>
             <td><?php echo $row['kaina']; ?></td>
+            <td><?php echo $row['foto']; ?></td>
+            <td><?php echo $row['aprasymas']; ?></td>
             <td>
                 <a href="admin.php?edit=<?php echo $row['id'];?>"
                     class="btn btn-info">edit</a>
@@ -77,12 +81,20 @@ function pre_r($array){
 <form  action="process.php" method="post">
     <input type="hidden" name="id" value="<?php echo $id ?>">
     <div class="form-group">
-        <label>pavadinimas</label>
-        <input type="text" name="pavadinimas" class="form-control" value="<?php echo $pavadinimas; ?>" placeholder="enter your name">
+        <label>preke</label>
+        <input type="text" name="preke" class="form-control" value="<?php echo $preke; ?>" placeholder="preke">
     </div>
     <div class="form-group">
         <label>kaina</label>
-        <input type="text" name="kaina" class="form-control" value="<?php echo $kaina; ?>" placeholder="pavadinimas">
+        <input type="text" name="kaina" class="form-control" value="<?php echo $kaina; ?>" placeholder="kaina">
+    </div>
+    <div class="form-group">
+        <label>foto</label>
+        <input type="text" name="foto" class="form-control" value="<?php echo $foto; ?>" placeholder="foto">
+    </div>
+    <div class="form-group">
+        <label>aprasymas</label>
+        <input type="text" name="aprasymas" class="form-control" value="<?php echo $aprasymas; ?>" placeholder="aprasymas">
     </div>
     <div class="form-group">
         <?php if($update==true): ?>
