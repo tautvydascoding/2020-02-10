@@ -36,9 +36,9 @@ session_start();
     </li> 
 
   </ul>
-    <form class="form-inline my-2 my-lg-0">
-      <input class="input-group input-group-sm mr-sm-2 " type="search" placeholder="Search" aria-label="Search">
-      <button class="btn btn-outline-success btn-sm my-2 my-sm-0 mr-sm-2" type="submit">Search</button>
+    <form class="form-inline my-2 my-lg-0" action="search.php" method="post">
+      <input class="input-group input-group-sm mr-sm-2 " type="search" placeholder="Ieskoti" aria-label="Search" name="search">
+      <button class="btn btn-outline-success btn-sm my-2 my-sm-0 mr-sm-2" type="submit" name="search-btn">Ieskoti</button>
     </form>
     <form action="prisijungimas-vartorojai-form.php">
       <input class="btn btn-success btn-sm my-2 my-sm-0 mr-sm-2" type="submit" value="Prisijungti" method="post">
@@ -46,9 +46,10 @@ session_start();
     <form action="registracija-vartorojai-form.php">
       <input class="btn btn-info btn-sm my-2 my-sm-0 mr-sm-2" type="submit" value="Registruotis" method="post">
     </form>
-    <form action="">
+    <!-- <form action="">
       <input class="btn btn-dark btn-outline-light btn-sm my-2 my-sm-0 mr-sm-2" type="submit" value="Log out" method="post">
-    </form>
+    </form> -->
+    
 
 </div>
 </nav>
