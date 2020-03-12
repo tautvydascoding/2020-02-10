@@ -30,7 +30,7 @@ body{
 }
 
 .spalva {
-    background-color: rgba(158, 161, 163, 0.623);
+    background-color:rgb(218, 214, 214);
 }
 
 /* .float {
@@ -42,9 +42,27 @@ body{
     clear: both;
 } */
 a {
-    color: rgb(0, 0, 0);
+    color: white;
 }
 a:hover {
-    color: rgba(28, 95, 139, 0.623)ey;
+    color: rgb(0, 155, 155);
+  }
+.border-news {
+    border: solid 1px grey ;
+    
+}
+
+  .md-menu {
+      display: inline-block;
   }
 
+  .komandos{
+      color: black;
+  }
+
+
+  @media ( max-width:767px){
+    .md-menu {
+        display: inline-block;
+    }
+  }

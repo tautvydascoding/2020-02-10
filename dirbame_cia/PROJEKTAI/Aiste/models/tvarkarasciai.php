@@ -1,32 +1,32 @@
 <?php
 
-// prisijungimas prie duomenu bazes
-define('DB_HOST', 'localhost'); //define konstanta - nekintantis kintamasis
-define('DB_MYSQL_USER', 'root');
-define('DB_MYSQL_PASSWORD', 'root');  // Jei naudoji XAMP, WAMP 'root'-> ''
-define('DB_NAME', 'rankinis');
+// // prisijungimas prie duomenu bazes
+// define('DB_HOST', 'localhost'); //define konstanta - nekintantis kintamasis
+// define('DB_MYSQL_USER', 'root');
+// define('DB_MYSQL_PASSWORD', 'root');  // Jei naudoji XAMP, WAMP 'root'-> ''
+// define('DB_NAME', 'rankinis');
 
-$prisijungimas = mysqli_connect( DB_HOST, DB_MYSQL_USER, DB_MYSQL_PASSWORD, DB_NAME, 3307);
-// jeigu MAMP'e pakeitet MYSQL porta is 3306 i kitoki, privalot ji nurodyti
-//$prisijungimas = mysqli_connect( $DB_HOST, $DB_MYSQL_USER, $DB_MYSQL_PASSWORD, $DB_NAME, 3307);
+// $prisijungimas = mysqli_connect( DB_HOST, DB_MYSQL_USER, DB_MYSQL_PASSWORD, DB_NAME, 3307);
+// // jeigu MAMP'e pakeitet MYSQL porta is 3306 i kitoki, privalot ji nurodyti
+// //$prisijungimas = mysqli_connect( $DB_HOST, $DB_MYSQL_USER, $DB_MYSQL_PASSWORD, $DB_NAME, 3307);
 
-if ($prisijungimas) {
-    // echo "pavyko prisijungti prie DB:" . mysqli_connect_error($prisijungimas);
+// if ($prisijungimas) {
+//     // echo "pavyko prisijungti prie DB:" . mysqli_connect_error($prisijungimas);
    
-} else {
-    echo "ERROR: nepavyko prisijungti prie DB:" . mysqli_connect_error($prisijungimas);
-}
-function getPrisijungimas() {
-    // isvardini globalius kint. kuriuos nori naudoti f-jos viduje
-    global $prisijungimas; // !! sioje eilute, globaliu kint. negalima keisti, bet zemiau galima
-    return $prisijungimas;
-}
+// } else {
+//     echo "ERROR: nepavyko prisijungti prie DB:" . mysqli_connect_error($prisijungimas);
+// }
+// function getPrisijungimas() {
+//     // isvardini globalius kint. kuriuos nori naudoti f-jos viduje
+//     global $prisijungimas; // !! sioje eilute, globaliu kint. negalima keisti, bet zemiau galima
+//     return $prisijungimas;
+// }
 
-function deleteTvarkarasciai($nr) {
-    $manoSQL = "DELETE FROM rezultatai WHERE id = '$nr'  LIMIT 1";
+function deleteTvarkarasciai($ID) {
+    $manoSQL = "DELETE FROM rezultatai WHERE ID = '$ID'  LIMIT 1";
     $arPavyko = mysqli_query( getPrisijungimas(),  $manoSQL  );
     if ( $arPavyko == false) {   // !$arPavyko
-        echo "ERROR nepavyko atleisti gydytojo nr: $nr <br>";
+        echo "ERROR nepavyko atleisti gydytojo nr: $ID <br>";
     }
 }
 // deleteDoctor(6); // test
@@ -36,11 +36,11 @@ function deleteTvarkarasciai($nr) {
     $pavarde - gyd. pavarde
     $zona - gyd. zona kurios pacientus aptarnauja
 */
-function createTvarkarasciai($vardas, $pavarde, $zona) {
-    $manoSQL = "INSERT INTO  rezultatai VALUES( NULL, '$vardas', '$pavarde', '$zona' )";
+function createTvarkarasciai($ID, $data, $sale, $komandos, $rezultatas) {
+    $manoSQL = "INSERT INTO  rezultatai VALUES( NULL, '$data', '$sale', '$komandos', '$rezultatas' )";
     $arPavyko = mysqli_query( getPrisijungimas(),  $manoSQL  );
     if ( $arPavyko == false) {   // !$arPavyko
-        echo "ERROR nepavyko sukurti gydytojo vardas: $vardas, $pavarde, $zona <br>";
+        echo "ERROR nepavyko sukurti gydytojo vardas: $data, $sale, $komandos, $rezultatas <br>";
     }
 }
 // test
@@ -55,17 +55,18 @@ function createTvarkarasciai($vardas, $pavarde, $zona) {
     $pavarde - gyd. pavarde
     $zona - gyd. zona kurios pacientus aptarnauja
 */
-function editTvarkarasciai($nr, $vardas, $pavarde, $zona) {
+function editTvarkarasciai($ID, $data, $sale, $komandos, $rezultatas) {
     $manoSQL = "UPDATE  rezultatai SET
-                                    name= '$vardas',
-                                    lname = '$pavarde',
-                                    area = '$zona'
-                                WHERE id = '$nr'
+                                    data= '$data',
+                                    sale = '$sale',
+                                    komandos = '$komandos',
+                                    rezultatas = '$rezultatas'
+                                WHERE ID = '$ID'
                                 LIMIT 1
                 ";
     $arPavyko = mysqli_query( getPrisijungimas(),  $manoSQL  );
     if ( $arPavyko == false) {   // !$arPavyko
-        echo "ERROR nepavyko redaguoti gydytojo nr:$nr, $vardas, $pavarde, $zona <br>";
+        echo "ERROR nepavyko redaguoti gydytojo nr:$ID, $data, $sale, $komandos, $rezultatas <br>";
     }
 }
 // test
@@ -76,8 +77,8 @@ function editTvarkarasciai($nr, $vardas, $pavarde, $zona) {
    $nr - gydytojo id is DB
    return - (type: ARRAY)
 */
-function getTvarkarasciai( $nr ) {
-    $manoSQL = "SELECT * FROM komandos  WHERE id = '$nr';  ";
+function getTvarkarasciai( $ID ) {
+    $manoSQL = "SELECT * FROM komandos  WHERE ID = '$ID';  ";
     // $rezultataiOBJ -  Mysql Objektas
     $rezultataiOBJ = mysqli_query(getPrisijungimas(), $manoSQL);
     // ar radom gydytoja

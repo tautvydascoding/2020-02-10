@@ -1,5 +1,8 @@
 <?php include("header.php");
 session_start();
+if(isset($_SESSION['username'])){
+    header("");
+}
 ?>
 
     <body>
@@ -31,13 +34,18 @@ session_start();
       <button type="submit" class="btn btn-primary">Register</button>
     </form>
 </div>
-<a href="contacts.php">kontaktai</a>
 
-    </div>
+ <ul>
+<li><a href="contacts.php">kontaktai</a></li>
+<li><a href="photos/img.php">Fotoalbumas</a></li>
+<li><a href="controller/Logout.php">Logout</a></li>
+</ul>
+
+<h3>Welcome <?php echo $_SESSION['username'];?></h3>
+
 </div>
 </div>
-<h1>Welcome <?php echo $_SESSION['username']; ?></h1>
-<!---------------------------------------------------------- -->
+<!-------------------------------------------------- -->
 <?php
 include("models/prekes.php");
 
@@ -50,7 +58,7 @@ while ($zvakes) {
 }
 
  ?>
-<!----------------------------------------------------------- -- >
+<!----------------------------------------- -->
 
 
 
@@ -59,3 +67,4 @@ while ($zvakes) {
 
 
     </body>
+<?php include('footer.php'); ?>

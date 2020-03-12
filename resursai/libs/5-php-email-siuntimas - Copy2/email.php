@@ -5,9 +5,9 @@
 
 
 // print_r( $_POST );
-$klientoVardas = $_POST['vardas'];
-$klientoKlausimas = $_POST['klausimas'];
-$klientoPastas = $_POST['pastas'];
+    $klientoVardas = $_POST['vardas'];
+    $klientoKlausimas = $_POST['klausimas'];
+    $klientoPastas = $_POST['pastas'];
 // echo "  $klientoVardas  $klientoPavarde  <hr /> ";
 // echo "  $klientoAntraste  <hr /> $klientoKlausimas   ";
 // echo "  <hr /> $klientoPastas   ";

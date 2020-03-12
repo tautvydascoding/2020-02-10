@@ -1,29 +1,29 @@
 <?php
 
-// prisijungimas prie duomenu bazes
-define('DB_HOST', 'localhost'); //define konstanta - nekintantis kintamasis
-define('DB_MYSQL_USER', 'root');
-define('DB_MYSQL_PASSWORD', 'root');  // Jei naudoji XAMP, WAMP 'root'-> ''
-define('DB_NAME', 'rankinis');
+// // prisijungimas prie duomenu bazes
+// define('DB_HOST', 'localhost'); //define konstanta - nekintantis kintamasis
+// define('DB_MYSQL_USER', 'root');
+// define('DB_MYSQL_PASSWORD', 'root');  // Jei naudoji XAMP, WAMP 'root'-> ''
+// define('DB_NAME', 'rankinis');
 
-$prisijungimas = mysqli_connect( DB_HOST, DB_MYSQL_USER, DB_MYSQL_PASSWORD, DB_NAME, 3307);
-// jeigu MAMP'e pakeitet MYSQL porta is 3306 i kitoki, privalot ji nurodyti
-//$prisijungimas = mysqli_connect( $DB_HOST, $DB_MYSQL_USER, $DB_MYSQL_PASSWORD, $DB_NAME, 3307);
+// $prisijungimas = mysqli_connect( DB_HOST, DB_MYSQL_USER, DB_MYSQL_PASSWORD, DB_NAME, 3307);
+// // jeigu MAMP'e pakeitet MYSQL porta is 3306 i kitoki, privalot ji nurodyti
+// //$prisijungimas = mysqli_connect( $DB_HOST, $DB_MYSQL_USER, $DB_MYSQL_PASSWORD, $DB_NAME, 3307);
 
-if ($prisijungimas) {
-    // echo "pavyko prisijungti prie DB:" . mysqli_connect_error($prisijungimas);
+// if ($prisijungimas) {
+//     // echo "pavyko prisijungti prie DB:" . mysqli_connect_error($prisijungimas);
    
-} else {
-    echo "ERROR: nepavyko prisijungti prie DB:" . mysqli_connect_error($prisijungimas);
-}
-function getPrisijungimas() {
-    // isvardini globalius kint. kuriuos nori naudoti f-jos viduje
-    global $prisijungimas; // !! sioje eilute, globaliu kint. negalima keisti, bet zemiau galima
-    return $prisijungimas;
-}
+// } else {
+//     echo "ERROR: nepavyko prisijungti prie DB:" . mysqli_connect_error($prisijungimas);
+// }
+// function getPrisijungimas() {
+//     // isvardini globalius kint. kuriuos nori naudoti f-jos viduje
+//     global $prisijungimas; // !! sioje eilute, globaliu kint. negalima keisti, bet zemiau galima
+//     return $prisijungimas;
+// }
 
-function deleteKomandos($nr) {
-    $manoSQL = "DELETE FROM komandos WHERE id = '$nr'  LIMIT 1";
+function deleteKomandos($id) {
+    $manoSQL = "DELETE FROM komandos WHERE id = '$id'  LIMIT 1";
     $arPavyko = mysqli_query( getPrisijungimas(),  $manoSQL  );
     if ( $arPavyko == false) {   // !$arPavyko
         echo "ERROR nepavyko atleisti gydytojo nr: $nr <br>";
@@ -36,7 +36,7 @@ function deleteKomandos($nr) {
     $pavarde - gyd. pavarde
     $zona - gyd. zona kurios pacientus aptarnauja
 */
-function createKomandos($vardas, $pavarde, $zona) {
+function createKomandos($id, $Pavadinimas, $Miestas) {
     $manoSQL = "INSERT INTO  komandos VALUES( NULL, '$vardas', '$pavarde', '$zona' )";
     $arPavyko = mysqli_query( getPrisijungimas(),  $manoSQL  );
     if ( $arPavyko == false) {   // !$arPavyko
@@ -55,11 +55,10 @@ function createKomandos($vardas, $pavarde, $zona) {
     $pavarde - gyd. pavarde
     $zona - gyd. zona kurios pacientus aptarnauja
 */
-function editKomandos($nr, $vardas, $pavarde, $zona) {
+function editKomandos($nr, $Pavadinimas, $Miestas) {
     $manoSQL = "UPDATE  komandos SET
-                                    name= '$vardas',
-                                    lname = '$pavarde',
-                                    area = '$zona'
+                                    Pavadinimas= '$Pavadinimas',
+                                    Miestas = '$Miestas'
                                 WHERE id = '$nr'
                                 LIMIT 1
                 ";
@@ -76,8 +75,8 @@ function editKomandos($nr, $vardas, $pavarde, $zona) {
    $nr - gydytojo id is DB
    return - (type: ARRAY)
 */
-function getKomanda( $nr ) {
-    $manoSQL = "SELECT * FROM komandos  WHERE id = '$nr';  ";
+function getKomanda( $id ) {
+    $manoSQL = "SELECT * FROM komandos  WHERE id = '$id';  ";
     // $rezultataiOBJ -  Mysql Objektas
     $rezultataiOBJ = mysqli_query(getPrisijungimas(), $manoSQL);
     // ar radom gydytoja

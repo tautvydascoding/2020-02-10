@@ -1,31 +1,31 @@
 <?php
 
-// prisijungimas prie duomenu bazes
-define('DB_HOST', 'localhost'); //define konstanta - nekintantis kintamasis
-define('DB_MYSQL_USER', 'root');
-define('DB_MYSQL_PASSWORD', 'root');  // Jei naudoji XAMP, WAMP 'root'-> ''
-define('DB_NAME', 'rankinis');
+// // prisijungimas prie duomenu bazes
+// define('DB_HOST', 'localhost'); //define konstanta - nekintantis kintamasis
+// define('DB_MYSQL_USER', 'root');
+// define('DB_MYSQL_PASSWORD', 'root');  // Jei naudoji XAMP, WAMP 'root'-> ''
+// define('DB_NAME', 'rankinis');
 
-$prisijungimas = mysqli_connect( DB_HOST, DB_MYSQL_USER, DB_MYSQL_PASSWORD, DB_NAME, 3307);
-// jeigu MAMP'e pakeitet MYSQL porta is 3306 i kitoki, privalot ji nurodyti
-//$prisijungimas = mysqli_connect( $DB_HOST, $DB_MYSQL_USER, $DB_MYSQL_PASSWORD, $DB_NAME, 3307);
+// $prisijungimas = mysqli_connect( DB_HOST, DB_MYSQL_USER, DB_MYSQL_PASSWORD, DB_NAME, 3307);
+// // jeigu MAMP'e pakeitet MYSQL porta is 3306 i kitoki, privalot ji nurodyti
+// //$prisijungimas = mysqli_connect( $DB_HOST, $DB_MYSQL_USER, $DB_MYSQL_PASSWORD, $DB_NAME, 3307);
 
-if ($prisijungimas) {
-    // echo "pavyko prisijungti prie DB:" . mysqli_connect_error($prisijungimas);
+// if ($prisijungimas) {
+//     // echo "pavyko prisijungti prie DB:" . mysqli_connect_error($prisijungimas);
    
-} else {
-    echo "ERROR: nepavyko prisijungti prie DB:" . mysqli_connect_error($prisijungimas);
-}
-function getPrisijungimas() {
-    // isvardini globalius kint. kuriuos nori naudoti f-jos viduje
-    global $prisijungimas; // !! sioje eilute, globaliu kint. negalima keisti, bet zemiau galima
-    return $prisijungimas;
-}
+// } else {
+//     echo "ERROR: nepavyko prisijungti prie DB:" . mysqli_connect_error($prisijungimas);
+// }
+// function getPrisijungimas() {
+//     // isvardini globalius kint. kuriuos nori naudoti f-jos viduje
+//     global $prisijungimas; // !! sioje eilute, globaliu kint. negalima keisti, bet zemiau galima
+//     return $prisijungimas;
+// }
 
 function deleteNaujiena($nr) {
     $manoSQL = "DELETE FROM naujienos WHERE id = '$nr'  LIMIT 1";
-    $arPavyko = mysqli_query( getPrisijungimas(),  $manoSQL  );
-    if ( $arPavyko == false) {   // !$arPavyko
+    $rezultatas = mysqli_query( getPrisijungimas(),  $manoSQL  );
+    if ( $rezultatas == false) {   // !$arPavyko
         echo "ERROR nepavyko atleisti gydytojo nr: $nr <br>";
     }
 }
@@ -38,11 +38,21 @@ function deleteNaujiena($nr) {
 */
 function createNaujiena($titel, $text, $foto) {
     $manoSQL = "INSERT INTO  naujienos VALUES( NULL, '$titel', '$text', '$foto' )";
-    $arPavyko = mysqli_query( getPrisijungimas(),  $manoSQL  );
-    if ( $arPavyko == false) {   // !$arPavyko
-        echo "ERROR nepavyko sukurti gydytojo vardas: $titel, $text, $foto <br>";
+    $rezultatas = mysqli_query( getPrisijungimas(),  $manoSQL  );
+    if ( $rezultatas == false) {   // !$arPavyko
+        echo "ERROR nepavyko sukurti: $titel, $text, $foto <br>";
     }
 }
+
+function getFotos($id) {
+    $manoSQL = "SELECT fotos.naujienos_id, fotos.id, fotos.name FROM fotos INNER JOIN naujienos ON fotos.naujienos_id = naujienos.id WHERE naujienos.id = $id";
+    $rezultatas = mysqli_query( getPrisijungimas(),  $manoSQL  );
+    if ( $rezultatas == false) {   // !$arPavyko
+        echo "ERROR nepavyko sukurti: $id <br>";
+    }
+    return $rezultatas;
+}
+
 // test
 // createDoctor('Jurgis', 'Jurgaitis', 'A3');
 // createDoctor('Tadas', 'Tadauskas',  'B2');
@@ -57,15 +67,15 @@ function createNaujiena($titel, $text, $foto) {
 */
 function editNaujiena($id, $titel, $text, $foto) {
     $manoSQL = "UPDATE  naujienos SET
-                                    name= '$titel',
-                                    lname = '$text',
-                                    area = '$foto'
+                                    titel = '$titel',
+                                    text = '$text',
+                                    foto = '$foto'
                                 WHERE id = '$id'
                                 LIMIT 1
                 ";
-    $arPavyko = mysqli_query( getPrisijungimas(),  $manoSQL  );
-    if ( $arPavyko == false) {   // !$arPavyko
-        echo "ERROR nepavyko redaguoti gydytojo nr:$id, $titel, $text, $foto <br>";
+    $rezultatas = mysqli_query( getPrisijungimas(),  $manoSQL  );
+    if ( $rezultatas == false) {   // !$arPavyko
+        echo "ERROR nepavyko redaguoti gydytojo nr: $id, $titel, $text, $foto <br>";
     }
 }
 // test
@@ -77,7 +87,7 @@ function editNaujiena($id, $titel, $text, $foto) {
    return - (type: ARRAY)
 */
 function getNaujiena( $id ) {
-    $manoSQL = "SELECT * FROM naujienos  WHERE id = '$id';  ";
+    $manoSQL = "SELECT * FROM naujienos  WHERE id = '$id' order by id DESC;  ";
     // $rezultataiOBJ -  Mysql Objektas
     $rezultataiOBJ = mysqli_query(getPrisijungimas(), $manoSQL);
     // ar radom gydytoja
@@ -98,7 +108,7 @@ function getNaujiena( $id ) {
 // print_r( $gyd1 );
 
 function getNaujienosVisi() {
-    $manoSQL = "SELECT * FROM naujienos   ";
+    $manoSQL = "SELECT * FROM naujienos  order by id DESC ";
     // $rezultataiOBJ -  Mysql Objektas
     $rezultataiOBJ = mysqli_query(getPrisijungimas(), $manoSQL);
     return $rezultataiOBJ;

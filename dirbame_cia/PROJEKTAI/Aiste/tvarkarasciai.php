@@ -1,88 +1,60 @@
 <?php
 include ("header.php");
-?>
-
-
-    
-<?php
+include ('models/prisijungimas.php');
 include ('models/tvarkarasciai.php');
 ?>
 
+  <section class="container  tarpas-apacia mt-2">
+    <div class="row hight-col">
 
-<header class="container tarpas-apacia tarpas-virsus">
-    <nav class="row ">
-        <div class="col-2 spalva paddingas tarpas-desine">
-            <a href="index.php">Pradžia</a>
+      <main class="col-3 spalva tarpas-desine bg-dark mr-2">
+        <div class="row paddingas"> 
+            <a href="komandos.php">Komandos</a>
         </div>
-        <div class="col-2 spalva paddingas tarpas-desine">
-            <a href="">Apie</a>
+        <div class="row paddingas">
+            <a href="tvarkarasciai.php">Tvarkarasciai</a>
         </div>
-        <div class="col-2 spalva paddingas tarpas-desine">
-            <a href="kontaktai.php">Kontaktai</a>
+        <div class="row paddingas">
+            <a href="cempionatoLentele.php">Čempionato lentelė</a>
         </div>
-        <div class="col-3 spalva paddingas tarpas-desine">
-            <input type="search" placeholder="search">
-        </div>
-        <div class="col spalva paddingas">
-            <form action="registracija-form.php">
-                <input type="submit" value="Prisijungti" method="get">
-                <input type="submit" value="Registruotis" method="get">
-            </form>
-        </div>
-    </nav>
-</header>
 
-    <section class="container  tarpas-apacia">
-        <div class="row hight-col">
+        </main>
 
-        <main class="col-3 spalva tarpas-desine">
-                <div class="row paddingas"> 
-                    <a href="komandos.php">Komandos</a>
-                </div>
-                <div class="row paddingas">
-                    <a href="tvarkarasciai.php">Tvarkarasciai</a>
-                </div>
-                <div class="row paddingas">
-                    <a href="">papildomai</a>
-                </div>
-                <div class="row paddingas">
-                    <a href="">papildomai2</a>
-                </div>
-            </main>
+      <aside class="col spalva">
+      <div class="row paddingas">
+              <div class="col">
+                <table class="table table-striped table-dark">
+                    <thead class="">
+                    <tr>
+                        <th scope="col">Nr</th>
+                        <th scope="col">Data</th>
+                        <th scope="col">Sale</th>                    
+                        <th scope="col">Komandos</th>
+                        <th scope="col">Rezultatas</th>
 
-            <aside class="col spalva">
-                <div class="row paddingas">
-                    <?php
-                        $visosKomandosOBJ =  getTvarkarasciaiVisi();
+                        <!-- <th scope="col">Rezultatas</th> -->
+                    </tr>
+                    </thead>
+                    <tbody>
+                        <?php $visosKomandosOBJ =  getTvarkarasciaiVisi();
                         $komandos = mysqli_fetch_assoc($visosKomandosOBJ);
-                        // print_r($komandos);
                         while($komandos) {
-                        echo $komandos['ID'] . " " . $komandos['data'] . " " . $komandos['sale'] . " " . $komandos['komandos'] . " " . $komandos['rezultatas'] .  "<br>";
-                        $komandos = mysqli_fetch_assoc($visosKomandosOBJ);
-                        }
-                    ?>
-                </div>
-                <div class="row paddingas">bb</div>
-            </aside>
+                        echo "<tr><th scope='row'>" . $komandos['ID'] . "<td>" . $komandos['data'] . "</td>" . "<td>" . $komandos['sale'] . "</td>" . "<td>" . $komandos['komandos'] . "</td>" . "<td>" . $komandos['rezultatas'] . "</td>" . "</th></tr>"; 
+                        $komandos = mysqli_fetch_assoc($visosKomandosOBJ);} ?>
+                    </tbody>
+                    </table>
+                 </div>
+            </div>
+      </aside>
 
-        </div>
+      </div>
     </section>
 
 
-    <footer class="container spalva">
-        <div class="row paddingas">Footer</div>
-    </footer>
 
-
-
-        <!-- <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script> -->
-        <script type="text/javascript" src="libs/jQuery/jquery-3.3.1.min.js" ></script>
-        <script type="text/javascript" src="libs/bootstrap/js/bootstrap.bundle.min.js">    </script>
-        <!--  mano js pats zemiausias!!!-->
-        <script type="text/javascript" src="master.js"></script>
-
-    </body>
-</html>
+<?php
+include ("footer.php");
+?>
 
 
 
