@@ -1,6 +1,10 @@
 
-ody{
-    background: linear-gradient(rgba(0, 0, 50, 0.5),rgba(0,0,50,0.5)), url('../upload_images/14.png');
+body{
+    background: linear-gradient(rgba(0, 0, 50, 0.5),rgba(0,0,50,0.5)),
+    url('../upload_images/14.png');
     background-size: cover;
-    color: yellow;
+    color: red;
+}
+.login-box{
+
 }

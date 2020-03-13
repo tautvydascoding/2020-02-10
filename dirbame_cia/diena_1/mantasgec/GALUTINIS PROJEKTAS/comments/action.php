@@ -1,9 +1,9 @@
 <?php
 
-require 'config.php';
 
 
-$msg = "";
+
+$msg = "hello";
 
 if(isset($_POST['submit'])){
     $name = $_POST['name'];
@@ -15,6 +15,14 @@ if(isset($_POST['submit'])){
         $msg="posted successfully!";
     }else{
         $msg = "Failed post!";
+    }
+}
+
+if(isset($_GET['del'])){
+    $id =$_GET['del'];
+    $sql = "DELETE FROM comment_table WHERE id='id'";
+    if ($prisijungimas->query($sql)){
+        header('location:coments.php');
     }
 }
 

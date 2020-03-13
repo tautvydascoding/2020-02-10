@@ -13,6 +13,17 @@ require 'action.php';
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
         <link rel="stylesheet" href="../libs/bootstrap/css/bootstrap.min.css">
+        <!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+<!-- Popper JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
         <!-- galimos klaidos -->
         <!-- blogas kelias iki failo -->
         <!-- "/" ne i ta puse -->
@@ -48,9 +59,10 @@ while($row=$result->fetch_assoc()){
 <p class="card-text"><?= $row['comment']  ?></p>
 </div>
 <div class="card-footer py-2">
-   <a href="action.php?del=<?= $row['id'] ?>" class="text-danger mr-2" onclick="return confirm('do you want to delete this comment?');"
+      <a href="action.php?del=<?= $row['id'] ?>"class="bg-danger" class="text-danger mr-2"
+        onclick=class"return confirm('do you want delete comment?');"
        title="Delete"><i=class="fas fa-trash"></i></a>
-       <a href="comments.php?edit=<?=$row['id'] ?>"class="text-success" title="edit"><i class="fas fa-edit"</a>
+
 
 
     </div>

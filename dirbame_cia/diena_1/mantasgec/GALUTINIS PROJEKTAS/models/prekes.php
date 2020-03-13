@@ -14,7 +14,7 @@ if ($prisijungimas) {
 
     //echo "pavyko prisijungti prie DB <br>";
 
-     echo "pavyko prisijungti prie DB <br>";
+    // echo "pavyko prisijungti prie DB <br>";
 
 } else {
     echo "ERROR: nepavyko prisijungti prie DB:" . mysqli_connect_error($prisijungimas);
