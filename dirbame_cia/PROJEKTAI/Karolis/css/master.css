@@ -1,0 +1,19 @@
+dark-color: #111;
+light-color: #eee;
+body{
+  padding: 25px;
+background-color: black;
+color: black;
+font-size: 25px;
+}
+
+body.dark-mode {
+  background-color: black;
+  color: white;
+}
+  }
+
+body.light-mode {
+  background-color: white;
+  color: black;
+}
