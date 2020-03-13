@@ -44,7 +44,7 @@ $result = $mysqli->query( "SELECT * FROM prekes1");
     <table class="table">
         <thread>
             <tr>
-                <th>pavadinimas</th>
+                <th>preke</th>
                 <th>kaina</th>
                 <th>foto</th>
                 <th>aprasymas</th>

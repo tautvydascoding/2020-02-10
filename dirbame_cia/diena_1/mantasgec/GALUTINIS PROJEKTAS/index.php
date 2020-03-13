@@ -38,6 +38,7 @@ if(isset($_SESSION['username'])){
  <ul>
 <li><a href="contacts.php">kontaktai</a></li>
 <li><a href="upload_images\img.php">Fotoalbumas</a></li>
+<li><a href="comments/comments.php">komentarai</a></li>
 <li><a href="controller/Logout.php">Logout</a></li>
 </ul>
 
@@ -62,16 +63,11 @@ while($zvakes) {
     echo "</article>";
     $zvakes = mysqli_fetch_assoc($visosZvakes);
 
-
-
 }
 
  ?>
 </main>
 <!----------------------------------------- -->
-
-
-
 
 
 
