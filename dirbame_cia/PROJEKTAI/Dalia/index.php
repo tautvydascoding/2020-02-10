@@ -1,37 +1,35 @@
 <?php
-
-include "header.php";
-include "models/prekes.php";
-
-$visosPrekesOBJ =  getItems();
-$preke = mysqli_fetch_assoc($visosPrekesOBJ);
-
+include('header.php');
+  $conn = mysqli_connect("localhost", "root", "root", "parduotuve");
+  $results = mysqli_query($conn, "SELECT * FROM prekes2");
+  $users = mysqli_fetch_all($results, MYSQLI_ASSOC);
 ?>
-<section class="container bg-light">
 
-    <br>
-    <h1 class='text-center text-success'>TOPO CENTRAS</h1>
-    <br>
+  <div class="container bg-ligh">
+    <div class="row justify-content-center">
 
+        <h1>TOPO CENTRAS</h1>
+      <div class="col-12" style="margin-top: 30px;">
 
-    <div class="row">
-
-    <?php
-
-        while($preke) {
-            echo  "<article class='col-sm bg-success float-left m-2 p-5'>". "<h2 class='text-center'>" . "<br />" . $preke['category'] . "</h2>" .
-            "<h3 class= 'text-center'>" . $preke['name'] . "</h3>" .
-            "<p class=' text-center'>" . $preke['description'] . "</p>" .
-                "<button class='btn btn-secondary btn-lg btn-block' >". $preke ['price'] . " Eur " . "</button>" .
-            "</article>";
-            $preke = mysqli_fetch_assoc($visosPrekesOBJ);
-        }
-    ?>
+        <table class="table table-striped table-hover table-bordered ">
+          <thead>
+            <th>Nuotrauka</th>
+            <th>Prekės pavadinimas</th>
+            <th>Aprašymas</th>
+            <th>Kaina</th>
+          </thead>
+          <tbody>
+            <?php foreach ($users as $user): ?>
+              <tr>
+                <td> <img src="<?php echo 'images/' . $user['profile_image'] ?>" width="90" height="90" alt=""> </td>
+                <td> <?php echo $user['bio']; ?> </td>
+                <td> <?php echo $user['bio2']; ?> </td>
+                <td> <?php echo $user['price']; ?> </td>
+              </tr>
+            <?php endforeach; ?>
+          </tbody>
+        </table>
+      </div>
     </div>
-    <button type="button" name="button"></button>
-<div class="clearfix"></div>
-</div>
-</section>
-
-</header>
-<?php include "footer.php"; ?>
+  </div>
+<?php include('footer.php'); ?>
