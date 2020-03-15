@@ -1,31 +1,12 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="utf-8">
-        <title></title>
-        <!-- reikalinga kad prisitaikantis dizainas veiktu tvarkingai -->
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-
-        <link rel="stylesheet" href="libs/bootstrap/css/bootstrap.min.css">
-        <!-- galimos klaidos -->
-        <!-- blogas kelias iki failo -->
-        <!-- "/" ne i ta puse -->
-        <!-- neuzdarete ">" -->
-        <link rel="stylesheet" href="css/master.css">
-        <!-- !!!! VISSA MANO CSS failas pats zemiausias -->
-    </head>
-
-    <body>
+<?php include('index-header.php') ?>
 
         <div class="container">
-            <header class="row">
-                <div class="col-md-12">
+            <header class="row bg-info d-flex justify-content-center">
                     <?php include('nav.php') ?>
                     <h1> POM POM gaminiai </h1>
-                </div>
             </header>
-        <div class="container ">
-            <section class="row">
+
+            <section class="row bg-info mt-2 ">
 
                 <?php
                 include ('controllers/pom.php');
@@ -34,29 +15,13 @@
                 $SG = mysqli_fetch_assoc($visosSG);
                 //-------------
                 while($SG ){?>
-                    <section class="col-md-3">
+                    <section class="col-md-3 pt-3">
+                    <?php echo "<img src='{$SG['foto']}' width='200px' height='200px'>";?>
                     <?php echo "<h3>". "<br>". $SG['dydis']."<br>".
                     $SG['kaina']."<br>". $SG['aprasymas']."</h3>"; ?>
                     </section>
-                    <?php $SG = mysqli_fetch_assoc($visosSG); 
+                    <?php $SG = mysqli_fetch_assoc($visosSG);
                 }?>
             </section>
-        </div>
 
-
-
-            <footer class="row">
-                <div class="col-md-12">
-                    2020 footer
-                </div>
-            </footer>
-        </div>
-        <!-- Scriptai FAILO dugne -->
-        <!-- <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script> -->
-        <script type="text/javascript" src="libs/jQuery/jquery-3.3.1.min.js" ></script>
-        <script type="text/javascript" src="libs/bootstrap/js/bootstrap.bundle.min.js">    </script>
-        <!--  mano js pats zemiausias!!!-->
-        <script type="text/javascript" src="master.js"></script>
-
-    </body>
-</html>
+<?php include('index-footer.php') ?>
