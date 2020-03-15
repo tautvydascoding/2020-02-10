@@ -4,8 +4,8 @@ session_start();
 include('../models/loginas.php');
 include('../models/funkc-gaminiai.php');
 
-print_r($_GET);
-print_r($_POST);
+// print_r($_GET);
+// print_r($_POST);
 
 $id = $_POST['id'];
 $preke = $_POST['preke'];
@@ -21,7 +21,7 @@ $_SESSION['zinute'] =  "Pavyko pakoreguoti gamini";
 // echo "pavyko pakoreguoti gamini";
 
 //redirect - perkelimas
-header("Location: ../Pradzia.php");
+header("Location: ../adminFiles.php");
 exit();
 
 // echo "Pavyko sukurti";

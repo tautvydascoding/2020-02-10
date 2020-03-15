@@ -15,6 +15,11 @@ include('Navigacija.php');
                     <?php
 session_start();
 
+
+echo "<div class= 'bg-warning'>".$_SESSION['zinute']."</div>";
+ $_SESSION['zinute'] = "";
+
+
 // $_SESSION['zinute'] = "";
 echo "<hr />";
 ?>
@@ -42,23 +47,23 @@ echo "<hr />";
 echo "<hr />";
 //==========================
 
-// include('models/funkc-kontaktai.php');
-//
-// echo "<a href='controller/adresas-create-form.php'>Kurti adresa</a>";
-//
-// $visiAdresaiOBJ =  getAdresai();
-//
-//
-// $adresas = mysqli_fetch_assoc($visiAdresaiOBJ);
-// while($adresas) {
-//     echo "<div class='row'>";
-//     echo "<h3 class='col-md-6'>". $adresas['adresas'].", ".$adresas['miestas']."</h3>";
-//     echo "<a class='col-md-3' href='controller/adresas-delete.php?id={$adresas['id']}'>Delete</a>";
-//     echo "<a class='col' href='controller/adresas-update-form.php?id={$adresas['id']}'>Update</a>";
-//     $adresas = mysqli_fetch_assoc($visiAdresaiOBJ);
-//     echo "</div>";
-// }
-// echo "<hr />";
+include('models/funkc-kontaktai.php');
+
+echo "<a href='controller/adresas-create-form.php'>Kurti adresa</a>";
+
+$visiAdresaiOBJ =  getAdresai();
+
+
+$adresas = mysqli_fetch_assoc($visiAdresaiOBJ);
+while($adresas) {
+    echo "<div class='row'>";
+    echo "<h3 class='col-md-6'>". $adresas['adresas'].", ".$adresas['miestas']."</h3>";
+    echo "<a class='col-md-3' href='controller/adresas-delete.php?id={$adresas['id']}'>Delete</a>";
+    echo "<a class='col' href='controller/adresas-update-form.php?id={$adresas['id']}'>Update</a>";
+    $adresas = mysqli_fetch_assoc($visiAdresaiOBJ);
+    echo "</div>";
+}
+echo "<hr />";
 
 // ================================
                      ?>

@@ -7,6 +7,10 @@ include('Header.php');
 <?php
 include('Navigacija.php');
 session_start();
+
+// echo "<div class= 'bg-warning'>".$_SESSION['zinute']."</div>";
+//  $_SESSION['zinute'] = "";
+
  ?>
 <!-- =========== -->
   <!-- <?php
@@ -24,12 +28,12 @@ session_start();
 
                 <main class="col aukstis-300 bg-light">
                     <h1>Pagrindinis</h1>
-                    <br />
                     <?php
                     echo "<div class= 'bg-warning'>".$_SESSION['zinute']."</div>";
+                     $_SESSION['zinute'] = "";
+                     ?>
+                    <br />
 
-                    // echo $_SESSION['zinute'] =  "";
-                    ?>
                     <?php
                     include('models/funkc-apie.php');
 

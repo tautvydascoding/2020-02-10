@@ -1,6 +1,9 @@
 
 <?php
 
+session_start();
+
+include('../models/loginas.php');
 include('../models/funkc-kontaktai.php');
 
 $trinamasAdresas = $_GET['id'];
@@ -8,7 +11,12 @@ deleteAdresas ($trinamasAdresas);
 
 // deleteGaminys(9);
 
-// header("Location: ../Pradzia.php");
-// exit();
+$_SESSION['zinute'] =  "Pavyko istrinti adresa";
 
-echo "pavyko istrinti adresa";
+print_r($_SESSION);
+
+
+header("Location: ../adminFiles.php");
+exit();
+
+// echo "pavyko istrinti adresa";
