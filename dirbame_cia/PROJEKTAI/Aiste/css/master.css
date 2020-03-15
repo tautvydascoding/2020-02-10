@@ -1,5 +1,6 @@
 body{
-    background-color: rgba(237, 240, 241, 0.623);
+    background: var(--background);
+    color: var(--foreground);
 }
 .height-70{
     height: 70px;
@@ -33,14 +34,6 @@ body{
     background-color:rgb(218, 214, 214);
 }
 
-/* .float {
-    float: left;
-    width: 30%;
-}
-
-.float-isjungiu {
-    clear: both;
-} */
 a {
     color: white;
 }
@@ -49,7 +42,6 @@ a:hover {
   }
 .border-news {
     border: solid 1px grey ;
-    
 }
 
   .md-menu {
@@ -60,6 +52,31 @@ a:hover {
       color: black;
   }
 
+  .darkmode {
+    --clr-light: #fdffc4;
+    --clr-dark: #00332a;
+    --clr-primary: #202302;
+    --clr-secondary: #00100d;
+    --clr-accent: #ff7750;
+  
+    /* --foreground: var(--clr-light); */
+    --background: var(--clr-dark);
+  }
+
+  .dark-mode-toggle {
+    position: absolute;
+    z-index: 100;
+    top: 1em;
+    right: 1em;
+    color: var(--foreground);
+    border: 2px solid currentColor;
+    padding: 4px;
+    background: transparent;
+    cursor: pointer;
+    border-radius: 5px;
+    width: 30px;
+    height: 30px;
+  }
   
 
   @media ( max-width:767px){

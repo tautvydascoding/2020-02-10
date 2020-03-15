@@ -2,6 +2,8 @@
 include_once ("header.php");
 include_once ('models/prisijungimas.php');
 include_once ('models/vartotojai.php');
+
+
 ?>
 
 
@@ -25,15 +27,16 @@ include_once ('models/vartotojai.php');
         <div class="row paddingas">
           <div class="col border border-secondary pb-2">
             <h3> <?php echo "<p class='bg-warning'>". $_SESSION['zinute'] . "</p>"; ?> </h3>
-            <h3>Prisijungti</h3>
+            <h3>Prisijungti</h3><hr>
             <form action="controller/vartotojai-prisijungimas.php" method="post">
-              <label for="email">Jusu el pastas</label>
-              <input type="text" name="email"  class="form-control" placeholder="El pastas" required> <hr>
-
-              <label for="password">Jusu slaptazodis</label>
-              <input type="password" name="password" class="form-control"  placeholder="Slaptazodis" required> <hr>
-
-              <button type="submit"  class="btn btn-primary" > Go !!! </button>
+              <input type="text" name="email" id="email" class="form-control" placeholder="El pastas" required> 
+              <input type="password" name="password" id="pass"  class="form-control"  placeholder="Slaptazodis" required> 
+              <select class="form-control"  name="userType" id="" required>
+                <option value="user" >User</option>
+                <option value="admin" >Admin</option>
+              </select><br>
+              <tr><td><input type="checkbox" name="remember">Isiminti</td></tr> <hr>
+              <button type="submit"  class="btn btn-primary" name="login"> Go !!! </button>
              </form>
             </div>
           </div>

@@ -22,25 +22,22 @@ include ('models/naujienos.php');
 
         <aside class="col spalva">
             <h1> Paieskos rezultatai</h1>
-            <div class="">  
+            <div class="row">  
                 <?php 
-                    if (isset($_POST['search'])) {
-                        $search = mysqli_query(getPrisijungimas(), $_POST['search']);
-                        $sql = "SELECT * FROM naujienos WHERE titel LIKE '%$search%'";
-                        $result = mysqli_query(getPrisijungimas(),$sql) or die ("could not search");
-                        $count = mysqli_num_rows($result);
+                    if (isset($_POST['search-btn'])) {
+                        $search = mysqli_real_escape_string(getPrisijungimas(), $_POST['search']);
+                        $sql = "SELECT * FROM naujienos WHERE titel LIKE '%$search%' OR text LIKE '%$search%'";
+                        $result = mysqli_query(getPrisijungimas(),$sql);
+                        $queryResult = mysqli_num_rows($result);
 
-                        echo "<div><h6>" . "Rasta " . $count . " straipsniai !" . "</h6></div>";
+                        echo "<h4 class='text-info paddingas'>" . "Rasta straipsiu - " . $queryResult . "</h4>";
 
-                        if ($count == 0) {
-                            echo "Nera rezultatu";
-                        } else {
-                            while ($row = mysqli_fetch_array($result)) {  
-                            echo "<div>" . "<h4>" . $row['titel'] . "</h4>" .
-                            "<p>".  $row['text'] . "</p>" . "</div>";
+                        if ($queryResult > 0) {
+                            while ($row = mysqli_fetch_assoc($result)) {  
+                            echo "<div>" . "<h5>" . $row['titel'] . "</h5>" . 
+                            "<p><a href='naujiena.php?nr={$row['id']}' class='btn btn-outline-dark btn-sm' role='button'>Plačiau</a> </p>" . "<div>";
                         }
-                            
-                        }
+                        } 
                     }
                 
                 ?>

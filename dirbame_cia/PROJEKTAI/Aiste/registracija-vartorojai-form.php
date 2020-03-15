@@ -24,14 +24,15 @@ include_once ('models/vartotojai.php');
       <aside class="col spalva">
         <div class="row paddingas">
            <div class="col border border-secondary pb-2">
-            <h3>Registruotis</h3>
+           <h3> <?php echo "<p class='bg-warning'>". $_SESSION['zinute'] . "</p>"; ?> </h3>
+            <h3>Registruotis</h3> <hr>
             <form action="controller/vartotojai-registracija.php" method="post">
-              <label for="email">Jusu el pastas</label>
-              <input type="text" name="email"  class="form-control" placeholder="El pastas" required> <hr>
-
-              <label for="password">Jusu slaptazodis</label>
-              <input type="password" name="password" class="form-control"  placeholder="Slaptazodis" required> <hr>
-
+              <input type="text" name="userName"  class="form-control" placeholder="Vartotojo vardas" required>
+              <input type="email" name="email"  class="form-control" placeholder="El-pastas" required>
+              <input type="password" name="password" class="form-control"  placeholder="Slaptazodis" required>
+              <input type="password" name="password-repeat" class="form-control"  placeholder="Pakartoti slaptazodis" required>
+              <input type="hidden" value="user" name="userType">
+              <hr>
               <button type="submit"  class="btn btn-primary" > Registruotis </button>
              </form>
             </div>

@@ -31,7 +31,7 @@ function deleteVartotojas($id) {
 }
 
 
-function createVartotojas($email, $pass) {
+function createVartotojas($email, $pass, $id, $userType, $userName, $pass2) {
     $vart="SELECT*FROM vartotojai WHERE email='$email'";
     $result=mysqli_query(getPrisijungimas(), $vart);
     $num=mysqli_num_rows($result);
@@ -40,20 +40,33 @@ function createVartotojas($email, $pass) {
             $_SESSION['zinute'] = "toks vartotojas jau egziztuoja";
 
         }else{
-            $manoSQL="insert into vartotojai values('$email', '$pass', NULL)";
+            $manoSQL="insert into vartotojai values('$email', '$pass', NULL , '$userType', '$userName', '$pass2')";
             mysqli_query(getPrisijungimas(), $manoSQL);
             $_SESSION['zinute'] = "registracija sekminga";
             }
         }
 
 function prisijungimasVartotojas($email, $pass) {
-    $vart="SELECT*FROM vartotojai WHERE email='$email' && password = '$pass' ";
+    $vart="SELECT*FROM vartotojai WHERE email='$email' && password = '$pass'";
     $result=mysqli_query(getPrisijungimas(), $vart);
-    $num=mysqli_num_rows($result);
-        if ($num==true){
-        $_SESSION['zinute'] = "Loged in $email";
+    $userTypes = mysqli_fetch_array($result);
+    
+        if ($userTypes['userType'] == 'admin'){
+            $rem = $_POST['remember'];
+            if (isset($_POST['remember'])) {
+                setcookie('email', $email, time() + 60*60*10 ); 
+                setcookie('password', $pass, time() + 60*60*10 ); 
+            }
+            $_SESSION['zinute'] = "Sveiki, $email";
+            header('location:../adminFile.php');
+        }else if ($userTypes['userType'] == 'user') {
+            if (isset($_POST['remember'])) {
+                setcookie('email', $email, time() + 60*60*10 ); 
+                setcookie('password', $pass, time() + 60*60*10 ); 
+            }
+            $_SESSION['zinute'] = "Sveiki, $email";
             header('location:../index.php');
-        }else{
+        } else {
             header('location:../prisijungimas-vartorojai-form.php');
             $_SESSION['zinute'] = "Neteisingas email arba slatazodis";
         }
