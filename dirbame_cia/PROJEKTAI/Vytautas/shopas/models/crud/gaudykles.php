@@ -16,6 +16,7 @@
     </head>
 
     <body>
+        <a href="../../index.php" class="btn btn-info"> Atsijungti </a>
         <h2>Sapnu gaudykles</h2><br />
         <?php include_once 'navSG.php' ?>
         <?php require_once 'process.php'; ?>
