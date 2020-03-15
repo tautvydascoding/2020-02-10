@@ -1,4 +1,5 @@
 <?php
+session_start();
 // print_r( $_POST );
 $klientoVardas = $_POST['vardas'];
 $klientoKlausimoAntraste = $_POST['sritis'];
@@ -72,3 +73,9 @@ date_default_timezone_set('Etc/UTC');
     } catch (Exception $e) {
         echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
     }
+
+
+$_SESSION['zinute'] = "uzklausa isiusta";
+header('Location: index.php');
+
+exit();

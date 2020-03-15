@@ -35,7 +35,7 @@ include_once ('models/vartotojai.php');
                 <option value="user" >User</option>
                 <option value="admin" >Admin</option>
               </select><br>
-              <tr><td><input type="checkbox" name="remember">Isiminti</td></tr> <hr>
+              <!-- <tr><td><input type="checkbox" name="remember">Isiminti</td></tr> <hr> -->
               <button type="submit"  class="btn btn-primary" name="login"> Go !!! </button>
              </form>
             </div>
