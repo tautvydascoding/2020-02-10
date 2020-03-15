@@ -1,6 +1,6 @@
 <?php
 
-include('loginas.php');
+// include('loginas.php');
 
 // ===========================================================
 
@@ -16,6 +16,19 @@ function getGaminiai() {
 //     echo "<h3>". $gaminys['preke']."</h3>";
 //     $gaminys = mysqli_fetch_assoc($visiGaminiaiOBJ);
 // }
+
+// ===========================================================
+
+function getFotos($id) {
+    $manoSQL = "SELECT gaminiai.preke, gaminiai.aprasas  FROM gaminiai INNER JOIN nuotraukos ON gaminiai.id = nuotraukos.prekes_id WHERE prekes_id = $id";
+    $rezultatas = mysqli_query( getPrisijungimas(),  $manoSQL  );
+    if ( $rezultatas == false) {   // !$arPavyko
+        echo "ERROR nepavyko gauti nuotrauku: $id <br>";
+    }
+    return $rezultatas;
+}
+
+
 
 // ===========================================================
 
@@ -74,7 +87,7 @@ function getGaminys( $id ) {
         $resultARRAY = mysqli_fetch_assoc( $rezultataiOBJ  );
         return $resultARRAY;
     } else {
-        echo "Atleiskite , tokio gydytojo nera";
+        echo "Atleiskite , tokio gaminio nera";
         return NULL;
     }
 }
@@ -84,12 +97,12 @@ function getGaminys( $id ) {
 //test
 // $gyd1 = getDoctor(1);
 // print_r( $gyd1 );
-function getDoctors() {
-    $manoSQL = "SELECT * FROM doctors    ";
-    // $rezultataiOBJ -  Mysql Objektas
-    $rezultataiOBJ = mysqli_query(getPrisijungimas(), $manoSQL);
-    return $rezultataiOBJ;
-}
+// function getDoctors() {
+//     $manoSQL = "SELECT * FROM doctors    ";
+//     // $rezultataiOBJ -  Mysql Objektas
+//     $rezultataiOBJ = mysqli_query(getPrisijungimas(), $manoSQL);
+//     return $rezultataiOBJ;
+// }
 // $visiGydytojaiOBJ =  getDoctors();
 // // is Mysqli Obj. paima viena eilute ir pavercia i array/masyva:
 // $gydytojas = mysqli_fetch_assoc($visiGydytojaiOBJ);

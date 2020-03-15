@@ -23,7 +23,7 @@ include('Navigacija.php');
 
                     $adresas = mysqli_fetch_assoc($visiAdresaiOBJ);
                     while($adresas) {
-                        echo "<article class='col gallery'>";
+                        echo "<article class='col-md-3 gallery'>";
                         echo "<h5>". $adresas['adresas']."</h5>";
                         echo "<h5>". $adresas['miestas']."</h5>";
                         echo "<h5>". $adresas['kodas']."</h5>";

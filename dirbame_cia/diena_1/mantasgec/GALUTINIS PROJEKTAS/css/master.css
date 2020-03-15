@@ -1,6 +1,10 @@
 
 body{
-    background: linear-gradient(rgba(0, 0, 50, 0.5),rgba(0,0,50,0.5)), url('../photos/14.png');
+    background: linear-gradient(rgba(0, 0, 50, 0.5),rgba(0,0,50,0.5)),
+    url('../upload_images/14.png');
     background-size: cover;
     color: red;
+}
+.login-box{
+
 }

@@ -1,5 +1,7 @@
 <?php
 // session_start();
+
+include('../models/loginas.php');
 include('../models/funkc-vartotojo.php');
 
 print_r($_POST);
@@ -8,37 +10,40 @@ print_r($_POST);
 
 $vardas = $_POST['vardas'];
 $pavarde = $_POST['pavarde'];
-$elpastas = $_POST['email'];
+$elpastas = $_POST['emailas'];
 $slaptaz1 = $_POST['passw1'];
 $slaptaz2 = $_POST['passw2'];
+
 
 // =====
 
 // funkcija iskvieciama,
 
-$visiElpastoOBJ =  getElpastai ();
-$elpasto = mysqli_fetch_assoc($visiElpastoOBJ);
-// //------------------ok, atspausdina visus
+// $visiElpastoOBJ =  getElpastai ();
+// $elpasto = mysqli_fetch_assoc($visiElpastoOBJ);
+//------------------ok, atspausdina visus
 
 // while($elpasto) {
 //     echo "<h3>". $elpasto['elpastas']."</h3>";
 //     $elpasto = mysqli_fetch_assoc($visiElpastoOBJ);
 // }
+
 // -----------
 // tikrinam, ar DB turimi emailai (elpasto) sutampa suregistruojamu (elpastas)
 // ????? kazkodel neveikia....
-while($elpasto) {
 
-    if ($elpasto == $elpastas){
-        echo "Toks pastas jau naudojamas. Pamirsote registraciją?"; // echo
-        // $_SESSION ['zinute'] = "Toks pastas jau naudojamas. Pamirsote registraciją?"; // sesijos zinutes
-    }
-    $elpasto = mysqli_fetch_assoc($visiElpastoOBJ);
-    // else {
-    //     echo "Sveikiname prisiregistravus prie svetainės";
-    //     // $_SESSION ['zinute'] = "Sveikiname prisiregistravus";
-    // }
-}
+// while($elpasto) {
+//
+//     if ($elpasto == $elpastas){
+//         echo "Toks pastas jau naudojamas. Pamirsote registraciją?"; // echo
+//         // $_SESSION ['zinute'] = "Toks pastas jau naudojamas. Pamirsote registraciją?"; // sesijos zinutes
+//     }
+//     $elpasto = mysqli_fetch_assoc($visiElpastoOBJ);
+//     // else {
+//         // echo "Sveikiname prisiregistravus prie svetainės";
+//     //     // $_SESSION ['zinute'] = "Sveikiname prisiregistravus";
+//     // }
+// }
 
 
 // =====

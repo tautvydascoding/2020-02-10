@@ -2,7 +2,7 @@
 include ("prisijungimas.php");
 
 function deleteSG($nr){
-    $manoSQL = "DELETE FROM sapnu_gaudykles WHERE id = '$nr' LIMIT 1";
+    $manoSQL = "DELETE FROM gaudykles WHERE id = '$nr' LIMIT 1";
     $arPavyko = mysqli_query(getPrisijungimas(), $manoSQL);
     if (!$arPavyko) {
         echo "ERROR nepavyko istrinti sapnu gaudykles nr: $nr <br>";
@@ -19,7 +19,7 @@ $zona - gyd. zona kurioje aptarnauja pacientus
 */
 
 function createSG($dydis, $spalva, $kaina, $aprasymas){
-    $manoSQL = "INSERT INTO sapnu_gaudykles VALUES(NULL, '$dydis', '$spalva', '$kaina', '$aprasymas')";
+    $manoSQL = "INSERT INTO gaudykles VALUES(NULL, '$dydis', '$spalva', '$kaina', '$aprasymas')";
     $arIsikele = mysqli_query(getPrisijungimas(), $manoSQL);
     if (!$arPavyko) {
         echo "ERROR nepavyko prideti sapnu gaudykles: $dydis, $spalva, $kaina, $aprasymas <br>";
@@ -29,14 +29,22 @@ function createSG($dydis, $spalva, $kaina, $aprasymas){
 // createDoctor('Jurgis', 'Jurgaitis', 'A3');
 // createDoctor('Tadas', 'Tadauskas', 'B1');
 
+function getFotos($id) {
+    $manoSQL = "SELECT sg_nuotraukos.prekes_id, sg_nuotraukos.id, sg_nuotraukos.pavadinimas, sg_nuotraukos.aprasymas, sg_nuotraukos.pozicija FROM sg_nuotraukos INNER JOIN gaudykles ON sg_nuotraukos.prekes_id = gaudykles.id WHERE sg_nuotraukos.id = $id";
+    $rezultatas = mysqli_query( getPrisijungimas(),  $manoSQL  );
+    if ( $rezultatas == false) {   // !$arPavyko
+        echo "ERROR nepavyko sukurti: $id <br>";
+    }
+    return $rezultatas;
+}
 
-function editSG($nr, $dydis, $spalva, $kaina, $aprasymas){
-    $manoSQL = "UPDATE sapnu_gaudykles SET
+function editSG($dydis, $spalva, $kaina, $aprasymas){
+    $manoSQL = "UPDATE gaudykles SET
                                 dydis = '$dydis',
                                 spalva = '$spalva',
                                 kaina = '$kaina',
                                 aprasymas = '$aprasymas'
-                                WHERE id = '6'
+                                WHERE id = ''
                                 LIMIT 1
         ";
     $arPasikeite = mysqli_query(getPrisijungimas(), $manoSQL);
@@ -54,7 +62,7 @@ function editSG($nr, $dydis, $spalva, $kaina, $aprasymas){
     return - (type: ARRAY)
     */
 function getSG($nr){
-    $manoSQL = "SELECT * FROM sapnu_gaudykles WHERE id = '$nr'";
+    $manoSQL = "SELECT * FROM gaudykles WHERE id = '$nr'";
     //$rezultataiOBJ - Mysql objektas
     $rezultataiOBJ = mysqli_query(getPrisijungimas(), $manoSQL);
     if (mysqli_num_rows($rezultataiOBJ) > 0) {
@@ -74,7 +82,7 @@ function getSG($nr){
 // print_r($gyd1);
 //SGS- sapnu gaudykles!!!!!!!!!
 function getSGS(){
-    $manoSQL = "SELECT * FROM sapnu_gaudykles";
+    $manoSQL = "SELECT * FROM gaudykles";
     //$rezultataiOBJ - Mysql objektas
     $rezultataiOBJ = mysqli_query(getPrisijungimas(), $manoSQL);
     return $rezultataiOBJ;
