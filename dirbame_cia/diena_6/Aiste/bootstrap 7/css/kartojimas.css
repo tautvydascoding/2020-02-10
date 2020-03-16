@@ -1,0 +1,30 @@
+body{
+    background-color: black;
+}
+header {
+    height: 70px;
+}
+
+.aukstis {
+    min-height: 400px;
+}
+
+.tarpas-apacia {
+    margin-bottom: 10px;
+}
+
+.tarpas-desine {
+    margin-right: 10px;
+}
+
+footer{
+    height: 70px;
+}
+
+.padingas{
+    padding: 10px;
+}
+
+.tarpas-virsus {
+    margin-top: 15px;
+}
