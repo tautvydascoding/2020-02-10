@@ -1,0 +1,27 @@
+.aukstis-100 {
+    min-height: 120px;
+}
+.aukstis-20 {
+    min-height: 20px;
+}
+.aukstis-70 {
+    min-height: 70px;
+}
+.aukstis-50 {
+    min-height: 50px;
+}
+
+.tarpas-apacia{
+    margin-bottom: 10px;
+}
+
+.tarpas-desine {
+    margin-right: 10px;
+}
+
+.spalva {
+    background-color: gray;
+}
+
+
+
