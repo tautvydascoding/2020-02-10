@@ -1,0 +1,16 @@
+h2.pirmas {
+    color: red;
+}
+ul .pirmas {
+    color: green;
+}
+li {
+    color: blue;
+}
+li {
+    color: blue
+}
+
+section.grupe li{
+    color: red
+}

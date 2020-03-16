@@ -1,0 +1,96 @@
+  html {
+    background-color: #A9A9A9
+
+  }
+
+header {
+  min-height: 67px;
+  background-color: pink;
+  font-family: 'Sriracha', cursive;
+}
+
+/* ---------------NAV--------- */
+nav { background-color: pink;
+  width: 60%;
+}
+nav ul { padding-left: 0;
+}
+nav li {
+  font-size: 25px;
+  padding-top: 13px;
+  float: left;
+  width: 25%;
+  text-align: center;
+  list-style: none;
+}
+.isjungiu-li { list-style-type: circle;}
+
+  /* --------------------------- */
+.paieska { background-color: pink;
+  width: 38%;
+  padding-top: 16px;
+  margin left: 2%
+}
+
+.paieska button {
+  color: white;
+  border: none;
+  width: 70px;
+  background-color: black; text-decoration-color: #50FFFF;}
+.paieska input { width: 70%; }
+.float { float: left; }
+.isjungiu-float { clear: both }
+
+/* Darau maina */
+
+main {
+  width: 68%;
+  background-color: white;
+  margin-right: 2%;
+  float: left;
+  padding-left: 10px;
+  padding-top: 30px;
+}
+
+aside {
+  width: 30%;
+  background-color: pink;
+  font-family: 'Sriracha', cursive;
+  float: left;
+  /* automatinis aukscio triukas */
+  margin-bottom: -9999px;
+  padding-bottom: 9999px;
+  /* nepamirsti uzdeti ant tevinio elemento: overflow: hidden; */
+}
+h2,h3 {
+    text-align: center;
+    font-weight: bold;
+}
+section {
+  overflow: hidden;
+  margin-top: 2%;
+  margin-bottom: 2%;
+}
+footer {
+    background-color: pink;
+    min-height: 67px;
+    text-align: left;
+    padding-top: 17px;
+    font-size: 18px;
+}
+body {
+    width: 1200px;
+    /* elementaru centravimas */
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #A9A9A9
+}
+h1,h2,h3 {
+    text-align: center;
+    font-family: 'Modak',  cursive;
+}
+
+h1 {
+        text-shadow: 0px 0px 10px black;
+        
+}
