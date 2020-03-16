@@ -12,7 +12,7 @@ $prisijungimas = mysqli_connect( DB_HOST, DB_MYSQL_USER, DB_MYSQL_PASSWORD, DB_N
 
 if ($prisijungimas) {
 
-    echo "pavyko prisijungti prie DB <br>";
+    //echo "pavyko prisijungti prie DB <br>";
 
     // echo "pavyko prisijungti prie DB <br>";
 
