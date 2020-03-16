@@ -20,7 +20,7 @@ function getGaminiai() {
 // ===========================================================
 
 function getFotos($id) {
-    $manoSQL = "SELECT gaminiai.preke, gaminiai.aprasas  FROM gaminiai INNER JOIN nuotraukos ON gaminiai.id = nuotraukos.prekes_id WHERE prekes_id = $id";
+    $manoSQL = "SELECT nuotraukos.pavad  FROM nuotraukos INNER JOIN gaminiai ON nuotraukos.prekes_id = gaminiai.id  WHERE prekes_id = $id";
     $rezultatas = mysqli_query( getPrisijungimas(),  $manoSQL  );
     if ( $rezultatas == false) {   // !$arPavyko
         echo "ERROR nepavyko gauti nuotrauku: $id <br>";
@@ -91,6 +91,7 @@ function getGaminys( $id ) {
         return NULL;
     }
 }
+
 
 // ===================================================================
 

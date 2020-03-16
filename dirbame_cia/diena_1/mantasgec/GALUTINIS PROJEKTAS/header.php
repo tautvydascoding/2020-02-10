@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -12,5 +14,5 @@
         <!-- "/" ne i ta puse -->
         <!-- neuzdarete ">" -->
         <link rel="stylesheet" href="css/master.css">
-    
+
 </head>

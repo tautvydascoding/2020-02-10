@@ -24,7 +24,8 @@ $pass = $_POST['passw1'];
         echo "<script>location.href'vartotojas-prisijung-form.php'</script>";
     }
 
-
+    // header("Location: ../Pradzia.php");
+    // exit();
 
 // ========================
 // if (isset($_SESSION['em'])) {
@@ -45,16 +46,16 @@ $pass = $_POST['passw1'];
 // =====
 // select elpastas From vartotojai;
 
-echo "<br />";
-getVartotojoEmail ($koks);
+// echo "<br />";
+// getVartotojoEmail ($koks);
 
 // echo "<br />";
 // getVartotojoSlaptaz ( $pass );
 
-echo "<br />";
-print_r($koks);
-echo "<br />";
-print_r($pass);
+// echo "<br />";
+// print_r($koks);
+// echo "<br />";
+// print_r($pass);
 
 // echo "$vartotojai['vardas']";
 

@@ -1,0 +1,63 @@
+.kubelis {
+    width: 110px;
+    height: 100px;
+    border: solid 2px black;
+    display: inline-block;
+}
+.fonas2-- {
+    background-color: red;
+}
+.fonas3-- {
+    background-color: blue;
+}
+.fonas4-- {
+    background-color: blue;
+}
+.fonas5-- {
+    background-color: green;
+}
+.fonas6-- {
+    background-color: green;
+}
+.fonas7-- {
+    background-color: red;
+}
+.fonas8-- {
+    background-color: white;
+}
+.fonas9-- {
+    background-color: red;
+}
+
+
+
+.kubas {
+    width: 150px;
+    height: 150px;
+    border: solid 2px black;
+    display: inline-block;
+}
+.fonass2-- {
+    background-color: purple;
+}
+.fonass3-- {
+    background-color: green;
+}
+.fonass4-- {
+    background-color: yellow;
+}
+.fonass5-- {
+    background-color: white;
+}
+.fonass6-- {
+    background-color: yellow;
+}
+.fonass7-- {
+    background-color: brown;
+}
+.fonass8-- {
+    background-color: blue;
+}
+.fonass9-- {
+    background-color: white;
+}

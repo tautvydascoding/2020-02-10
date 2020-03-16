@@ -22,7 +22,7 @@ $_SESSION['zinute'] =  "Pavyko sukurti gamini";
 
 
 //redirect - perkelimas
-header("Location: ../Pradzia.php");
+header("Location: ../adminFiles.php");
 exit();
 
 

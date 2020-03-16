@@ -1,5 +1,6 @@
 <?php
-// session_start();
+
+session_start();
 
 include('../models/loginas.php');
 include('../models/funkc-vartotojo.php');
@@ -13,6 +14,20 @@ $pavarde = $_POST['pavarde'];
 $elpastas = $_POST['emailas'];
 $slaptaz1 = $_POST['passw1'];
 $slaptaz2 = $_POST['passw2'];
+
+// =====
+
+$password = $_POST['passw1'];
+$hashed_password = password_hash($password, PASSWORD_DEFAULT);
+// =====
+
+createVartotojas ($vardas, $pavarde, $elpastas, $hashed_password);
+
+// =====
+$_SESSION['zinute'] =  "Pavyko sukurti vartotoja";
+
+header("Location: ../Pradzia.php");
+exit();
 
 
 // =====
@@ -55,14 +70,6 @@ $slaptaz2 = $_POST['passw2'];
 //     echo "Slaptazodziai nesutampa. Negalime sukurti, bandykite dar karta. ";
 //     // $_SESSION ['zinute'] = "Suklydote. Slaptazodziai nesutampa ";
 // }
-
-// =====
-
-$password = $_POST['passw1'];
-$hashed_password = password_hash($password, PASSWORD_DEFAULT);
-// =====
-
-createVartotojas ($vardas, $pavarde, $elpastas, $hashed_password)
 
 // ==============
 // if(password_verify($password, $hashed_password)) {

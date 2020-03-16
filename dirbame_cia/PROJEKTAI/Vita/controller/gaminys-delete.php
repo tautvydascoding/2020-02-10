@@ -15,7 +15,7 @@ $_SESSION['zinute'] =  "Pavyko istrinti gamini";
 
 print_r($_SESSION);
 
-header("Location: ../Pradzia.php");
+header("Location: ../adminFiles.php");
 exit();
 
 // echo "pavyko istrinti gamini";

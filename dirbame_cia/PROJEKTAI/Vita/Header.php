@@ -26,7 +26,7 @@ include('models/loginas.php');
         <!-- ................................................. -->
         <header class="row">
             <div class="col-md-12 aukstis-100 mb-2 bg-success">
-                Virsus
+                
                 <div class="row">
 
                 <div class="col floatr">
