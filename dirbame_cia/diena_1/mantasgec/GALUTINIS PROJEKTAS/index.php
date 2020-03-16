@@ -1,7 +1,7 @@
 <?php include("header.php");
 session_start();
 
-if(!isset($_SESSION['message']))
+if(!isset($_SESSION['username']))
 
 
       ?>
@@ -43,7 +43,7 @@ if(!isset($_SESSION['message']))
 <li><a href="comments/comments.php">komentarai</a></li>
 <li><a href="controller/Logout.php">Logout</a></li>
 </ul>
-<h1>Welcome <?php echo $_SESSION['message']; ?></h1>
+<h1>Welcome <?php echo $_SESSION['username']; ?></h1>
 
 
 </div>
