@@ -1,0 +1,34 @@
+
+}
+.text-raudonas{
+    color: red;
+}
+.text-yellow{
+    color: yellow;
+}
+.text-zalias{
+    color: green;
+}
+.text-blue{
+    color: blue;
+}
+
+
+.fonas-g{
+    background-color: green;
+}
+.fonas-b{
+    background-color: blue;
+}
+.fonas-y{
+    background-color: yellow;
+}
+.fonas-br{
+    background-color: brown;
+}
+
+
+
+article {
+    border: solid 10px black;
+}

@@ -1,0 +1,31 @@
+h2.text-raudonas{
+    color: red;
+}
+h2.text-yellow{
+    color: yellow;
+}
+h2.text-zalias{
+    color: green;
+}
+h2.text-blue{
+    color: blue;
+}
+
+.fonas-g{
+    background-color: green;
+}
+.fonas-b{
+    background-color: blue;
+}
+.fonas-y{
+    background-color: yellow;
+}
+.fonas-br{
+    background-color: brown;
+}
+
+
+
+article {
+    border: solid 10px black;
+}

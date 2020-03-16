@@ -1,0 +1,92 @@
+.kubiukai {
+  width: 33%;
+  height: 150px;
+  border: solid 2px black;
+  float: left;
+  text-align: center;
+  align-items: center;
+}
+.fonas--1 {
+  background-color: blue;
+}
+.fonas--2 {
+  background-color: pink;
+}
+.fonas--3 {
+  background-color: green;
+}
+
+.Ilgas {
+  width: 100%;
+  height: 150px;
+  border: solid 2px black;
+  float: left;
+  text-align: center;
+  align-items: center;
+}
+.fonas--4 {
+    background-color: yellow;
+}
+.du {
+  width: 45%;
+  height: 150px;
+  border: solid 2px black;
+  float: left;
+  text-align: center;
+  align-items: center;
+}
+.fonas--5 {
+    background-color: pink;
+}
+.fonas--6 {
+    background-color: blue;
+}
+
+.remelis plotis-30 float{
+  width: 33%;
+  height: 150px;
+  border: solid 2px black;
+  float: left;
+  text-align: center;
+  align-items: center;
+}
+.remelis
+ plotis-100 {
+  width: 100%;
+  height: 150px;
+  border: solid 2px black;
+  float: left;
+  text-align: center;
+  align-items: center;
+}
+
+.remelis plotis-45 float{
+  width: 45%;
+  height: 150px;
+  border: solid 2px black;
+  float: left;
+  text-align: center;
+  align-items: center;
+}
+
+
+
+
+
+
+.plotis-30 { width: 30%
+}
+
+.plotis-100 { width: 100%
+}
+
+.plotis-45 { width: 45%
+}
+
+.remelis { border: solid 2px red;}
+
+.float { float: left;}
+.isjungiu-float {
+    clear: both;
+    content: "";
+}
