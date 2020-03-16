@@ -1,17 +1,19 @@
 <?php include("header.php");
 session_start();
-if(isset($_SESSION['username'])){
-    header("");
-}
-?>
+
+if(!isset($_SESSION['username']))
+
+
+      ?>
+
 
     <body>
 <div class="container">
     <div class="login-box">
     <div class="row">
         <div class="col-sm-2">
-            <h5>Login here</h5>
             <form  action="controller/validation.php" method="post">
+            <h5>Login here</h5>
                 <div class="form-group">
                     <input type="text" name="user" class="form-control" placeholder="username" required>
                </div>
@@ -41,8 +43,8 @@ if(isset($_SESSION['username'])){
 <li><a href="comments/comments.php">komentarai</a></li>
 <li><a href="controller/Logout.php">Logout</a></li>
 </ul>
+<h1>Welcome <?php echo $_SESSION['username']; ?></h1>
 
-<h3>Welcome <?php echo $_SESSION['username'];?></h3>
 
 </div>
 </div>
@@ -62,12 +64,12 @@ while($zvakes) {
     echo "<h4>". $zvakes['kaina']." Eur"."</h4>";
     echo "</article>";
     $zvakes = mysqli_fetch_assoc($visosZvakes);
-
 }
 
- ?>
-</main>
+?>
+
 <!----------------------------------------- -->
+
 
 
 
