@@ -1,3 +1,46 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+form{
+    float: left;
+    margin-top: 30px;
+    list-style: none;
+    display: inline-block;
+    padding: 5px 10px;
+}
+.wrapper{
+    width: 1170px;
+    margin: auto;
+}
+body{
+    background: linear-gradient(rgba(0, 0, 0,0.6),rgba(0,0,0,0.6)), url("../img/14.png");
+    height: 100vh;
+    -webkit-background-size:cover;
+    background-size: cover;
+    background-position: center center;
+    position: relative;
+    color: #DAA520;
+}
+.nav-area{
+    float:right;
+    list-style: none;
+    margin-top: 30px;
+}
+.nav-area li{
+    display: inline-block;
+}
+.nav-area li a{
+    color:#DAA520;
+    text-decoration: none;
+    padding: 5px 20px;
+    font-family: 'Dancing Script', cursive;
+    font-size: 28px;
+}
+.nav-area li a:hover{
+    background: #fff;
+    color: #DAA520;
+}
 h1{
-    color: gold;
+    color: #DAA520;
 }
