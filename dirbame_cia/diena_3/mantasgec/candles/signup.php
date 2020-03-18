@@ -28,7 +28,7 @@ elseif ($_GET["error"] == "usertaken"){
             <input type="text" name="mail" placeholder="email">
             <input type="password" name="pwd" placeholder="password">
             <input type="password" name="pwd-repeat" placeholder="repeat password">
-            <button type="submit" name="signup-submit">Signup</button>
+            <button type="button" class="btn btn-warning">submit</button>
 
         </form>
         </section>

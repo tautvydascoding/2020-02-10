@@ -49,15 +49,15 @@ date_default_timezone_set('Etc/UTC');
         // $mail->isSMTP();                                               // Set the SMTP server to send through
         // $mail->SMTPAuth   = true;                                   // Enable SMTP authentication
 
-        $mail->Username = 'geciauskasmantas@Gmail.com';                 // SMTP username
-        $mail->Password = 'MGeciauskas87';                          // SMTP username
+        $mail->Username = 'samdo1987@gmail.com';                 // SMTP username
+        $mail->Password = 'mGeciauskas87';                          // SMTP username
                       // SMTP password
         // $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;         // Enable TLS encryption; `PHPMailer::ENCRYPTION_SMTPS` also accepted
         // $mail->Port       = 587;                                    // TCP port to connect to
 
         //Recipients
-        $mail->setFrom('geciauskasmantas@Gmail.com', 'Programuotojai');
-        $mail->addAddress('geciauskasmantas@Gmail.com', 'Programuotojai');     // Add a recipient
+        $mail->setFrom('samdo1987@gmail.com', 'Programuotojai');
+        $mail->addAddress('samdo1987@gmail.com', 'Programuotojai');     // Add a recipient
          $mail->addReplyTo($klientoPastas , $klientoVardas);
         // $mail->addCC('cc@example.com');
         // $mail->addBCC('bcc@example.com');

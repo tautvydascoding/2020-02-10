@@ -30,17 +30,18 @@
                 <?php
                 if (isset($_SESSION['userId'])) {
                 echo'             <form class="" action="includes/logout.inc.php" method="post">
-                                 <button type="submit" name="logout-submit">Logout</button>
+                                 <button class="btn btn-warning" type="submit" name="logout-submit">Logout</button>
                           </form> ';
 
              }
   else {
                 echo '                <form class="" action="includes/login.inc.php" method="post">
-                                    <input type="text" name="mailuid" placeholder="Username/e-mail">
-                                    <input type="password" name="pwd" placeholder="password">
-                                    <button class=""type="submit" name="login-submit">Login</button>
-                             </form>
-                             <a href="signup.php">Signup</a>';
+                                    <input class="login-header" type="text" name="mailuid" placeholder="Username">
+                                    <input class="login-header" type="password" name="pwd" placeholder="password">
+                                    <button class="btn btn-warning"type="submit" name="login-submit">Login</button>
+                                    <a href="signup.php" class="header-signup btn btn-warning">signup</a>
+                             </form> ';
+
 }
 
                  ?>

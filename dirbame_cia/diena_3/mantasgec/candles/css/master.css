@@ -20,7 +20,7 @@ body{
     background-size: cover;
     background-position: center center;
     position: relative;
-    color: #DAA520;
+    color: #FFD700;
 }
 .nav-area{
     float:right;
@@ -31,7 +31,7 @@ body{
     display: inline-block;
 }
 .nav-area li a{
-    color:#DAA520;
+    color:#FFD700;
     text-decoration: none;
     padding: 5px 20px;
     font-family: 'Dancing Script', cursive;
@@ -39,8 +39,15 @@ body{
 }
 .nav-area li a:hover{
     background: #fff;
-    color: #DAA520;
+    color: #FFD700;
 }
-h1{
-    color: #DAA520;
+.contacts-info{
+    font-size: 30px;
+    }
+.login-header{
+    width: 20%;
+    background-color: #FFD700;
+}
+.header-signup{
+    width: 13%;
 }
