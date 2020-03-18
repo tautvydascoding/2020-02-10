@@ -1,3 +1,5 @@
+
+<?php  session_start();?>
 <!DOCTYPE html>
 <html>
     <head>
@@ -22,18 +24,28 @@
                 <li><a href="index.php">Pradžia</a></li>
                 <li><a href="img/img.php">fotoalbumas</a></li>
                 <li><a href="comments">komentarai</a></li>
-                <li><a href="#">kontaktai</a></li>
+                <li><a href="contacts/contacts.php">kontaktai</a></li>
             </ul>
-            <div class="">
-                <form class="" action="includes/login.php" method="post">
-                    <input type="text" name="mailuid" placeholder="Username/e-mail">
-                    <input type="password" name="pwd" placeholder="password">
-                    <button class=""type="submit" name="Login">Login</button>
-             </form>
-             <a href="signup.php">Signup</a>
-             <form class="" action="includes/logout.php" method="post">
-                 <button type="submit" name="logout-submit">Logout</button>
-          </form>
+            <div class="header-login">
+                <?php
+                if (isset($_SESSION['userId'])) {
+                echo'             <form class="" action="includes/logout.inc.php" method="post">
+                                 <button type="submit" name="logout-submit">Logout</button>
+                          </form> ';
+
+             }
+  else {
+                echo '                <form class="" action="includes/login.inc.php" method="post">
+                                    <input type="text" name="mailuid" placeholder="Username/e-mail">
+                                    <input type="password" name="pwd" placeholder="password">
+                                    <button class=""type="submit" name="login-submit">Login</button>
+                             </form>
+                             <a href="signup.php">Signup</a>';
+}
+
+                 ?>
+
+
 
             </div>
 

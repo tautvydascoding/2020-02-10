@@ -1,4 +1,4 @@
-<?php
+<?php session_start();
 if (isset($_POST['signup-submit'])) {
     require 'dbh.inc.php';
 $username = $_POST['uid'];
@@ -50,10 +50,10 @@ else{
        exit();
    }
    else{
-       $hashedPwd = password_hash($password, PASSWORD_DEFAULT);
+       //$hashedPwd = password_hash($password, PASSWORD_DEFAULT);
 
 
-        mysqli_stmt_bind_param($stmt,"sss", $username, $email, $hashedPwd );
+        mysqli_stmt_bind_param($stmt,"sss", $username, $email, $password );
         mysqli_stmt_execute($stmt);
         header("location:../signup.php?signup=success");
         exit();
