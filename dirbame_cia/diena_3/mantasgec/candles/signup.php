@@ -1,4 +1,6 @@
-<?php session_start(); ?>
+<?php session_start();
+?>
+
 
 <main>
     <div class="wrapper-main">
@@ -23,15 +25,16 @@ elseif ($_GET["error"] == "usertaken"){
 }
 }
          ?>
-        <form class="" action="includes/signup.inc.php" method="post">
-            <input type="text" name="uid" placeholder="username">
-            <input type="text" name="mail" placeholder="email">
+        <form  action="includes/signup.inc.php" method="post">
+            <input type="text" name="uid" placeholder="Username">
+            <input type="text" name="mail" placeholder="E-mail">
             <input type="password" name="pwd" placeholder="password">
             <input type="password" name="pwd-repeat" placeholder="repeat password">
-            <button type="button" class="btn btn-warning">submit</button>
+            <button type="submit" name="signup-submit" class="btn btn-warning">submit</button>
 
         </form>
         </section>
 
     </div>
 </main>
+<?php require "footer.php"; ?>

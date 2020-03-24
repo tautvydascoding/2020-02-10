@@ -1,5 +1,4 @@
-
-<?php  session_start();?>
+<?php session_start(); ?>
 <!DOCTYPE html>
 <html>
     <head>
@@ -23,7 +22,7 @@
             <ul class="nav-area">
                 <li><a href="index.php">Pradžia</a></li>
                 <li><a href="img/img.php">fotoalbumas</a></li>
-                <li><a href="comments">komentarai</a></li>
+                <li><a href="comments/comments.php">komentarai</a></li>
                 <li><a href="contacts/contacts.php">kontaktai</a></li>
             </ul>
             <div class="header-login">

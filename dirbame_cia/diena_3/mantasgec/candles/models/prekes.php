@@ -4,7 +4,7 @@
 define('DB_HOST', 'localhost'); //define konstanta - nekintantis kintamasis
 define('DB_MYSQL_USER', 'root');
 define('DB_MYSQL_PASSWORD', 'root');  // Jei naudoji XAMP, WAMP 'root'-> ''
-define('DB_NAME', 'zvakes');
+define('DB_NAME', 'zvakes1');
 
 $prisijungimas = mysqli_connect( DB_HOST, DB_MYSQL_USER, DB_MYSQL_PASSWORD, DB_NAME,3307);
 // jeigu MAMP'e pakeitet MYSQL porta is 3306 i kitoki, privalot ji nurodyti
@@ -12,7 +12,7 @@ $prisijungimas = mysqli_connect( DB_HOST, DB_MYSQL_USER, DB_MYSQL_PASSWORD, DB_N
 
 if ($prisijungimas) {
 
-    echo "pavyko prisijungti prie DB <br>";
+    echo "pavyko prisijungt <br>";
 
     // echo "pavyko prisijungti prie DB <br>";
 
