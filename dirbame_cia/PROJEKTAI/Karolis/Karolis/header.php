@@ -1,9 +1,33 @@
 <?php
 session_start();
+$black = "";
+    $white = "";
+    $hour = time() + 3600;
+    if (isset($_POST['order']))
+    {
+        $color = $_POST['order'];
+        $$color = " selected";
+        setcookie("Free_cookies", $color, $hour);
+      }
+      else if(isset($_COOKIE['Free_cookies']))
+    {
+        $color = $_COOKIE['Free_cookies'];
+        $$color = " selected";
+    } else
+    {
+        $color = "black";
+        $black = " selected";
+    }
  ?>
-
-
 <!DOCTYPE html>
+
+<form method='post' <?php echo "STYLE='background-color:".$color.";'";?> ><p id='txtorder'>
+   <select name='order' id='order'>
+     <option value="black" <?php echo $black; ?> >black</option>
+ <option value="white" <?php echo $white; ?> >white</option>
+ </select>
+  <input type='submit' value='🌛'/>
+
   <head>
     <meta charset="utf-8">
     <meta name="description" content="Pavizdys meta aprasymo, daznai pasirodys search rezultatuose">
@@ -12,7 +36,6 @@ session_start();
     <link rel="stylesheet" href="libs/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="css/master.css">
   </head>
-  <body class>
 
 
 
@@ -34,6 +57,7 @@ session_start();
       <!-- <li><a href="../karolis/models/crud.php">Crud</a></li> -->
     </ul>
   </nav>
+  </form>
     <div class="header-login">
       <?php
         if (isset($_SESSION['userId'])) {
@@ -50,21 +74,15 @@ session_start();
             <a href="signup.php">Signup</a>';
         }
        ?>
-<button type="button" name="dark_light" onclick="myFunction()" title="dark-mode">🌛</button>
 
-<script type="text/javascript">
 
-function myFunction() {
-  var element = document.body;
-  element.classList.toggle("dark-mode");
-}
-
-</script>
 
     </div>
   </nav>
 </header>
-</body>
+
+
+
 <script type="text/javascript" src="libs/jQuery/jquery-3.3.1.min.js" ></script>
 <script type="text/javascript" src="libs/bootstrap/js/bootstrap.bundle.min.js">    </script>
 </html>
