@@ -55,7 +55,7 @@ else{
 
         mysqli_stmt_bind_param($stmt,"sss", $username, $email, $password );
         mysqli_stmt_execute($stmt);
-        header("location:../signup.php?signup=success");
+        header("location:../index.php?signup=success");
         exit();
    }
 }
@@ -65,6 +65,6 @@ else{
  mysqli_close($conn);
  }
 else{
-    header("location:../signup.php");
+    header("location:../index.php");
     exit();
 }

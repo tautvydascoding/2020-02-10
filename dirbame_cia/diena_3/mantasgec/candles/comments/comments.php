@@ -32,9 +32,9 @@ require 'action.php';
 
 </head>
 <body class="bg-dark">
-<div class="container">
-<div class="row justify-content-center mb-2">
-    <div class="col-lg-5 bg-light rounded mt-2">
+<div class="container-fluid">
+<div class="row  mb-2">
+    <div class="col-lg-5 bg-dark rounded mt-2">
         <h4>Write your comment!</h4>
         <form  action="comments.php" method="post">
             <div class="form-group">
@@ -51,7 +51,7 @@ while($row=$result->fetch_assoc()){
 
      ?>
 <div class="card mb-2 border-secondary">
-<div class="card-header bg-secondary py-1 text-dark"></div>
+<div class="card-header bg-warning py-1 text-dark"></div>
 <span class="font-italic">posted by:<?= $row['name'];?></span>
 <span class="font-italic">On : <?= $row['cur_date'];?></span>
 </div>
@@ -74,11 +74,13 @@ while($row=$result->fetch_assoc()){
 </div>
 </div>
 
-
+<footer>
+    <a href="../index.php" class="btn btn-primary" type="button" name="atgal">Gryžti</a>
 <script type="text/javascript" src="libs/jQuery/jquery-3.3.1.min.js" ></script>
 <script type="text/javascript" src="libs/bootstrap/js/bootstrap.bundle.min.js">    </script>
 <!--  mano js pats zemiausias!!!-->
 <script type="text/javascript" src="master.js"></script>
+</footer>
 
 </body>
 </html>

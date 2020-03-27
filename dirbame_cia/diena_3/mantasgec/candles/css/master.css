@@ -44,10 +44,47 @@ body{
 .contacts-info{
     font-size: 30px;
     }
-.login-header{
-    width: 20%;
-    background-color: #FFD700;
+
 }
 .header-signup{
     width: 13%;
+}
+.pradzia-title{
+    font-family: 'Comfortaa', cursive;
+    padding-top: 10px;
+    padding-left: 50px;
+}
+.pradzia-text{
+    padding-left: 50px;
+    line-height: 1.5;
+}
+.contacts-form{
+    padding: 15px 25px;
+}
+.login-header{
+    background-color: white;
+    border-radius: 4px;
+    padding: 4px 20px 7px ;
+    width: 20%;
+}
+.img-text{
+    text-align: center;
+    margin: 10px;
+}
+.img-button{
+    margin:30px;
+}
+.gallery{
+    margin: 10px 50px;
+}
+.gallery img{
+width: 230px;
+height: 230px;
+padding: 5px;
+filter: grayscale(100%);
+transition: 1s;
+}
+.gallery img:hover{
+    filter: grayscale(0);
+    transform: scale(1.1);
 }

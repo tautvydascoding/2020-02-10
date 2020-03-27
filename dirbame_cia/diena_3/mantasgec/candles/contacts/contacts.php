@@ -8,12 +8,11 @@
         <!-- reikalinga kad prisitaikantis dizainas veiktu tvarkingai -->
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <link rel="stylesheet" href="libs/bootstrap/css/bootstrap.min.css">
+        <link rel="stylesheet" href="../libs/bootstrap/css/bootstrap.min.css">
 
         <link rel="stylesheet" href="../css/master.css">
         <!-- !!!! VISSA MANO CSS failas pats zemiausias -->
     </head>
-
     <div class="contacts-info">
 
         <h2>Candle For Our Home ™ </h2>
@@ -21,11 +20,9 @@
         <h4>Tel. nr. : +37069916709<br />
             El. paštas : candleforourhome@gmail.com<br />
             Instagram : @candleforour<br />
-            Facebook: https://www.facebook.com/Candle-For-Our-Home-1882569828458313/<br /></h4>
+            Facebook: <a href="https://www.facebook.com/Candle-For-Our-Home-1882569828458313/">Our Facebook!</a><br /></h4>
         </div>
-
-
-         <form  action="../includes/email.php" method="post">
+         <form class="contacts-form" action="../includes/email.php" method="post">
              <h1>Atsiliepimus siuskite čia.</h1>
                <input type="text" name="vardas" placeholder="Jusu vardas" > <br>
                <input type="text" name="email" placeholder="jusu email" required  > <br>
@@ -34,16 +31,9 @@
 
                 </textarea><br>
 
-               <input type="submit" value="Klausti">
+             <input  class="btn btn-primary"type="submit" value="Klausti"><br /><br />
+             <a href="../index.php" class="btn btn-primary" type="button" name="atgal">Gryžti</a>
         </form>
-
-
-
-
-        <script type="text/javascript" src="libs/jquery-3.4.1.min.js"> </script>
-        <script type="text/javascript" src="libs/bootstrap/js/bootstrap.bundle.min.js"> </script>
-        <!-- MANO JS pats zemiausias -->
-        <script type="text/javascript" src="js/main.js"></script>
-
+<?php require "../footer.php" ?>
      </body>
 </html>

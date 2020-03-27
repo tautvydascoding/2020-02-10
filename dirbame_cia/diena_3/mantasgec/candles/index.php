@@ -13,7 +13,8 @@ echo '<p class="login-status">you are logged in!</p>';
 }else{
     '<p class="login-status">you are logged out!</p>';
 }
-             ?>
+?>
+
         </section>
 
     </div>
