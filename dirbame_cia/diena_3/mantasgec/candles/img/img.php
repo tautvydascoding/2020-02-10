@@ -15,7 +15,7 @@
 
 <div class="gallery">
     <a href="1.jpg"><img src="1.jpg" alt="candle"  ></a>
-    <a href="2.jpg"><img src="2.jpg" alt="candle"  ></a>
+    <a href="2.jpg" ><img src="2.jpg" alt="candle"  ></a>
     <a href="3.jpg"><img src="3.jpg" alt="candle"  ></a>
     <a href="5.jpg"><img src="5.jpg" alt="candle"  ></a>
     <a href="6.jpg"><img src="6.jpg" alt="candle"  ></a>
@@ -26,7 +26,7 @@
     <a href="11.jpg"><img src="11.jpg" alt="candle"  ></a>
     <a href="12.jpg"><img src="12.jpg" alt="candle"  ></a>
     <a href="13.jpg"><img src="13.jpg" alt="candle"  ></a>
-    <a href="14.jpg"><img src="14.jpg" alt="candle"  ></a>
+    
 </div>
 
 
