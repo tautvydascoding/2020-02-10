@@ -20,7 +20,7 @@
         <nav a href="wrapper" >
             <a href=""></a>
             <ul class="nav-area">
-                <li><a href="pradzia.php">Pradžia</a></li>
+                <li><a href="pradzia.php">apie...</a></li>
                 <li><a href="img/img.php">fotoalbumas</a></li>
                 <li><a href="comments/comments.php">komentarai</a></li>
                 <li><a href="contacts/contacts.php">kontaktai</a></li>
